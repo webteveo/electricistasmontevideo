@@ -1,0 +1,1 @@
+{"name":"electricistasmontevideo/sitio","description":"Sitio PHP de Electricistas Montevideo","license":"proprietary","require":{"php":">=8.0","ext-mbstring":"*"}}

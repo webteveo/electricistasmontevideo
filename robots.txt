@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /_archivo_base/
+Disallow: /config/
+Disallow: /src/
+Disallow: /content/
+Disallow: /scripts/
+Disallow: /vendor/
+Sitemap: https://electricistasmontevideo.com/sitemap.xml

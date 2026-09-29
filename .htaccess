@@ -1,0 +1,48 @@
+Options -Indexes
+DirectoryIndex index.php
+RewriteEngine On
+# La copia retirada es recuperable localmente y nunca es pública.
+RewriteRule ^(?:_archivo_base|config|src|content|scripts|vendor|data|\.claude|\.codex|\.agents)(?:/|$) - [F,L,NC]
+<FilesMatch "(?i)\.(md|log|zip|lock)$">
+Require all denied
+</FilesMatch>
+<FilesMatch "^(composer\.json|trabajos\.json)$">
+Require all denied
+</FilesMatch>
+# Dominio definitivo; el entorno localhost conserva su subcarpeta.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?electricistasmontevideo\.com$ [NC]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://electricistasmontevideo.com%{REQUEST_URI} [R=301,L,NE]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^sitemap-(paginas|servicios|zonas|articulos).xml$ sitemap.php?grupo=$1 [L]
+RewriteRule ^robots\.txt$ robots.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+# Compresión
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+# Cache de estáticos (versionados con ?v=)
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+<IfModule mod_headers.c>
+<FilesMatch "\.(css|js|webp|png|jpe?g|svg|ico|woff2)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>

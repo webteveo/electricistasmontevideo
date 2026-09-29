@@ -1,0 +1,95 @@
+<?php
+// Bloques de respuesta directa (H2 en pregunta) y fuentes por servicio. Solo datos verificables:
+// normativa de UTE/URSEA con enlace y fecha de consulta. Sin precios, plazos ni garantías del negocio.
+// Consultado: 25/09/2026. Al cambiar un bloque, actualizar 'mod'.
+
+$fuente_rbt = ['label'=>'UTE – Reglamento de Baja Tensión (índice de capítulos)', 'url'=>'https://www.ute.com.uy/clientes/tramites-y-servicios/tecnicos-y-firmas-instaladoras/reglamento-de-baja-tension', 'nota'=>'consultado el 25/09/2026'];
+$fuente_c06 = ['label'=>'RBT Capítulo VI – Protecciones contra contactos directos e indirectos', 'url'=>'https://ute.com.uy/sites/default/files/files-cuerpo-paginas/C-06.pdf', 'nota'=>'interruptor diferencial de alta sensibilidad (30 mA)'];
+$fuente_c05 = ['label'=>'RBT Capítulo V – Agrupamiento de accesorios de protección, tableros', 'url'=>'https://portal.ute.com.uy/sites/default/files/files-cuerpo-paginas/C-05.pdf', 'nota'=>'estructura de tableros y distribución de cargas'];
+$fuente_c07 = ['label'=>'RBT Capítulo VII – Grado de electrificación de las viviendas', 'url'=>'https://portal.ute.com.uy/sites/default/files/files-cuerpo-paginas/C-07.pdf', 'nota'=>'circuitos y puntos mínimos por vivienda'];
+$fuente_c23 = ['label'=>'RBT Capítulo XXIII – Puestas a tierra', 'url'=>'https://portal.ute.com.uy/sites/default/files/files-cuerpo-paginas/C-23.pdf', 'nota'=>'electrodos y resistencia de tierra'];
+$fuente_c22 = ['label'=>'RBT Capítulo XXII – Instalaciones al aire libre', 'url'=>'https://portal.ute.com.uy/sites/default/files/files-cuerpo-paginas/C-22.pdf', 'nota'=>'instalaciones exteriores'];
+$fuente_c10 = ['label'=>'RBT Capítulo X – Locales de pública concurrencia', 'url'=>'https://portal.ute.com.uy/sites/default/files/files-cuerpo-paginas/C-10.pdf', 'nota'=>'comercios y locales con público'];
+$fuente_c30 = ['label'=>'RBT Capítulo XXX – Instalaciones para la carga de vehículos eléctricos', 'url'=>'https://portal.ute.com.uy/sites/default/files/docs/C-30.pdf', 'nota'=>'versión febrero 2022'];
+$fuente_pliego = ['label'=>'UTE – Pliego tarifario vigente desde el 01/01/2026', 'url'=>'https://www.ute.com.uy/sites/default/files/docs/Pliego%20Tarifario%20Enero%202026.pdf', 'nota'=>'precios sin IVA'];
+$fuente_normativa = ['label'=>'UTE – Normativa de baja tensión para firmas y técnicos instaladores', 'url'=>'https://portal.ute.com.uy/firmas-y-tecnicos-instaladores/normativa', 'nota'=>'nueva Norma de Instalaciones de Enlace vigente desde el 13/08/2026'];
+$fuente_ursea_ve = ['label'=>'URSEA – Requisitos para instalaciones eléctricas para carga de vehículos eléctricos', 'url'=>'https://www.gub.uy/unidad-reguladora-servicios-energia-agua/politicas-y-gestion/requisitos-para-instalaciones-electricas-para-carga-vehiculos-electricos', 'nota'=>'publicado el 21/06/2024'];
+$fuente_ute_carga = ['label'=>'UTE – Movilidad eléctrica: carga de vehículos', 'url'=>'https://portal.ute.com.uy/movilidad-sostenible-carga', 'nota'=>'carga domiciliaria con Schuko o SAVE'];
+
+$servicios_extra = [
+    'reparaciones' => [
+        'title'=>'Reparaciones eléctricas en Montevideo – Llaves que saltan',
+        'preguntas'=>[
+            ['h2'=>'¿Por qué salta la térmica?', 'p'=>['La llave térmica salta porque detecta una sobrecarga o un cortocircuito en el circuito que protege. La sobrecarga aparece cuando se usan a la vez varios equipos de consumo alto en un mismo circuito, como el horno, el aire acondicionado y la estufa. El cortocircuito es más grave: un cable pelado, un empalme flojo o un equipo dañado que une fase y neutro.', 'Si salta al enchufar siempre el mismo aparato, el problema suele estar en ese aparato. Si salta con varios equipos prendidos, el circuito está sobrecargado y hay que repartir la carga o sumar un circuito dedicado. Si salta sin nada conectado, hay una falla en la instalación que conviene revisar antes de volver a subirla.']],
+            ['h2'=>'¿Por qué salta el disyuntor diferencial?', 'p'=>['El disyuntor diferencial corta cuando detecta una fuga de corriente a tierra, es decir, electricidad que se escapa por un camino que no es el cable. El Reglamento de Baja Tensión de UTE considera de alta sensibilidad a los diferenciales de 30 mA y destaca que, además de proteger a las personas, limitan las fugas que pueden originar incendios.', 'Las causas más comunes en Montevideo son la humedad en cajas exteriores o en el baño, un termotanque o un lavarropas con la resistencia dañada y cables con la aislación envejecida. Para encontrar la causa se desconectan los equipos de a uno y se mide la aislación de cada circuito. El detalle está en [por qué salta el disyuntor](articulos/por-que-salta-el-disyuntor-diferencial).']],
+            ['h2'=>'¿Qué señales indican que hay que llamar al electricista ya?', 'p'=>['Olor a quemado, chispas al enchufar, un tomacorriente o una llave caliente al tacto, marcas negras en tapas o cables, y luces que bajan mucho de intensidad al arrancar un equipo. En cualquiera de esos casos lo más seguro es bajar la llave general, no volver a usar el punto afectado y consultar. No conviene abrir el tablero ni desarmar tomacorrientes para mirar.']],
+        ],
+        'fuentes'=>[$fuente_c06, $fuente_c05, $fuente_rbt],
+    ],
+    'instalaciones' => [
+        'title'=>'Instalaciones eléctricas en Montevideo – Obra y reformas',
+        'preguntas'=>[
+            ['h2'=>'¿Cuántos circuitos necesita una vivienda?', 'p'=>['Depende del grado de electrificación. El Capítulo VII del Reglamento de Baja Tensión de UTE define tres niveles. En la electrificación mínima pide circuitos separados para los tomacorrientes de la cocina, del baño y de uso general, uno para la iluminación y otro para el calentador de agua. La media duplica los de cocina, tomacorrientes generales e iluminación. La elevada suma circuitos para usos específicos, como cocina eléctrica, lavavajillas o aire acondicionado.', 'En la práctica, una casa o un apartamento con aire acondicionado, termotanque y cocina eléctrica necesita circuitos dedicados para esos equipos. Colgarlos de un circuito de tomacorrientes comunes es la causa más frecuente de térmicas que saltan.']],
+            ['h2'=>'¿Cuándo hay que renovar una instalación vieja?', 'p'=>['Conviene renovar cuando los cables tienen la aislación reseca o quebradiza, cuando el tablero tiene fusibles o no tiene disyuntor diferencial, cuando no hay puesta a tierra o cuando se van a sumar equipos de consumo alto. También cuando la instalación pasó por varias reformas sin un criterio común y ya no se sabe qué llave corta cada ambiente.', 'No siempre hace falta rehacer todo. Se puede renovar por circuitos, empezando por la cocina y el baño, y aprovechar las canalizaciones que estén en buen estado.']],
+            ['h2'=>'¿Quién puede firmar una instalación ante UTE?', 'p'=>['Los trámites de conexión o modificación del suministro ante UTE los presenta una firma instaladora registrada y habilitada, vinculada a un técnico instalador habilitado, según el Capítulo XXIV del Reglamento de Baja Tensión. Si tu obra necesita un trámite ante UTE, como un servicio nuevo, un aumento de potencia o un cambio de monofásico a trifásico, consultanos y te decimos cómo se gestiona en tu caso.', 'Desde el 13/08/2026 rige una nueva versión de la Norma de Instalaciones de Enlace de Baja Tensión de UTE, que regula la conexión entre la red y la instalación del cliente.']],
+        ],
+        'tabla'=>['h2'=>'¿Qué circuitos pide el reglamento según el grado de electrificación?', 'cabecera'=>['Grado', 'Circuitos que incluye (RBT Cap. VII)'], 'filas'=>[['Mínima', 'Tomacorrientes de cocina (1 o 2), tomacorrientes de baño, tomacorrientes de uso general, iluminación y calentador de agua'], ['Media', 'Tomacorrientes de cocina (2), tomacorrientes de baño, tomacorrientes de uso general (2), iluminación (2) y calentador de agua'], ['Elevada', 'Lo mismo que la media, más 1 o 2 circuitos para usos específicos (cocina, microondas, lavavajillas, aire acondicionado)']]],
+        'fuentes'=>[$fuente_c07, $fuente_normativa, $fuente_rbt],
+    ],
+    'tableros' => [
+        'title'=>'Tableros eléctricos en Montevideo – Térmicas y disyuntor',
+        'preguntas'=>[
+            ['h2'=>'¿Qué diferencia hay entre la térmica y el disyuntor diferencial?', 'p'=>['La llave térmica protege los cables: corta cuando pasa más corriente de la que el circuito soporta, por sobrecarga o cortocircuito. El disyuntor diferencial protege a las personas: compara la corriente que sale y la que vuelve, y corta si detecta una fuga a tierra, como la que se produce cuando alguien toca un equipo con una falla de aislación.', 'Un tablero completo necesita las dos cosas. El Reglamento de Baja Tensión de UTE considera de alta sensibilidad al diferencial de 30 mA y admite usarlo en instalaciones existentes que no tienen conductor de protección. Aun así, lo correcto es sumar la puesta a tierra.']],
+            ['h2'=>'¿Cómo saber si mi casa tiene puesta a tierra?', 'p'=>['Una pista es mirar los tomacorrientes: si son de dos agujeros o el borne de tierra no tiene cable conectado, probablemente no hay tierra. La única forma segura de saberlo es medirla. El Capítulo XXIII del Reglamento de Baja Tensión de UTE regula los electrodos, como la jabalina, y la resistencia de tierra que tiene que alcanzar la instalación.', 'Sin puesta a tierra, la carcasa de un lavarropas o un termotanque con una falla puede quedar con tensión. Con tierra y diferencial, esa falla se corta en milésimas de segundo.']],
+            ['h2'=>'¿Cuándo conviene cambiar el tablero?', 'p'=>['Cuando tiene fusibles, cuando no tiene disyuntor diferencial, cuando las llaves saltan seguido o muestran marcas de recalentamiento, cuando no queda lugar para circuitos nuevos o cuando vas a sumar equipos de consumo alto, como aire acondicionado, cocina eléctrica o un [cargador para auto eléctrico](cargador-vehiculo-electrico-montevideo). Al cambiarlo se aprovecha para separar circuitos e identificar qué llave corresponde a cada ambiente.']],
+        ],
+        'tabla'=>['h2'=>'¿Qué protege cada elemento del tablero?', 'cabecera'=>['Elemento', 'Qué protege', 'Cuándo actúa'], 'filas'=>[['Llave térmica', 'Cables y equipos', 'Sobrecarga o cortocircuito'], ['Disyuntor diferencial (30 mA)', 'Personas; también reduce el riesgo de incendio', 'Fuga de corriente a tierra'], ['Puesta a tierra', 'Personas, junto con el diferencial', 'Deriva a tierra la corriente de una falla'], ['Fusibles (tableros viejos)', 'Solo sobrecorriente', 'Se funden y hay que reponerlos; no protegen contra fugas']]],
+        'fuentes'=>[$fuente_c06, $fuente_c05, $fuente_c23],
+    ],
+    'iluminacion' => [
+        'title'=>'Iluminación en Montevideo – Instalación de luces LED',
+        'preguntas'=>[
+            ['h2'=>'¿Qué luz conviene en cada ambiente?', 'p'=>['En cocina y baño conviene luz blanca neutra, de unos 4000 K, que muestra bien los colores y ayuda en las tareas. En dormitorios y living funciona mejor la luz cálida, de 2700 a 3000 K, y en lo posible con un dimmer para regularla. En pasillos y escaleras, un sensor de movimiento evita dejar luces prendidas.', 'Más que la cantidad de lámparas, importa distribuirlas bien: una luz general, una sobre la mesada o el espejo y, si hace falta, una de ambiente. Los spots empotrados necesitan espacio en el cielorraso y una conexión prolija, no colgada del cable anterior.']],
+            ['h2'=>'¿Qué hay que tener en cuenta en la iluminación exterior?', 'p'=>['Los artefactos exteriores tienen que tener un grado de protección adecuado contra el agua y el polvo, y las conexiones van en cajas estancas. El Reglamento de Baja Tensión de UTE dedica su Capítulo XXII a las instalaciones al aire libre. En la práctica, los circuitos exteriores conviene tenerlos separados y protegidos por un disyuntor diferencial, porque la humedad es la causa más común de fugas.']],
+            ['h2'=>'¿Cuánto se ahorra al pasar a LED?', 'p'=>['Una lámpara LED consume una fracción de lo que consumía una incandescente o una halógena para dar la misma luz. El ahorro real depende de cuántas horas por día estén prendidas y de tu tarifa. Con la tarifa residencial simple de UTE, el kWh de energía cuesta entre $6,744 y $10,539 sin IVA según el escalón de consumo, por lo que reemplazar las lámparas que más horas pasan encendidas es lo que más se nota en la factura.']],
+        ],
+        'fuentes'=>[$fuente_c22, $fuente_pliego, $fuente_rbt],
+    ],
+    'mantenimiento' => [
+        'title'=>'Revisión eléctrica en Montevideo – Mantenimiento e informe',
+        'preguntas'=>[
+            ['h2'=>'¿Qué incluye una revisión eléctrica?', 'p'=>['Una revisión completa mira el tablero (térmicas, disyuntor diferencial y su prueba de disparo), la puesta a tierra, el estado de cables y empalmes en las cajas, los tomacorrientes y llaves, y los circuitos de los equipos de consumo alto. El resultado es un informe con lo que está bien, lo que hay que corregir y en qué orden, para que decidas con información.']],
+            ['h2'=>'¿Cuándo conviene revisar la instalación?', 'p'=>['Antes de comprar o alquilar una casa o un apartamento, después de una reforma hecha por varias personas, si la vivienda tiene más de 25 o 30 años sin renovar, si las llaves saltan seguido o si vas a sumar equipos de consumo alto. En casas de veraneo, antes de cada temporada. En edificios, los espacios comunes y los tableros generales también necesitan revisiones periódicas.']],
+            ['h2'=>'¿Cómo se prueba el disyuntor diferencial?', 'p'=>['El disyuntor diferencial tiene un botón de prueba, marcado con una T. Al apretarlo tiene que cortar de inmediato. Si no corta, no está protegiendo y hay que cambiarlo. Es una prueba sencilla que conviene hacer cada tanto. El Reglamento de Baja Tensión de UTE establece que la actuación del interruptor se verifica antes de dar por terminado un trabajo en una instalación interior.']],
+        ],
+        'fuentes'=>[$fuente_c06, $fuente_c23, $fuente_rbt],
+    ],
+    'comercios' => [
+        'title'=>'Electricista para comercios en Montevideo – Locales',
+        'preguntas'=>[
+            ['h2'=>'¿Qué cambia en la instalación de un comercio?', 'p'=>['Un comercio usa la instalación más horas y con más carga que una casa: heladeras, cámaras de frío, aire acondicionado, iluminación de vidriera, cartelería y equipos de cobro funcionando a la vez. Conviene separar circuitos por uso, para que una falla en la vidriera no deje sin energía la caja o las heladeras, y dimensionar el tablero para el consumo real.', 'Los locales con público están alcanzados por el Capítulo X del Reglamento de Baja Tensión de UTE, que pone requisitos específicos para los locales de pública concurrencia. Por ejemplo, el alumbrado de emergencia debe poder funcionar durante al menos una hora, y sus canalizaciones van separadas del resto.']],
+            ['h2'=>'¿Se puede trabajar sin cerrar el local?', 'p'=>['En la mayoría de los casos sí. Se planifica el trabajo por etapas, se hacen los cortes en horarios sin atención al público y se dejan provisorios seguros cuando un circuito tiene que quedar funcionando. Antes de empezar se define con vos qué equipos no pueden quedar sin energía, como las cámaras de frío.']],
+            ['h2'=>'¿Qué pasa si el local necesita más potencia?', 'p'=>['Si el local suma equipos y el suministro no alcanza, puede hacer falta un aumento de potencia o un cambio a trifásica ante UTE. Ese trámite lo presenta una firma instaladora habilitada. Primero conviene medir el consumo real y ordenar los circuitos, porque a veces el problema es de distribución y no de potencia.']],
+        ],
+        'fuentes'=>[$fuente_c10, $fuente_c05, $fuente_normativa],
+    ],
+    'cargadores' => [
+        'title'=>'Cargador para auto eléctrico en Montevideo – Wallbox',
+        'preguntas'=>[
+            ['h2'=>'¿Qué exige el reglamento de UTE para instalar un cargador?', 'p'=>['El Capítulo XXX del Reglamento de Baja Tensión de UTE regula las instalaciones para la carga de vehículos eléctricos. Entre otros puntos, pide que el circuito de carga sea exclusivo para el vehículo, que cada punto de conexión tenga su interruptor automático y un diferencial de 30 mA como máximo, y que la caída de tensión hasta el punto de carga no supere el 5 %. Además, no permite puntos de carga monofásicos de más de 7,4 kW.', 'El tipo de diferencial depende del modo de carga. Para cargar con un tomacorriente Schuko (modos 1 y 2) pide un diferencial al menos tipo A. Para un cargador wallbox (modo 3) pide un diferencial tipo B, o un tipo A o F combinado con un detector de corriente continua. URSEA confirma que las instalaciones de carga se rigen por este capítulo.']],
+            ['h2'=>'¿Puedo cargar el auto en un enchufe común?', 'p'=>['UTE admite la carga domiciliaria con un tomacorriente tipo Schuko o con un SAVE (sistema de alimentación de vehículos eléctricos, el wallbox). Lo que no conviene es usar un tomacorriente cualquiera de un circuito compartido: la carga dura horas a potencia constante y recalienta cables y conexiones que no fueron pensados para eso. Aunque cargues con Schuko, el reglamento pide un circuito exclusivo con sus protecciones.']],
+            ['h2'=>'¿Cuánto cuesta cargar el auto en casa?', 'p'=>['Depende de la tarifa. Con la tarifa residencial triple horario de UTE, vigente desde el 01/01/2026, el kWh cuesta $2,443 en horario valle (de 00:00 a 07:00), $5,172 en llano y $12,034 en punta, sin IVA. Un auto que consume 15 kWh cada 100 km gasta unos $37 sin IVA en energía para recorrerlos si carga en valle, y unos $180 si carga en punta.', 'Por eso conviene un cargador programable, que arranque solo a medianoche. La tarifa triple horario requiere una potencia contratada de 3,5 kW como mínimo. Más detalles en [cuánto cuesta cargar un auto eléctrico en casa](articulos/cuanto-cuesta-cargar-auto-electrico-en-casa-uruguay).']],
+        ],
+        'tabla'=>['h2'=>'¿Qué modo de carga conviene?', 'cabecera'=>['Modo (RBT Cap. XXX)', 'Punto de conexión', 'Potencia', 'Diferencial exigido'], 'filas'=>[['Modo 1 y 2', 'Tomacorriente Schuko de uso doméstico', 'Hasta 3,7 kW (lenta)', 'Al menos tipo A, 30 mA'], ['Modo 3', 'Estación de carga en AC (wallbox / SAVE)', 'Hasta 7,4 kW monofásico; más en trifásico', 'Tipo B, 30 mA, o tipo A/F con detector de corriente continua'], ['Modo 4', 'Estación de carga en DC', 'Carga rápida (uso comercial)', 'Según el equipo y el proyecto']]],
+        'fuentes'=>[$fuente_c30, $fuente_ursea_ve, $fuente_ute_carga, $fuente_pliego],
+    ],
+];
+
+foreach ($servicios_extra as $id => $x) {
+    if (!isset($servicios_landing[$id])) continue;
+    $servicios_landing[$id]['title'] = $x['title'];
+    $servicios_landing[$id]['preguntas'] = $x['preguntas'];
+    if (!empty($x['tabla'])) $servicios_landing[$id]['preguntas'][] = ['h2'=>$x['tabla']['h2'], 'p'=>[], 'tabla'=>['cabecera'=>$x['tabla']['cabecera'], 'filas'=>$x['tabla']['filas']]];
+    $servicios_landing[$id]['fuentes'] = $x['fuentes'];
+    $servicios_landing[$id]['mod'] = '2026-09-25';
+}
