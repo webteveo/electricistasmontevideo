@@ -1,0 +1,69 @@
+# Frases y palabras que delatan texto generado por IA.
+# Formato: severidad | expresión regular (Python, sin distinguir mayúsculas) | sugerencia
+# Severidad: alta (bloquea), media (revisar), baja (ojo al abuso).
+# Agregá líneas nuevas cuando detectes un tic nuevo. Las líneas con # son comentarios.
+
+# --- Muletillas de apertura y contexto vacío ---
+alta  | \ben el mundo actual\b                         | Borrá la frase y arrancá por el dato o la respuesta.
+alta  | \bhoy en d[ií]a\b                              | Sacalo. Si la fecha importa, poné el mes y el año.
+alta  | \ben la era digital\b                          | Sacalo; no aporta nada.
+alta  | \ben el vertiginoso\b                          | Sacalo; es relleno.
+media | \ben el mundo de (las?|los?)\b                 | Nombrá el rubro directamente ("en mudanzas", "en sanitaria").
+alta  | \bcuando se trata de\b                         | Andá directo: "Para X..." o empezá por el sujeto.
+alta  | \bsin m[aá]s pre[aá]mbulos?\b                  | Borralo y empezá.
+alta  | ¿alguna vez te (preguntaste|has preguntado)    | Empezá por la respuesta, no con una pregunta retórica.
+alta  | \badentr[eé]monos\b                            | Borralo; entrá al tema sin anunciarlo.
+alta  | \bsumerg(ir|irse|irte|ite|ete|imos|ámonos|amonos)\b | Borralo; decí qué vas a explicar o explicalo.
+
+# --- Conectores de relleno ---
+alta  | \bcabe (destacar|mencionar|se[nñ]alar|resaltar|aclarar)\b | Decilo sin anunciarlo.
+alta  | \bes importante (mencionar|destacar|se[nñ]alar|tener en cuenta|recordar|aclarar)\b | Decí el dato; si es importante, se nota solo.
+alta  | \bvale la pena (mencionar|destacar|se[nñ]alar)\b | Decilo sin anunciarlo.
+alta  | \bsin lugar a dudas?\b                          | Sacalo o reemplazá por el dato que lo demuestra.
+media | \bsin duda( alguna)?\b                          | Sacalo o poné el dato que lo demuestra.
+alta  | \ben definitiva\b                               | Sacalo; cerrá con un paso práctico.
+alta  | \ben resumen\b                                  | No resumas lo que ya dijiste.
+alta  | \ben conclusi[oó]n\b                            | No resumas; cerrá con un paso práctico.
+alta  | \bpara concluir\b                               | No resumas; cerrá con un paso práctico.
+alta  | \bpor [uú]ltimo,? pero no menos importante\b    | Sacalo.
+media | \bdicho esto\b                                  | Sacalo o usá "Igual," / "Ahora,".
+media | \ben pocas palabras\b                           | Sacalo.
+media | \ba la hora de\b                                | Cambialo por "para", "al" o "cuando".
+media | \bya sea que\b                                  | Reescribí con "si..., y si...".
+alta  | \bno se trata de\b[^.!?\n]{0,120}\bse trata de\b | Fórmula de IA. Afirmá lo que sí es y listo.
+
+# --- Adjetivos y verbos inflados ---
+alta  | \bes (fundamental|crucial|clave|esencial|vital|primordial)\b | Explicá la consecuencia concreta de no hacerlo.
+media | (?<!\bes )\b(fundamental|crucial|esencial|primordial)\b   | Reemplazá por la razón concreta.
+media | \b(punto|factor|aspecto|elemento) clave\b       | Nombrá el punto en sí.
+alta  | \b(es|son|será) la clave\b                   | Explicá qué pasa si no se hace.
+media | \bsin estr[eé]s\b                              | Promesa de folleto. Decí qué problema concreto evitás.
+alta  | \bjuega un (papel|rol) (fundamental|crucial|clave|importante|esencial)\b | Decí qué hace concretamente.
+media | \bpotenci(ar|á|a tu|ando|e|en|amos)\b          | Decí qué mejora y cuánto.
+baja  | \boptimiz\w*                                    | Solo en contexto técnico. Si no, decí qué cambia.
+alta  | \bdesbloque\w*                                  | Sacalo salvo que hables de un celular o una cerradura.
+alta  | \bun sinf[ií]n de\b                             | Poné la cantidad real o "muchos".
+alta  | \bamplia (gama|variedad)\b                      | Nombrá dos o tres opciones reales.
+media | \brobust[oa]s?\b                                | Decí qué aguanta: peso, años, lluvia.
+media | \bintegral(es)?\b                               | Decí qué incluye exactamente.
+media | \bde (manera|forma) (eficiente|efectiva|óptima|optima)\b | Decí cuánto tiempo o plata ahorra.
+media | \bnaveg(ar|á|a|ando|es)\b                       | Si no es navegación real, usá "resolver", "hacer", "entender".
+media | \bpanorama\b                                    | Nombrá la situación concreta.
+media | \becosistema\b                                  | Solo en biología. Si no, nombrá los actores reales.
+alta  | \bllev(ar|á|a|e) (tu|su|el|la) \w+ al (siguiente|pr[oó]ximo) nivel\b | Decí qué mejora, con números.
+media | \bmarcar la diferencia\b                        | Decí la diferencia concreta.
+media | \b(tu|su) (mejor )?aliado\b                     | Decí qué hace el servicio.
+media | \bsoluci[oó]n(es)? (integral|a medida|ideal|perfecta)\b | Describí qué incluye.
+media | \bexperiencia (única|unica|inolvidable|excepcional)\b | Sacalo; es folleto.
+media | \bbrind(ar|a|amos|an|ará|aremos|arte|arle|amos)\b                  | Usá "dar", "ofrecer" o el verbo concreto.
+media | \btranquilidad\b                                | Decí qué riesgo evitás concretamente.
+
+# --- Hedging vacío y tono de folleto ---
+media | \b(dependiendo de|seg[uú]n) (tus|sus) necesidades\b | Decí de qué depende exactamente y cómo.
+media | \bpodr[ií]a ser una (buena|excelente|gran) opci[oó]n\b | Tomá posición: conviene o no conviene, y cuándo.
+media | \bno dudes en\b                                  | Sacalo; poné el paso concreto.
+alta  | \bno esperes m[aá]s\b                           | Sacalo; es publicidad.
+alta  | \bte sorprender[aá]\b                           | Sacalo; mostrá el dato.
+media | \bdescubr(í|i|e)\s+(c[oó]mo|qué|por qué|cu[aá]l|cu[aá]nto|todo|nuestr\w*|los|las)\b | Imperativo de marketing. Decilo directamente.
+media | \bgu[ií]a (definitiva|completa|esencial)\b      | Título de plantilla. Decí qué resuelve.
+alta  | \ben este art[ií]culo (te )?(vamos a|veremos|exploraremos|te contamos|te explicamos|analizaremos)\b | No anuncies el artículo. Respondé.

@@ -1,0 +1,89 @@
+# Ficha de sitio de EJEMPLO. El negocio es ficticio: sirve para mostrar el formato
+# y para el artículo de demostración. No publiques nada escrito con esta ficha.
+#
+# Copiala como sites/<id-del-sitio>.yaml y completala con datos reales.
+# Regla: lo que no sepas, dejalo vacío o como "[DATO FALTANTE: ...]". La skill
+# nunca inventa precios, casos, años ni testimonios: si no están acá o no se los
+# das en la entrevista, salen marcados como faltantes en el borrador.
+
+id: _ejemplo
+nombre: Mudanzas Cordón             # exactamente como figura en Google Business Profile
+dominio: mudanzascordon.com.uy
+pais: UY                            # UY | AR
+moneda: $U                          # $U | $ | USD
+iva_en_precios: "[DATO FALTANTE: ¿los precios que publicás incluyen IVA?]"
+telefono: "[DATO FALTANTE]"
+whatsapp: "[DATO FALTANTE]"
+
+zona:
+  ciudad: Montevideo
+  barrios: [Cordón, Centro, Parque Rodó, Pocitos, Tres Cruces, La Blanqueada, Buceo, Malvín]
+  tambien_cubre: [Ciudad de la Costa, Costa de Oro]
+  no_cubre: [interior del país]     # decir lo que NO se hace también es contenido
+
+servicios:
+  - nombre: Mudanzas en Montevideo
+    url: /mudanzas-montevideo/
+  - nombre: Fletes chicos
+    url: /fletes/
+  - nombre: Embalaje
+    url: /embalaje/
+  - nombre: Mudanzas de oficina
+    url: /mudanzas-oficina/
+
+# Páginas del sitio para enlaces internos (servicio y zona).
+paginas:
+  - {titulo: "Mudanzas en Montevideo", url: /mudanzas-montevideo/, tipo: servicio}
+  - {titulo: "Fletes chicos", url: /fletes/, tipo: servicio}
+  - {titulo: "Mudanzas en Pocitos", url: /mudanzas-pocitos/, tipo: zona}
+  - {titulo: "Mudanzas en Cordón", url: /mudanzas-cordon/, tipo: zona}
+  - {titulo: "Mudanzas a Ciudad de la Costa", url: /mudanzas-ciudad-de-la-costa/, tipo: zona}
+  - {titulo: "Pedir presupuesto", url: /presupuesto/, tipo: conversion}
+
+voz:
+  tratamiento: voseo                # voseo | tuteo | usted | neutro
+  persona: nosotros                 # nosotros | yo
+  tono: cercano                     # directo | cercano | técnico
+  registro: informal-cuidado
+  vocabulario_local: [flete, peón, camión cerrado, portero, gastos comunes, la IM]
+  evitar: ["económico", "servicio de excelencia"]
+  opiniones:
+    - "Para un monoambiente con pocas cosas, un flete chico alcanza; no pagues una mudanza completa."
+    - "Preferimos cobrar por hora con un tope acordado antes que precio cerrado a ciegas."
+    - "Las cajas de supermercado sirven para libros, nunca para vajilla."
+
+autor:
+  nombre: Martín Suárez             # ficticio (ejemplo)
+  rol: encargado de mudanzas
+  experiencia: "hace mudanzas en Montevideo desde 2014"   # ficticio (ejemplo)
+  foto: /img/autor-martin.jpg
+  perfil_url: /nosotros/
+
+# Datos reales del negocio. Es lo que diferencia el artículo de los de la competencia.
+precios:                            # rango + fecha. Vacío = [DATO FALTANTE] en el artículo
+  fecha: ""                         # ej: "setiembre 2026"
+  tarifa_hora: ""                   # ej: "$U 1.600 + IVA, camión 5 m + 2 peones"
+  minimo_horas: ""
+  monoambiente: ""
+  dos_dormitorios: ""
+  tres_dormitorios: ""
+  recargo_piso_sin_ascensor: ""
+  recargo_fin_de_semana: ""
+
+experiencia:
+  anios: "desde 2014"               # ficticio (ejemplo)
+  trabajos_estimados: ""            # ej: "unas 400 mudanzas por año"
+  casos:                            # trabajos concretos: barrio, qué pasó, cuánto llevó
+    - "[DATO FALTANTE: un caso real con barrio, tamaño, horas y qué complicó]"
+  errores_comunes:                  # lo que el profesional ve repetirse
+    - "No reservar el ascensor con el portero: en muchos edificios hay horario para mudanzas."
+    - "Pedir presupuesto sin decir el piso ni si hay ascensor."
+    - "Dejar el desarme de camas y roperos para el día de la mudanza."
+  saber_de_oficio:                  # lo que solo sabe alguien del rubro
+    - "En los edificios de los años 60 de Pocitos y Cordón el ascensor es chico: la heladera de dos puertas y los colchones de dos plazas bajan por la escalera."
+    - "En Ciudad Vieja y el Centro el camión muchas veces no puede estacionar en la puerta y se pierde tiempo en el traslado a pie."
+  fotos_disponibles:                # para sugerir imágenes en el artículo
+    - "camión cerrado cargado en Pocitos"
+    - "peones bajando heladera por escalera"
+  certificaciones: []
+  resenas_google: ""                # ej: "4,8 con 120 reseñas (set. 2026)"

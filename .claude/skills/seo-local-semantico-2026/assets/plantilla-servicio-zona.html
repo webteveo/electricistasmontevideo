@@ -1,0 +1,130 @@
+<!-- ============================================================
+  Plantilla de contenido: página SERVICIO × ZONA
+  Pegar dentro de <main> de la plantilla PHP. Reemplazar {variables}.
+  El <head> (title, description, canonical, JSON-LD) va aparte:
+  ver references/on-page-formulas.md y references/entidades-y-schema.md.
+  Orden de secciones justificado en on-page-formulas.md §4.
+  EMD mono-servicio (cerrajero.uy/pocitos/): las URLs son {url}/{zona_slug}/ y el
+  breadcrumb es Inicio › {Departamento} › {Zona}; no hay troncal de servicio (la home
+  cumple ese rol). Los H3 de subservicios solo se enlazan si esa página existe en el
+  topical map; si no, van sin <a>. Bloques de prueba (rating, reseñas, matrícula,
+  garantía) son opcionales: sin dato, se borra el <li> o la línea; nunca se inventa.
+============================================================ -->
+
+<nav class="breadcrumb" aria-label="Ubicación">
+  <a href="{url}/">Inicio</a> › <a href="{url}/{servicio_slug}/">{Servicio}</a> › <a href="{url}/{servicio_slug}/{departamento_slug}/">{Departamento}</a> › <span>{Zona}</span>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <h1>{Servicio} en {Zona}: {promesa local, ej. llegamos en 20 minutos, las 24 horas}</h1>
+  <p class="hero-sub">{Tiempo de llegada} desde {base}. {Precio desde} · {Garantía / matrícula}.</p>
+  <p class="hero-cta">
+    <a class="cta-wsp" data-servicio="{servicio}" data-zona="{zona}" rel="noopener" target="_blank"
+       href="https://wa.me/{telefono_sin_mas}?text=Hola,%20necesito%20{servicio_urlencoded}%20en%20{zona_urlencoded}">Escribir por WhatsApp</a>
+    <a class="cta-call" href="tel:{telefono}">Llamar {telefono_visible}</a>
+  </p>
+  <p class="hero-proof">★ {rating} · {n_reseñas} reseñas en Google · {credencial}</p>
+  <img src="{url}/img/{servicio_slug}-{zona_slug}-real.webp" alt="{Profesional} {acción} en {tipo de inmueble} de {Zona}, {Ciudad}" width="1200" height="800" fetchpriority="high" decoding="async">
+</section>
+
+<!-- 2. PRIMER PÁRRAFO answer-first (40–70 palabras; snippet de reserva; pasaje citable) -->
+<p class="lead">{Marca} hace {servicio} en {Zona}: {qué exactamente}. Salimos desde {base} y llegamos en {tiempo_min}–{tiempo_max} minutos por {avenida/ruta}. {Un dato que solo aplica a esta zona: tipo de vivienda, problema típico o referencia}. Precio desde {precio_desde} (vigente {mes_año}); te lo confirmamos por WhatsApp antes de salir.</p>
+
+<!-- 3. BARRA DE CONFIANZA -->
+<ul class="trust-bar">
+  <li>{años} años en {ciudad}</li>
+  <li>{n_trabajos}+ trabajos</li>
+  <li>{garantía}</li>
+  <li>{matrícula / RUT / seguro}</li>
+  <li>Sin cargo por visita</li>
+</ul>
+
+<!-- 4. SERVICIOS EN LA ZONA (solo los que se dan ahí) -->
+<section>
+  <h2>Servicios de {servicio} en {Zona}</h2>
+  <div class="cards">
+    <article><h3><a href="{url}/{subservicio_1_slug}/">{Subservicio 1} en {Zona}</a></h3><p>{1–2 frases con valor: método, tiempo, precio desde}.</p></article>
+    <article><h3><a href="{url}/{subservicio_2_slug}/">{Subservicio 2}</a></h3><p>{…}</p></article>
+    <article><h3><a href="{url}/{subservicio_3_slug}/">{Subservicio 3}</a></h3><p>{…}</p></article>
+  </div>
+</section>
+
+<!-- 5. TRABAJOS RECIENTES EN LA ZONA (★ test Sterling Sky) -->
+<section>
+  <h2>Trabajos recientes en {Zona}</h2>
+  <table class="jobs">
+    <thead><tr><th>Fecha</th><th>Trabajo</th><th>Referencia</th><th>Tiempo de llegada</th></tr></thead>
+    <tbody>
+      <tr><td>{mes año}</td><td>{trabajo 1}</td><td>{calle o referencia aprox.}</td><td>{min} min</td></tr>
+      <tr><td>{mes año}</td><td>{trabajo 2}</td><td>{…}</td><td>{min} min</td></tr>
+      <tr><td>{mes año}</td><td>{trabajo 3}</td><td>{…}</td><td>{min} min</td></tr>
+    </tbody>
+  </table>
+  <figure><img src="{url}/img/{servicio_slug}-{zona_slug}-trabajo.webp" alt="{Qué se ve} en {Zona}" width="900" height="600" loading="lazy" decoding="async"><figcaption>{Descripción honesta del trabajo, mes año}.</figcaption></figure>
+</section>
+
+<!-- 6. RESEÑAS DE LA ZONA (★) -->
+<section>
+  <h2>Opiniones de vecinos de {Zona}</h2>
+  <blockquote><p>“{Texto real de la reseña que menciona el barrio}”</p><footer>{Nombre}, {Zona} · {mes año} · <a href="{url_ficha_google}" rel="noopener" target="_blank">Ver en Google</a></footer></blockquote>
+  <blockquote><p>“{…}”</p><footer>{Nombre}, {subzona} · {mes año}</footer></blockquote>
+</section>
+
+<!-- 7. CÓMO LLEGAMOS (★) + PROCESO -->
+<section>
+  <h2>Cómo llegamos a {Zona}</h2>
+  <p>Salimos desde {base} por {avenida/ruta}. En horario normal tardamos {tiempo_min}–{tiempo_max} minutos; de noche o fin de semana {tiempo_noche}. Cubrimos también {subzona_1}, {subzona_2} y {subzona_3}.</p>
+  <ol class="steps">
+    <li>Nos escribís por WhatsApp con {dato que necesita el operador}.</li>
+    <li>Te pasamos el precio cerrado antes de salir.</li>
+    <li>Llegamos en {tiempo} y {resolvemos sin daños / hacemos el trabajo}.</li>
+    <li>Pagás al terminar: {medios de pago}. {Garantía}.</li>
+  </ol>
+</section>
+
+<!-- 8. PRECIOS EN LA ZONA (tabla con fecha) -->
+<section>
+  <h2>Precios de {servicio} en {Zona} ({mes año})</h2>
+  <table class="prices">
+    <thead><tr><th>Trabajo</th><th>Desde</th><th>Incluye</th></tr></thead>
+    <tbody>
+      <tr><td>{subservicio 1}</td><td>{$ precio}</td><td>{qué incluye}</td></tr>
+      <tr><td>{subservicio 2}</td><td>{$ precio}</td><td>{…}</td></tr>
+      <tr><td>Recargo nocturno / feriado</td><td>{+%}</td><td>{franja}</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Precios orientativos vigentes a {mes año}. Presupuesto sin cargo por WhatsApp.</p>
+</section>
+
+<!-- 9. ZONA Y COBERTURA (anti-boilerplate) -->
+<section>
+  <h2>Dónde trabajamos en {Zona}</h2>
+  <p>{Tipo de vivienda predominante y qué implica para el servicio}. {Problema típico de la zona y cómo lo resolvemos}. Referencias: {ref_1}, {ref_2}, {ref_3}.</p>
+  <!-- opcional: mapa por clic (facade), nunca iframe autocargado -->
+</section>
+
+<!-- 10. FAQ LOCAL (3–5, visible; JSON-LD opcional) -->
+<section class="faq">
+  <h2>Preguntas frecuentes de {Zona}</h2>
+  <h3>¿Cuánto tarda en llegar un {profesional} a {Zona}?</h3>
+  <p>{Respuesta directa en 2–4 líneas con tiempos reales}.</p>
+  <h3>¿Cuánto cuesta {subservicio} en {Zona}?</h3>
+  <p>{Precio desde con fecha y qué incluye}.</p>
+  <h3>{Pregunta local real, ej. ¿Llegan a {subzona} un domingo?}</h3>
+  <p>{Respuesta real del operador}.</p>
+</section>
+
+<!-- 11. CTA FINAL (el botón sticky móvil lo pone la plantilla global) -->
+<section class="cta-final">
+  <h2>{Servicio} en {Zona} ahora</h2>
+  <p>Escribinos y te confirmamos precio y tiempo de llegada en minutos.</p>
+  <a class="cta-wsp" data-servicio="{servicio}" data-zona="{zona}" rel="noopener" target="_blank" href="https://wa.me/{telefono_sin_mas}?text=Hola,%20necesito%20{servicio_urlencoded}%20en%20{zona_urlencoded}">WhatsApp {telefono_visible}</a>
+</section>
+
+<!-- 12. ZONAS CERCANAS + TRONCAL + MADRE (3–5 vecinos reales, anchors variados) -->
+<section class="nearby">
+  <h2>También llegamos cerca de {Zona}</h2>
+  <p>Si estás en <a href="{url}/{servicio_slug}/{vecino_1_slug}/">{vecino_1}</a>, en <a href="{url}/{servicio_slug}/{vecino_2_slug}/">{vecino_2}</a> o en <a href="{url}/{servicio_slug}/{vecino_3_slug}/">{vecino_3}</a> el tiempo de llegada es similar. Para el resto de {Departamento}, ver <a href="{url}/{servicio_slug}/{departamento_slug}/">{servicio} en {Departamento}</a> o el servicio completo de <a href="{url}/{servicio_slug}/">{servicio} en {Ciudad}</a>.</p>
+  <p class="updated">Última actualización: {fecha_visible}.</p>
+</section>
