@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en los espacios comunes?', 'p' => [
                     'Automáticos de escalera, fotocélulas de luces exteriores, bombas que no arrancan y porteros eléctricos. Son circuitos que funcionan muchas horas por día. Se revisan las protecciones del tablero común y cada punto por separado. Si el tablero de tu unidad es el problema, mirá [tableros en Malvín Norte](tableros-electricos/malvin-norte).',
                 ]],
+                ['h2' => '¿Qué falla en las casas de Malvín Norte fuera de los complejos?', 'p' => [
+                    'Entre los bloques también hay casas de una planta de los años 60 y 70, con fondo y ampliaciones. Ahí las fallas son las de cualquier casa de esa época: tomacorrientes sin tierra, el termotanque colgado del circuito del baño y el fondo alimentado por un cable que cruza el patio. Se reparan las fallas y se propone separar los circuitos más cargados para que no vuelvan.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan bombas de agua de complejos?', 'a' => 'Sí, la parte eléctrica: alimentación, automático y protecciones.'],
                 ['q' => '¿La comisión puede contratarlos directamente?', 'a' => 'Sí. Presupuestamos a nombre de la cooperativa o del complejo.'],
-                ['q' => '¿Cómo pido la reparación?', 'a' => 'Por WhatsApp, con el bloque, la unidad y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué circuitos conviene sumar?', 'p' => [
                     'Como mínimo, separar cocina, baño y termotanque de los tomacorrientes generales, y agregar uno para aire acondicionado. Si la unidad no tiene tierra, se evalúa la tierra común del edificio. Más en [puesta a tierra](puesta-a-tierra-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué hacer si el tablero de la unidad es de madera o chapa vieja?', 'p' => [
+                    'En algunos bloques todavía quedan tableros originales de chapa o de base de madera, con dos tapones o dos térmicas viejas. No tienen diferencial ni lugar para crecer. Se reemplazan por un gabinete aislante nuevo en el mismo lugar, sin romper la pared, y se aprovecha para separar la cocina y el termotanque en sus circuitos.',
                 ]],
             ],
             'faq' => [

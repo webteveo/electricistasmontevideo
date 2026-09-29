@@ -38,7 +38,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan bombas de pozo?', 'a' => 'La parte eléctrica: protección, automático, capacitor y conexiones.'],
                 ['q' => '¿Atienden emprendimientos familiares?', 'a' => 'Sí, con circuitos propios para las máquinas.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +50,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se separa el emprendimiento de la casa?', 'p' => [
                     'Con un sector propio en el tablero o un tablero secundario, para que un horno o un lavarropas industrial no afecte a la vivienda. Si el consumo del emprendimiento lo justifica, se evalúa un suministro separado. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las cooperativas de Bella Italia?', 'p' => [
+                    'En las cooperativas de Bella Italia, cada vivienda tiene su tablero y el conjunto un tablero de servicios. Con los años, los socios fueron sumando equipos y algunos tableros quedaron chicos. Se amplían unidad por unidad, con el mismo criterio para todas, y se revisa el tablero común.',
                 ]],
             ],
             'faq' => [

@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué hacer si la llave salta seguido?', 'p' => [
                     'No subirla una y otra vez. Desconectar los equipos del circuito y consultarnos: puede ser sobrecarga, un equipo con fuga o un cable dañado. Si hace falta un tablero nuevo, mirá [tableros en Tres Ombúes](tableros-electricos/tres-ombues).',
                 ]],
+                ['h2' => '¿Qué pasa en Pueblo Victoria?', 'p' => [
+                    'En Pueblo Victoria hay casas más antiguas que en el resto del barrio, algunas de principios de siglo. Las instalaciones tienen cables viejos y tableros de fusibles. Se reparan las fallas y se recomienda pasar a un tablero con térmicas y diferencial.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Revisan casas después de una crecida?', 'a' => 'Sí.'],
                 ['q' => '¿Reparan empalmes caseros?', 'a' => 'Sí, con bornes y cajas adecuadas.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,12 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero?', 'p' => [
                     'Llave general, diferencial de 30 mA y térmicas por circuito, en un gabinete cerrado. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene taller o comercio?', 'p' => [
+                    'Si en la casa funciona un taller o un comercio, conviene un sector propio en el tablero, con su diferencial, para que las máquinas o las heladeras no afecten a la vivienda.',
+                ]],
+                ['h2' => '¿Qué pasa si la casa no tiene tierra?', 'p' => [
+                    'Se instala una jabalina en el patio, en un lugar donde se pueda revisar la conexión, y se lleva el conductor al tablero y a cocina, baño y lavadero. En suelos húmedos cerca del arroyo, conviene medirla cada tanto.',
                 ]],
             ],
             'faq' => [

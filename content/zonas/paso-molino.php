@@ -38,11 +38,13 @@ return [
                 ['h2' => '¿Qué falla en la vivienda de arriba?', 'p' => [
                     'Si comparte circuitos con el local, cualquier falla abajo la afecta. Se separan en el mismo trabajo o se planifica la separación. Si el tablero no da más, mirá [tableros en Paso Molino](tableros-electricos/paso-molino).',
                 ]],
+                ['h2' => '¿Qué pasa con los edificios bajos de Uruguayana?', 'p' => [
+                    'Sobre la calle Uruguayana hay edificios de pocos pisos con locales en planta baja. La luz de la escalera, el portero y la bomba dependen del tablero de servicios. Se revisan con la administración.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan carteles luminosos?', 'a' => 'La parte eléctrica.'],
                 ['q' => '¿Trabajan antes de la apertura?', 'a' => 'Se puede coordinar.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -58,6 +60,12 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa con la potencia?', 'p' => [
                     'Si el local suma aire y frío, puede quedar corta. Se mide el consumo y se evalúa. Mirá [aumento de potencia](aumento-de-potencia-ute-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con la iluminación de vidriera?', 'p' => [
+                    'Las vidrieras de Agraciada están encendidas muchas horas. Conviene un circuito propio con reloj o fotocélula, separado del salón, para que una falla en la vidriera no apague el local.',
+                ]],
+                ['h2' => '¿Qué conviene en los edificios bajos de la zona?', 'p' => [
+                    'En los edificios de pocos pisos de Paso Molino, las unidades tienen tableros chicos en el palier. Se amplían o se reemplazan por tableros con diferencial dentro de cada unidad, sin tocar el tablero de servicios.',
                 ]],
             ],
             'faq' => [
@@ -79,6 +87,12 @@ return [
                 ]],
                 ['h2' => '¿Se puede hacer por partes?', 'p' => [
                     'Sí. Lo más común es empezar por separar local y vivienda, y después renovar cada uno por circuitos.',
+                ]],
+                ['h2' => '¿Qué pasa con los locales antiguos?', 'p' => [
+                    'Muchos locales de Agraciada conservan instalaciones de décadas detrás de una vidriera renovada. Al recablear el local, se aprovecha para separar vidriera, salón y depósito en circuitos propios, con tierra.',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de altos con balcón?', 'p' => [
+                    'Las casas de altos de Agraciada suelen tener balcón a la calle con luces y tomacorrientes expuestos. Al recablear, esos puntos se reconectan con cajas estancas y cable en caño, y quedan en un circuito con su protección.',
                 ]],
             ],
             'faq' => [

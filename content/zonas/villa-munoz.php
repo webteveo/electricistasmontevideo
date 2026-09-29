@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Por qué un local se queda entero sin luz?', 'p' => [
                     'Porque todo cuelga de una llave. Cuando una heladera o una estufa hace saltar la protección, se apagan salón, oficina y depósito. Primero se repara la causa del disparo y después se proponen circuitos separados. Si el tablero no lo permite, mirá [tableros en Villa Muñoz](tableros-electricos/villa-munoz).',
                 ]],
+                ['h2' => '¿Qué falla en los depósitos de mercadería?', 'p' => [
+                    'En los depósitos de los comercios mayoristas de General Flores, la iluminación es lo más crítico: galpones con tubos viejos o luminarias que se apagan de a una. Además, los tomacorrientes para cargar zorras eléctricas o equipos se gastan con el uso. Se cambian las luminarias por LED de galpón y se revisan los tomacorrientes y su protección.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Revisan casas antes de comprarlas?', 'a' => 'Sí. Te decimos en qué estado está la instalación y qué habría que hacer.'],
                 ['q' => '¿Reparan instalaciones de depósitos?', 'a' => 'Sí, iluminación, tomacorrientes y tableros.'],
-                ['q' => '¿Cómo pido la reparación?', 'a' => 'Por WhatsApp, con la dirección y qué dejó de funcionar.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se divide el tablero de un local con depósito?', 'p' => [
                     'Se separan salón, oficina y depósito, cada uno con su térmica, y se agregan circuitos para equipos de consumo alto, como heladeras o aire. Con un diferencial por sector se evita que una fuga en el depósito deje sin luz el salón. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los PH largos de Retiro?', 'p' => [
+                    'En los PH de pasillo largo, cada unidad tiene su medidor en la entrada y un tablero al fondo. Muchas veces la protección junto al medidor no corresponde con el cable que va a la vivienda, y el tablero del fondo es una caja con dos llaves. Se ajusta la protección de salida al cable y se instala en la unidad un tablero completo con diferencial.',
                 ]],
             ],
             'faq' => [

@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Por qué las cajas bajas son un problema?', 'p' => [
                     'Porque en suelos que se anegan, una caja a treinta centímetros del piso termina con agua adentro. Donde se pueda, se elevan las cajas y tomacorrientes, y en exteriores se usan cajas estancas. Si los exteriores no tienen protección aparte, mirá [tableros en Bañados de Carrasco](tableros-electricos/banados-de-carrasco).',
                 ]],
+                ['h2' => '¿Qué pasa con los mosquitos, la humedad y las luces exteriores?', 'p' => [
+                    'En la zona de los bañados, las luces exteriores atraen insectos que se meten en las luminarias, y junto con la humedad del ambiente terminan provocando cortocircuitos o fugas. Se recomiendan luminarias cerradas con buen sello y, si se quiere, LED de tono cálido, que atraen menos insectos. Cada luminaria se conecta en una caja estanca.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Revisan instalaciones después de una inundación?', 'a' => 'Sí, circuito por circuito, antes de volver a dar energía.'],
                 ['q' => '¿Reparan bombas de pozo?', 'a' => 'Sí, la parte eléctrica.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué pasó.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Por qué separar los exteriores en otro diferencial?', 'p' => [
                     'Porque en suelos húmedos son los que más fugas tienen. Con un diferencial propio, la lluvia corta solo el jardín, la bomba o el galpón, y la casa sigue con energía mientras se busca la causa. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene para la bomba del pozo?', 'p' => [
+                    'Muchas casas de la zona toman agua de pozo. La bomba necesita su propio circuito con protección para motor y diferencial, y su tablero tiene que estar en alto, lejos del agua del pozo. Si la bomba falla, la casa se queda sin agua, así que conviene que su protección sea independiente del resto.',
                 ]],
             ],
             'faq' => [

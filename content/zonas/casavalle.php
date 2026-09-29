@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan la instalación común de un complejo?', 'a' => 'Sí, contratados por la comisión o la administración.'],
                 ['q' => '¿Revisan termotanques con fuga?', 'a' => 'Medimos la aislación para saber si el problema es el equipo.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de una casa con ampliaciones?', 'p' => [
                     'Una llave general, un diferencial y térmicas para la casa y para cada ampliación, con los tramos exteriores en su propio circuito. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los comercios de barrio?', 'p' => [
+                    'En Casavalle hay almacenes y kioscos en casas familiares, con heladeras y freezers funcionando todo el día. Un sector propio para el comercio en el tablero, con su diferencial, evita que una falla en una heladera deje sin energía a la familia.',
                 ]],
             ],
             'faq' => [

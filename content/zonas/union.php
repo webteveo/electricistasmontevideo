@@ -38,7 +38,6 @@ return [
             'faq' => [
                 ['q' => 'Las luces titilan en toda la casa, ¿qué puede ser?', 'a' => 'Un empalme flojo en la línea principal o en el tablero. Conviene revisarlo pronto.'],
                 ['q' => '¿Reparan carteles luminosos de locales?', 'a' => 'La parte eléctrica: alimentación y protección.'],
-                ['q' => '¿Cómo pido presupuesto?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +50,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de un comercio?', 'p' => [
                     'Circuitos para iluminación del salón, vidriera y cartel, tomacorrientes, heladeras y aire, con diferencial por grupo. En locales con público, el Reglamento de Baja Tensión de UTE tiene exigencias propias. Más detalles en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa en las casas de patio de la Unión?', 'p' => [
+                    'Las casas antiguas de la Unión tienen habitaciones alrededor de un patio, y los circuitos pasan de una a otra por fuera. Un tablero nuevo permite separar esos tramos exteriores con su diferencial, para que una lluvia no corte la casa. Si la casa se alquila por piezas, se puede dar un circuito a cada una con su protección.',
                 ]],
             ],
             'faq' => [
@@ -69,6 +71,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se distribuye en una casa de techos altos?', 'p' => [
                     'Muchas veces conviene bajar la distribución: en vez de repartir desde cajas a cuatro metros de altura, se lleva por zócalos o por encima de las puertas, con cajas accesibles. Facilita futuras reparaciones. Más en [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene local al frente?', 'p' => [
+                    'En 8 de Octubre, muchas casas antiguas tienen el local sobre la avenida y la vivienda atrás. Al recablear, se aprovecha para independizar por completo los dos: líneas separadas desde los medidores, tableros propios y ningún circuito compartido. Así el comercio se puede alquilar o renovar sin tocar la vivienda.',
                 ]],
             ],
             'faq' => [

@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan bombas de pozo?', 'a' => 'La parte eléctrica: protección, automático, capacitor y cables.'],
                 ['q' => '¿Atienden galpones?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa con la protección del pilar?', 'p' => [
                     'Se revisa que la protección junto al medidor corresponda a la sección del cable que va a la casa. En tramos largos es especialmente importante, porque protege toda la línea. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los barrios nuevos de Manga?', 'p' => [
+                    'En los barrios de casas nuevas de Manga, el tablero viene correcto pero con pocas bocas libres. Cuando se suma un galpón, una piscina o un taller, se agrega un tablero secundario en el fondo, alimentado desde el principal, con su diferencial.',
                 ]],
             ],
             'faq' => [

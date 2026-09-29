@@ -38,11 +38,13 @@ return [
                 ['h2' => '¿Qué conviene revisar después de una falla?', 'p' => [
                     'El resto del circuito afectado: si un tomacorriente se quemó por sobrecarga, el cable que llega a él también sufrió. Se mide la aislación y se revisan las cajas cercanas. Si el tablero no tiene lugar para separar circuitos, mirá [tableros en Castro](tableros-electricos/castro).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas de personas mayores?', 'p' => [
+                    'En el barrio viven muchas personas mayores en casas de hace décadas. Además de reparar la falla puntual, revisamos lo que más riesgo tiene para ellas: que el diferencial funcione, que no haya alargues en los pasillos, que las llaves de luz estén a mano y que la iluminación de baño y escaleras sea suficiente. Son cambios chicos que evitan accidentes.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Instalan la conexión fija del termotanque?', 'a' => 'Sí, con circuito propio y tierra.'],
                 ['q' => '¿Reparan instalaciones de conjuntos?', 'a' => 'Sí, en unidades y espacios comunes.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [

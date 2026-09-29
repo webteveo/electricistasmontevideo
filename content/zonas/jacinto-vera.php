@@ -38,7 +38,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan termotanques en la azotea?', 'a' => 'La parte eléctrica: alimentación, protección y conexiones.'],
                 ['q' => '¿Atienden las dos plantas de una casa de altos?', 'a' => 'Sí, con el acuerdo de los dos propietarios si hay algo común.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -72,6 +71,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se hace con la azotea?', 'p' => [
                     'Todos los tramos que quedan a la intemperie se pasan a caño apto para exterior, con cajas estancas, y cada equipo queda con su circuito. Es de lo primero que conviene hacer, porque es lo que más se deteriora. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las balconeras y fachadas antiguas?', 'p' => [
+                    'Las casas de altos de Jacinto Vera tienen balconeras y fachadas que conviene no tocar. Al recablear, los recorridos van por el interior, por la escalera y por los entrepisos, y las luces de fachada se reconectan desde adentro con cajas estancas, sin abrir el frente.',
                 ]],
             ],
             'faq' => [

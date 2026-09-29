@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Cómo se repara el tramo del fondo?', 'p' => [
                     'Se reemplaza el cable expuesto por uno dentro de caño apto para exterior, con cajas estancas en los empalmes, y se le da su propia térmica en el tablero. Si el tablero no tiene lugar ni diferencial, mirá [tableros en Flor de Maroñas](tableros-electricos/flor-de-maronas).',
                 ]],
+                ['h2' => '¿Qué pasa con las luces de calle que alimentan casas?', 'p' => [
+                    'En algunas calles de Flor de Maroñas, la iluminación del frente de la casa se conectó al circuito de adentro con un cable que cruza el jardín. Cuando falla, puede hacer saltar la protección de toda la casa. Se separa en un circuito propio, con caño y una caja estanca en la luminaria.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan el cable del pilar a la casa?', 'a' => 'Sí, es parte de la instalación del cliente.'],
                 ['q' => '¿Atienden galpones del fondo?', 'a' => 'Sí, con su circuito y protección propia.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +53,9 @@ return [
                 ]],
                 ['h2' => '¿Qué circuitos necesita una casa con fondo?', 'p' => [
                     'Iluminación, tomacorrientes, cocina, baño y termotanque en la casa, y al menos un circuito para el fondo o la ampliación, con su propio diferencial si tiene tramos exteriores. Si hay galpón con herramientas, otro para el galpón. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con la protección del pilar?', 'p' => [
+                    'La llave que está en el pilar junto al medidor protege el tramo hasta la casa. En muchas casas del barrio es una llave antigua que ya no corresponde al cable. Se reemplaza por una térmica adecuada en un gabinete estanco, y el tablero de circuitos queda dentro de la casa. El medidor es de UTE y no se toca.',
                 ]],
             ],
             'faq' => [

@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan el tramo del pilar?', 'a' => 'Sí, es parte de la instalación del cliente.'],
                 ['q' => '¿Prueban los diferenciales?', 'a' => 'Sí, en cada visita.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de la casa?', 'p' => [
                     'Una llave general, un diferencial de 30 mA y térmicas para iluminación, tomacorrientes, cocina, baño, termotanque y ampliaciones. Todo identificado. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las cooperativas de ayuda mutua?', 'p' => [
+                    'En las cooperativas del barrio, las viviendas tienen tableros iguales y el conjunto comparte un tablero de servicios. Cuando varias familias quieren sumar un aire o un circuito para la cocina, conviene definir con la comisión un mismo criterio: qué térmica, qué cable y dónde. Así la instalación sigue siendo homogénea y el mantenimiento es simple.',
                 ]],
             ],
             'faq' => [

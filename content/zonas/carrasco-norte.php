@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer si falla un tramo enterrado?', 'p' => [
                     'Ubicarlo con medición de aislación, sin empezar a cavar al azar. Si el cable estaba sin caño, lo mejor es tender uno nuevo dentro de caño, con cajas accesibles, en vez de empalmar el viejo. Si los exteriores no tienen protección propia, mirá [tableros en Carrasco Norte](tableros-electricos/carrasco-norte).',
                 ]],
+                ['h2' => '¿Qué falla en las casas con alarma, cámaras y portón?', 'p' => [
+                    'En Carrasco Norte muchas casas tienen alarma, cámaras, portón automático y luces con sensor, todo conectado a la instalación con el paso de los años. Cuando uno de esos equipos tiene una fuente dañada o entra agua en su caja, hace saltar el diferencial y la casa se queda sin seguridad justo cuando más importa. Se revisa cada equipo por separado y se les da un circuito propio, con una protección que no dependa del resto de la casa.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de barbacoas y cuartos de servicio?', 'a' => 'Sí, y las separamos con su propio circuito si hace falta.'],
                 ['q' => '¿Atienden portones automáticos?', 'a' => 'Sí, la parte eléctrica del portón.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección aproximada y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se deja preparado para el auto eléctrico?', 'p' => [
                     'Una salida exclusiva con lugar para la térmica y el diferencial que pide el reglamento para la carga, y el caño hasta el garaje. Así, cuando compres el auto, instalar el cargador es rápido. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las casas de barrios cerrados?', 'p' => [
+                    'En los barrios privados de la zona, las casas suelen ser nuevas o recientes y tienen un tablero correcto pero justo. Las consultas llegan cuando se suma una piscina, un quincho con cocina o el cargador del auto. Coordinamos el ingreso con la administración, ampliamos el tablero o sumamos uno secundario en el quincho o el garaje, y dejamos todo rotulado con los mismos criterios del tablero original.',
                 ]],
             ],
             'faq' => [

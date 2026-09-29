@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => 'Un tomacorriente del balcón se puso negro, ¿qué hago?', 'a' => 'No lo uses y consultanos. Suele ser un contacto oxidado que calentó; hay que cambiarlo y revisar la caja.'],
                 ['q' => '¿Reparan porteros eléctricos en edificios de la zona?', 'a' => 'Sí, además de la iluminación de escaleras y los timbres.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la calle, si es casa o apartamento y qué dejó de funcionar.'],
             ],
         ],
         'tableros' => [

@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Por qué no arranca la bomba de la huerta?', 'p' => [
                     'Por la protección, el capacitor, la tensión que llega o la bomba misma. Se prueba cada cosa antes de cambiar nada. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas nuevas que se amplían?', 'p' => [
+                    'En los barrios nuevos de Conciliación, las casas traen instalación correcta, pero al sumar un dormitorio o un parrillero se suele tomar energía del tomacorriente más cercano. Con el tiempo, ese punto calienta. Se le da a la ampliación su propia línea desde el tablero.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan tramos enterrados?', 'a' => 'Sí.'],
                 ['q' => '¿Atienden bombas?', 'a' => 'La parte eléctrica.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,12 @@ return [
                 ]],
                 ['h2' => '¿Revisan la protección del pilar?', 'p' => [
                     'Sí, que corresponda a la sección del cable a la casa. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene para la huerta y el riego?', 'p' => [
+                    'Muchas casas de Conciliación tienen huerta con riego o una bomba para el tanque. La bomba necesita su circuito con protección para motor y diferencial, y un tablero chico en el fondo si hay varias cosas juntas. Así el riego no afecta a la casa.',
+                ]],
+                ['h2' => '¿Qué pasa si la casa tiene dos viviendas en el terreno?', 'p' => [
+                    'En Conciliación es común que los hijos construyan en el fondo del terreno de los padres. Si la segunda vivienda se alimenta desde el tablero de la primera, comparten protecciones y consumo. Lo recomendable es una línea independiente desde el medidor y un tablero completo en cada casa. Si la potencia no alcanza para las dos, se evalúa un segundo suministro con UTE; mientras tanto, cada vivienda con su diferencial.',
                 ]],
             ],
             'faq' => [

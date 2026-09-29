@@ -39,7 +39,6 @@ return [
             'faq' => [
                 ['q' => 'La luz de la escalera no enciende, ¿la arreglan?', 'a' => 'Sí, coordinando con la administración o con los vecinos.'],
                 ['q' => '¿Reparan porteros eléctricos?', 'a' => 'Sí, el cableado y las conexiones del portero y el timbre.'],
-                ['q' => '¿Cómo pido presupuesto?', 'a' => 'Por WhatsApp, con la dirección, el piso y qué dejó de funcionar.'],
             ],
         ],
         'tableros' => [

@@ -18,7 +18,6 @@ return [
             'faq' => [
                 ['q' => '¿Trabajan en edificios con portería de Pocitos?', 'a' => 'Sí. Avisamos en portería y coordinamos el horario con vos.'],
                 ['q' => 'Un tomacorriente calienta cuando enchufo la estufa, ¿qué hago?', 'a' => 'Dejá de usarlo y consultanos. Suele ser un contacto flojo o un circuito sobrecargado.'],
-                ['q' => '¿Cómo pido la reparación?', 'a' => 'Por WhatsApp, con la dirección, el piso y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -49,6 +48,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa si varios vecinos quieren cargador?', 'p' => [
                     'Conviene planificarlo como edificio: una canalización común hacia la cochera y, si hace falta, un sistema que reparta la potencia disponible entre los cargadores para no sobrecargar la acometida. Es más prolijo que hacer una instalación distinta para cada uno. Más detalles en [cargadores para vehículos eléctricos](cargador-vehiculo-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los edificios que tienen cocheras en subsuelo?', 'p' => [
+                    'Muchas torres de Pocitos tienen cocheras en uno o dos subsuelos, con rampas, ventilación forzada y humedad. El recorrido desde tu medidor puede bajar por un ducto de servicio o por la rampa, y en el subsuelo va en bandeja o caño fijado al techo. El cargador, en la pared de tu lugar, con una caja que soporte la humedad del ambiente. Antes de proponer el recorrido lo recorremos con el encargado del edificio.',
                 ]],
             ],
             'faq' => [

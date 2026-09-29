@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en un portón automático?', 'p' => [
                     'La alimentación, los finales de carrera, la botonera o las fotocélulas, casi siempre por humedad u oxidación. Revisamos la parte eléctrica del portón y su protección en el tablero. Si los exteriores no tienen circuito propio, mirá [tableros en Punta Gorda](tableros-electricos/punta-gorda).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas que se renuevan en Punta Gorda?', 'p' => [
+                    'Cuando una casa del barrio cambia de dueño, es común encontrar instalaciones de distintas épocas mezcladas: una cocina reformada en los 90, dormitorios con cableado original y exteriores agregados por otro electricista. Las fallas aparecen en los puntos de unión entre épocas. Relevamos la casa completa y marcamos qué tramos conviene renovar antes de mudarse.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan luces de jardín?', 'a' => 'Sí, luminarias, cajas y cables de jardín.'],
                 ['q' => '¿Trabajan en bombas de piscina?', 'a' => 'Sí, en la alimentación y la protección.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se deja previsto en una reforma?', 'p' => [
                     'Salidas para cada aire acondicionado, para el termotanque y la cocina, para el cargador del auto y para exteriores, portón y bomba. Un tablero con bocas libres permite sumar equipos sin cambiarlo en unos años. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Cómo se protegen las cámaras y la alarma?', 'p' => [
+                    'La alarma, las cámaras y el portón conviene que estén en un circuito propio, con su protección, y que no dependan del diferencial de los exteriores. Así, si entra agua en una luz del jardín, la casa sigue vigilada. Es una forma simple de ordenar el tablero en casas con muchos equipos de seguridad.',
                 ]],
             ],
             'faq' => [

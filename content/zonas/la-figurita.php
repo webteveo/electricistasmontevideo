@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer con los tomacorrientes de dos patas?', 'p' => [
                     'Si están firmes y no calientan, se pueden seguir usando para equipos chicos, pero no para lavarropas, termotanque o microondas, que necesitan tierra. Si calientan o están flojos, se cambian. Cuando llegue el conductor de tierra, se cambian por tomacorrientes de tres. Mirá [puesta a tierra](puesta-a-tierra-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con los conventillos de patio central?', 'p' => [
+                    'En los conventillos reciclados, el patio central tiene luces y tomacorrientes que usan todas las unidades. Si están colgados de la instalación de una sola, cualquier falla afecta a todas. Se reparan y se evalúa pasarlos a un circuito común con su propio medidor o protección.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Puedo poner un fusible más grande?', 'a' => 'No. Hay que encontrar la causa. Un fusible mayor deja el cable sin protección.'],
                 ['q' => '¿Reparan instalaciones en PH?', 'a' => 'Sí, en PH, casas y conventillos.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué pasa.'],
             ],
         ],
         'tableros' => [
@@ -73,6 +75,9 @@ return [
                 ]],
                 ['h2' => '¿En qué orden se renueva?', 'p' => [
                     'Primero el tablero y la línea principal, después cocina y baño con su tierra, después los tomacorrientes generales y al final la iluminación. En cada etapa se prueba todo. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las llaves de palanca y los tomacorrientes antiguos?', 'p' => [
+                    'Muchas casas de La Figurita conservan llaves de palanca y tomacorrientes de dos patas de otra época. Al recablear, se cambian por mecanismos actuales, y los de cocina, baño y lavadero pasan a tener tierra. Si la familia quiere conservar alguna llave por estética, se revisa y se reconecta a la instalación nueva.',
                 ]],
             ],
             'faq' => [

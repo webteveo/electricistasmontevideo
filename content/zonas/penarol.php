@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan instalaciones de casas patrimoniales?', 'a' => 'Sí, sin alterar fachadas ni aberturas.'],
                 ['q' => '¿Atienden talleres?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,9 @@ return [
                 ]],
                 ['h2' => '¿Conviene sumar tierra en el mismo trabajo?', 'p' => [
                     'Sí. En casas con techo de chapa y estructura metálica es especialmente importante: la estructura se conecta a tierra junto con los tomacorrientes de cocina y baño. Más en [puesta a tierra](puesta-a-tierra-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los talleres del ferrocarril reconvertidos?', 'p' => [
+                    'Algunos espacios de los antiguos talleres ferroviarios y sus alrededores se reconvirtieron en centros culturales, emprendimientos o depósitos. Sus instalaciones mezclan lo industrial con lo nuevo. Un tablero que ordene cada uso, con sus protecciones, es el primer paso para trabajar seguro.',
                 ]],
             ],
             'faq' => [
@@ -78,6 +80,9 @@ return [
                 ]],
                 ['h2' => '¿Se mantienen las llaves y artefactos antiguos?', 'p' => [
                     'Si la familia quiere conservar llaves o lámparas de época, se revisan y se reconectan a la instalación nueva. Si están deteriorados, se buscan reemplazos con estética similar.',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de Lavalleja?', 'p' => [
+                    'En Lavalleja, las casas son más recientes que las del barrio histórico, de los años 50 a 80, con techos de losa y caños embutidos. Si los caños sirven, se recablea por ahí. Si no, se usa canalización de aplicar prolija. En todos los casos, con tierra.',
                 ]],
             ],
             'faq' => [

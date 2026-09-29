@@ -51,6 +51,9 @@ return [
                 ['h2' => '¿Qué se renueva primero?', 'p' => [
                     'El tablero y la línea que llega desde el medidor, después cocina, baño y termotanque, y por último iluminación y dormitorios. En oficinas se empieza por los sectores de más uso. En cada circuito nuevo se suma el conductor de tierra. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las pensiones y los apartamentos compartidos?', 'p' => [
+                    'En el Centro hay pensiones y apartamentos compartidos donde muchas personas usan la misma instalación. Al recablear, conviene dar un circuito a cada habitación, con su protección, y dejar la cocina y el baño comunes en circuitos propios. Así se terminan los cortes de cada noche de invierno.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Se puede recablear sin tocar las molduras?', 'a' => 'Sí. Se buscan recorridos que eviten molduras y cielorrasos decorados.'],

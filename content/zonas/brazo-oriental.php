@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué se hace con una caja embutida en un muro húmedo?', 'p' => [
                     'Se limpia, se secan los bornes y, si hace falta, se reemplaza por una caja de aplicar estanca sobre el muro, para que la humedad de la pared no llegue a las conexiones. Si el muro tiene humedad de cimientos, conviene resolverla también. Si tu tablero no tiene diferencial, mirá [tableros en Brazo Oriental](tableros-electricos/brazo-oriental).',
                 ]],
+                ['h2' => '¿Qué falla en los PH de pasillo del barrio?', 'p' => [
+                    'En los PH de Brazo Oriental, las líneas de cada unidad recorren el pasillo común hasta el fondo. Si el caño común se deterioró o se llenó de agua, varias unidades tienen fallas parecidas a la vez. Se revisa el tramo común con los propietarios, se ubica el punto dañado y se reemplaza el caño o las líneas afectadas.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Miden la resistencia del termotanque?', 'a' => 'Sí, antes de decidir qué cambiar.'],
                 ['q' => '¿Reparan instalaciones en PH?', 'a' => 'Sí, en PH y casas.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa si la casa no tiene tierra?', 'p' => [
                     'Se instala una jabalina en el patio y se lleva el conductor al tablero, al termotanque y a los tomacorrientes de cocina y baño. Es parte del mismo trabajo. Mirá [puesta a tierra](puesta-a-tierra-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los aires en las azoteas?', 'p' => [
+                    'En las casas de una planta del barrio, las condensadoras de aire se fueron instalando en la azotea, y sus cables bajan por fuera hasta el circuito más cercano. Al cambiar el tablero, cada aire queda con su circuito y su térmica, y los cables de la azotea pasan a ir en caño apto para exterior.',
                 ]],
             ],
             'faq' => [
@@ -70,6 +75,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se renueva primero?', 'p' => [
                     'El circuito del termotanque y el de la cocina, que son los más exigidos. Después el baño, los aires y los tomacorrientes generales, y al final la iluminación. Todo con conductor de tierra. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de techo de losa?', 'p' => [
+                    'Muchas casas del barrio tienen techo de losa con los caños embutidos en el hormigón. Si esos caños están tapados o rotos, no se pueden reemplazar sin romper. En esos casos, la distribución nueva se lleva por las paredes, a media altura o por el zócalo, y en el techo solo quedan las bocas de luz que se puedan alimentar desde abajo.',
                 ]],
             ],
             'faq' => [

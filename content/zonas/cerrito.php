@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en las ampliaciones en altura?', 'p' => [
                     'El cable que sube a la ampliación, que suele ser fino y estar a la intemperie, y los empalmes en el punto donde se tomó la energía. Se reemplaza por una línea propia desde el tablero, en caño, con la sección adecuada. Si hace falta ordenar todo, mirá [tableros en el Cerrito](tableros-electricos/cerrito).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas cerca del santuario?', 'p' => [
+                    'Alrededor del santuario del Cerrito, las casas son más antiguas y las calles tienen pendiente. Muchas tienen sótano o planta baja semienterrada, donde se junta humedad. Los tomacorrientes y cajas de esos ambientes son los que más fallan. Se elevan o se cambian por estancos, con su protección.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de sótanos?', 'a' => 'Sí, con cajas elevadas o estancas.'],
                 ['q' => '¿Atienden comercios?', 'a' => 'Sí, en General Flores y alrededores.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,12 @@ return [
                 ]],
                 ['h2' => '¿Conviene un tablero en la planta alta?', 'p' => [
                     'Si la ampliación de arriba tiene varios circuitos o es una vivienda aparte, sí. Se alimenta desde el principal con una línea de sección adecuada. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene sótano?', 'p' => [
+                    'Si la casa tiene sótano o un ambiente semienterrado, sus circuitos conviene tenerlos separados, con su propio diferencial. Así, si entra agua o hay condensación, se corta solo ese sector. El tablero va en la planta principal, nunca en el sótano.',
+                ]],
+                ['h2' => '¿Qué pasa con las casas en pendiente?', 'p' => [
+                    'En las casas escalonadas del Cerrito, el tablero conviene en el nivel principal, en un lugar seco. Los circuitos del nivel más bajo, donde se junta el agua, van separados con su diferencial. Así, si hay humedad abajo, la parte principal de la casa sigue funcionando.',
                 ]],
             ],
             'faq' => [

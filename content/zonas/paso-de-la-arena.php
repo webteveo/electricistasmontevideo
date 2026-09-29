@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Cómo se resuelve la tensión baja al fondo?', 'p' => [
                     'Con un cable de sección adecuada para la distancia, o llevando una línea gruesa hasta un tablero en el fondo. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con los clubes de campo y casas de fin de semana?', 'p' => [
+                    'En la zona hay casas que se usan los fines de semana y quedan cerradas durante la semana. La humedad se acumula y los roedores pueden dañar cables. Al volver, si algo no funciona, conviene revisar antes de forzar las protecciones.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan bombas sumergibles?', 'a' => 'La parte eléctrica: alimentación, protección y conexiones.'],
                 ['q' => '¿Revisan después de una crecida?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa con la trifásica?', 'p' => [
                     'Si el suministro es trifásico, las cargas se reparten entre fases y las bombas trifásicas llevan su protección. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las casas de fin de semana?', 'p' => [
+                    'Un tablero con los circuitos que tienen que quedar activos (alarma, heladera, bomba) separados del resto, para poder cortar la casa cuando queda vacía sin afectar lo imprescindible.',
                 ]],
             ],
             'faq' => [

@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué pasa con el tramo a la azotea?', 'p' => [
                     'Si va sin caño, el sol y el viento lo resecan. Se reemplaza por uno en caño apto para exterior. Si la instalación da muchas fallas, mirá [recableado en el Cerro](recableado-electrico/cerro).',
                 ]],
+                ['h2' => '¿Qué pasa en las casas cerca de la Fortaleza?', 'p' => [
+                    'Las calles que suben hacia la Fortaleza tienen casas en pendiente, muy expuestas al viento. Las azoteas tienen termotanques solares, antenas y aires, con cables al sol. Se revisan esos tramos y se pasan a caño, con cajas estancas en cada equipo.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan luces de fachada?', 'a' => 'Sí, con artefactos para exterior.'],
                 ['q' => '¿Puedo poner un fusible más grande?', 'a' => 'No. Hay que encontrar la causa.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se trabaja en una cooperativa?', 'p' => [
                     'Unidad por unidad y en el tablero de servicios, con la comisión. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las cooperativas del Cerro?', 'p' => [
+                    'Las cooperativas del Cerro tienen tableros por vivienda y un tablero de servicios. Se revisa que cada diferencial dispare con su botón de prueba, se cambian los que no funcionan y se ordena el tablero común con la comisión.',
                 ]],
             ],
             'faq' => [
@@ -78,6 +83,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se renueva primero?', 'p' => [
                     'El tablero, los tramos más expuestos (fachada y azotea) y los circuitos de cocina y baño con tierra. Después el resto.',
+                ]],
+                ['h2' => '¿Qué pasa con el trazado antiguo de calles con nombres de países?', 'p' => [
+                    'En el casco antiguo del Cerro, las casas están construidas sobre la línea de la vereda, con muros que dan a la calle. Los medidores suelen estar en la fachada, y la línea entra directo. Al recablear, se renueva también ese tramo de entrada, que es de los más expuestos.',
                 ]],
             ],
             'faq' => [

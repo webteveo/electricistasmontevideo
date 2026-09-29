@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué falla en las instalaciones antiguas?', 'p' => [
                     'Empalmes flojos en cajas de muros gruesos y cables de décadas. Si hay muchas fallas, mirá [recableado en Capurro](recableado-electrico/capurro).',
                 ]],
+                ['h2' => '¿Qué pasa con las viejas fábricas convertidas en vivienda?', 'p' => [
+                    'En Capurro hay predios de antiguas fábricas que hoy son cooperativas o viviendas. En las construcciones recicladas, a veces quedan restos de la instalación industrial: tableros viejos, líneas que ya no se usan y cables tendidos en altura. Antes de cualquier reparación conviene saber qué sigue energizado y retirarlo.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan luces exteriores dañadas por la humedad?', 'a' => 'Sí, con artefactos y cajas aptos para exterior.'],
                 ['q' => '¿Atienden casas divididas?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de cada unidad?', 'p' => [
                     'Una llave general, un diferencial de 30 mA y térmicas para iluminación, tomacorrientes, cocina y baño. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las cooperativas nuevas de Capurro?', 'p' => [
+                    'Las cooperativas recientes tienen tableros correctos. Lo que suele hacer falta es ampliar cuando se suman equipos y revisar los espacios comunes, sobre todo la iluminación exterior, que cerca de la bahía se deteriora rápido. Se agregan circuitos en cada vivienda sin tocar lo común.',
                 ]],
             ],
             'faq' => [
@@ -78,6 +83,9 @@ return [
                 ]],
                 ['h2' => '¿Se puede recablear con las familias viviendo?', 'p' => [
                     'Sí, unidad por unidad y circuito por circuito, avisando cada día qué queda sin luz.',
+                ]],
+                ['h2' => '¿Qué pasa con las casas cerca del parque Capurro?', 'p' => [
+                    'Las casas que rodean el parque tienen árboles grandes cerca y, en muchos casos, tramos aéreos del medidor a la casa que pasan entre ramas. Al recablear, se aprovecha para pasar esos tramos a enterrados en caño o, si quedan aéreos, a una altura y un recorrido despejados.',
                 ]],
             ],
             'faq' => [

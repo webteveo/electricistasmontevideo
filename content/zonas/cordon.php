@@ -40,7 +40,6 @@ return [
             'faq' => [
                 ['q' => 'Se me reinicia el microondas cuando prendo la estufa, ¿es la instalación?', 'a' => 'Probablemente. Suele ser caída de tensión o un circuito sobrecargado. Conviene medir antes de cambiar equipos.'],
                 ['q' => '¿Reparan tomacorrientes que calientan?', 'a' => 'Sí, y revisamos la caja y el cable, que suelen ser la causa.'],
-                ['q' => '¿Cómo coordino la visita?', 'a' => 'Por WhatsApp, con la dirección aproximada, el piso y qué falla.'],
             ],
         ],
         'tableros' => [

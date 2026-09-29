@@ -40,7 +40,6 @@ return [
             'faq' => [
                 ['q' => 'Desde que pintaron, un tomacorriente no anda, ¿puede ser por la obra?', 'a' => 'Sí. Es común que se afloje un empalme o se dañe un cable al trabajar la pared.'],
                 ['q' => '¿Reparan instalaciones que hizo otra persona?', 'a' => 'Sí. Revisamos lo hecho y te decimos qué corregir.'],
-                ['q' => '¿Cómo pido la reparación?', 'a' => 'Por WhatsApp, con fotos del punto que falla y del tablero.'],
             ],
         ],
         'tableros' => [

@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué pasa con el tramo del fondo?', 'p' => [
                     'Si es exterior y sin caño, se reemplaza por uno protegido, con cajas estancas y su propia térmica. Si el tablero no tiene lugar para separar circuitos, mirá [tableros en Las Acacias](tableros-electricos/las-acacias).',
                 ]],
+                ['h2' => '¿Qué pasa en las casas de Burgues?', 'p' => [
+                    'En la zona de Burgues hay casas de barrio de mediados de siglo con ampliaciones y talleres chicos. Las fallas típicas son tomacorrientes gastados, empalmes que calientan en cajas de luz y el fondo sin protección propia. Se reparan y se separan los circuitos más cargados.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan cámaras de frío?', 'a' => 'La parte eléctrica: alimentación y protecciones.'],
                 ['q' => '¿Trabajan fuera del horario del comercio?', 'a' => 'Se puede coordinar.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Y la vivienda?', 'p' => [
                     'Su propio sector con iluminación, tomacorrientes, cocina, baño y termotanque. Si hay ampliaciones en el fondo, un circuito aparte. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en casas sin comercio?', 'p' => [
+                    'En las casas de Las Acacias que son solo vivienda, el tablero típico tiene dos o tres llaves y ningún diferencial. Se reemplaza por uno con circuitos para cocina, baño, termotanque, tomacorrientes, iluminación y fondo, con disyuntor diferencial. Si falta la tierra, se suma.',
                 ]],
             ],
             'faq' => [

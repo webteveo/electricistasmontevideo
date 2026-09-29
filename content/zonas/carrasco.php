@@ -18,7 +18,6 @@ return [
             'faq' => [
                 ['q' => 'El diferencial salta cuando arranca la bomba de la piscina, ¿qué es?', 'a' => 'La bomba o su cable pueden tener una fuga. Se mide la bomba por separado antes de cambiar nada.'],
                 ['q' => '¿Reparan instalaciones de casas con varias plantas?', 'a' => 'Sí, por sectores y con los circuitos identificados.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con la dirección aproximada y qué falla.'],
             ],
         ],
         'tableros' => [

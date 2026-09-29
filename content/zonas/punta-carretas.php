@@ -39,7 +39,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan portones automáticos?', 'a' => 'Sí, la parte eléctrica: alimentación, protecciones y conexiones.'],
                 ['q' => 'Se apagó un sector del apartamento, ¿qué puede ser?', 'a' => 'Una térmica que saltó o un empalme flojo. Si la térmica no sube, no la fuerces y consultanos.'],
-                ['q' => '¿Cómo coordino la visita?', 'a' => 'Por WhatsApp, con la dirección, el piso y qué falla.'],
             ],
         ],
         'tableros' => [

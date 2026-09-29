@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer con un tomacorriente exterior quemado?', 'p' => [
                     'Dejar de usarlo y cambiarlo por uno con tapa, dentro de una caja estanca, en un circuito protegido por diferencial. Si el cable que llega también está dañado por el sol o la humedad, se cambia el tramo completo. Si el tablero no tiene diferencial, mirá [tableros en La Blanqueada](tableros-electricos/la-blanqueada).',
                 ]],
+                ['h2' => '¿Qué falla en los edificios sobre 8 de Octubre?', 'p' => [
+                    'En los edificios de pocos pisos de la avenida, el tránsito y el polvo se meten en los palieres, y el portero eléctrico y la luz de la escalera son los que más fallan. En las unidades, los aires agregados sin circuito propio hacen saltar la térmica en verano. Se reparan los servicios comunes con la administración y, en cada unidad, se suma el circuito del aire.',
+                ]],
             ],
             'faq' => [
                 ['q' => 'El diferencial salta solo cuando llueve, ¿qué revisan?', 'a' => 'Los tramos y cajas del patio y los exteriores, uno por uno.'],
                 ['q' => '¿Reparan porteros eléctricos en PH?', 'a' => 'Sí, el cableado y las conexiones.'],
-                ['q' => '¿Cómo coordino la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa si la casa no tiene tierra?', 'p' => [
                     'El diferencial igual se puede instalar y protege contra la mayoría de los contactos peligrosos, pero lo correcto es sumar la puesta a tierra: una jabalina en el patio y el conductor hasta el tablero y los tomacorrientes de cocina y baño. Se puede hacer en el mismo trabajo. Mirá [puesta a tierra](puesta-a-tierra-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en los PH del barrio?', 'p' => [
+                    'En los PH de La Blanqueada, los medidores suelen estar en el zaguán y cada unidad tiene un tablero chico. Si el tablero de tu unidad está en el pasillo común, conviene dejar ahí solo la protección de la línea y colocar el tablero de circuitos dentro de la vivienda, para no depender del pasillo ni de las llaves del vecino.',
                 ]],
             ],
             'faq' => [
@@ -70,6 +75,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se renueva primero?', 'p' => [
                     'Los tramos exteriores, porque son los que más fallan, y los circuitos de cocina y baño, que llevan más corriente. Después, los dormitorios y la iluminación. En cada etapa se prueba todo antes de seguir. Mirá también [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa se alquila por piezas?', 'p' => [
+                    'Algunas casas de patio de La Blanqueada se alquilan por habitaciones. Al recablear, se puede dar a cada pieza un circuito propio, con su protección, para que un problema en una no afecte a las demás y cada inquilino sepa qué llave es la suya. Los espacios comunes, cocina y baño, en circuitos aparte.',
                 ]],
             ],
             'faq' => [

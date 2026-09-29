@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer si el galpón se queda sin luz?', 'p' => [
                     'Revisar primero el tramo que cruza el terreno, que es el más expuesto. Se mide la aislación y, si está dañado, se reemplaza por uno en caño. Si el galpón no tiene protección propia, mirá [tableros en Jardines del Hipódromo](tableros-electricos/jardines-del-hipodromo).',
                 ]],
+                ['h2' => '¿Qué pasa con los complejos del barrio?', 'p' => [
+                    'En los complejos de vivienda de Jardines del Hipódromo, las fallas de las unidades suelen repetirse porque la instalación es la misma en todas. Lo más frecuente es el circuito de tomacorrientes que no aguanta las estufas en invierno. Se repara la unidad y se le recomienda a la comisión una solución común para las demás.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de galpones y talleres?', 'a' => 'Sí, con su circuito y protección.'],
                 ['q' => '¿Atienden complejos de vivienda?', 'a' => 'Sí, unidades y espacios comunes.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se ordena un tablero armado de a poco?', 'p' => [
                     'Se releva qué alimenta cada llave, se retiran los puentes y los empalmes dentro del tablero, y se arma uno nuevo con un circuito por sector. Todo queda rotulado. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Cómo se ordena la instalación de una casa con dos familias?', 'p' => [
+                    'Si en el terreno viven dos familias y comparten tablero, cualquier falla afecta a las dos y no se sabe quién consume qué. Lo ideal es un tablero por vivienda desde el medidor y, si la potencia no alcanza, un suministro aparte con UTE. Mientras tanto, al menos una línea independiente con su protección.',
                 ]],
             ],
             'faq' => [

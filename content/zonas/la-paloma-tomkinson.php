@@ -37,15 +37,17 @@ return [
                 ['h2' => '¿Qué falla en los conjuntos?', 'p' => [
                     'Automáticos de luz, lámparas y protecciones del tablero común. Se revisan y se cambian. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas cerca de Camino Tomkinson?', 'p' => [
+                    'Sobre Camino Tomkinson hay casas con comercio al frente, talleres y viviendas con fondo. El tránsito del camino trae polvo que se mete en tomacorrientes y cajas exteriores. Además, en muchas casas la llave del pilar es vieja. Se revisan ambos puntos y se cambian si hace falta.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Instalan tomacorrientes nuevos?', 'a' => 'Sí, donde hoy usás zapatillas.'],
                 ['q' => '¿Reparan luces de conjuntos?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
-            'title' => 'Tableros eléctricos en La Paloma y Tomkinson',
+            'title' => 'Tableros eléctricos en La Paloma y Tomkinson – Cambio',
             'description' => 'Tableros en La Paloma y Tomkinson: casas sin diferencial, termotanque y cocina compartidos y conjuntos de vivienda. Presupuesto sin costo.',
             'intro' => 'Instalamos tableros en casas y conjuntos de La Paloma y Tomkinson. En muchas casas del barrio, el tablero no tiene diferencial y el termotanque y la cocina comparten circuito con todo lo demás. Instalamos un tablero con esos circuitos separados, disyuntor diferencial y lugar para ampliaciones, con cada llave identificada.',
             'secciones' => [
@@ -57,6 +59,15 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva un conjunto?', 'p' => [
                     'Un tablero por unidad y la revisión del tablero de servicios. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las casas con comercio?', 'p' => [
+                    'En las casas de La Paloma con almacén o kiosco al frente, un sector propio para el comercio, con su diferencial y circuitos para las heladeras, evita que un problema del local deje sin luz a la familia.',
+                ]],
+                ['h2' => '¿Qué conviene si la casa se sigue ampliando?', 'p' => [
+                    'En el barrio muchas casas siguen creciendo. Dejar bocas libres en el tablero permite que cada ampliación tenga su circuito sin cambiarlo. Es una decisión barata que evita un tablero nuevo en pocos años.',
+                ]],
+                ['h2' => '¿Qué pasa con la llave del pilar?', 'p' => [
+                    'En muchas casas del barrio, la protección junto al medidor es una llave antigua que no corresponde al cable que va a la casa. Se reemplaza por una térmica adecuada en un gabinete estanco. El medidor es de UTE y no se toca.',
                 ]],
             ],
             'faq' => [

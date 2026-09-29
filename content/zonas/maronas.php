@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer si en el conjunto varios tienen la misma falla?', 'p' => [
                     'Reparar la tuya y avisar a la comisión: si la causa es de construcción, conviene resolverla en todas las unidades. Te dejamos anotado qué encontramos para que sirva a los demás. Si tu tablero no tiene diferencial, mirá [tableros en Maroñas](tableros-electricos/maronas).',
                 ]],
+                ['h2' => '¿Qué falla en los locales de 8 de Octubre en Maroñas?', 'p' => [
+                    'Sobre la avenida, cerca del Hipódromo, hay almacenes, farmacias y comercios con vivienda al fondo. La heladera exhibidora y el aire son los equipos que más protecciones hacen saltar, sobre todo en verano. Se revisa el arranque de cada equipo y se separan los circuitos del local de los de la vivienda.',
+                ]],
             ],
             'faq' => [
                 ['q' => 'El cable a la planta alta está caliente, ¿qué hago?', 'a' => 'Dejá de usar los equipos de arriba y consultanos. Hay que cambiarlo.'],
                 ['q' => '¿Reparan locales sobre 8 de Octubre?', 'a' => 'Sí, en horarios que no corten la atención.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Y si arriba vive otra familia?', 'p' => [
                     'Entonces conviene que cada vivienda tenga su tablero completo y, si es posible, su propio suministro de UTE, para que cada una pague su consumo. Te orientamos sobre el trámite. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en Parque Guaraní?', 'p' => [
+                    'En Parque Guaraní hay casas de una planta con patio y ampliaciones, muchas con el tablero original en la cocina o en el pasillo. Moverlo a la entrada, en un lugar accesible, y armarlo con circuitos separados y diferencial es lo más útil. Si hay taller en el fondo, se le da su sector.',
                 ]],
             ],
             'faq' => [

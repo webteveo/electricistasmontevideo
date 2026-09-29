@@ -42,7 +42,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan tramos aéreos?', 'a' => 'Sí, los que son parte de la instalación del cliente.'],
                 ['q' => '¿Revisan motores y bombas?', 'a' => 'La parte eléctrica.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -58,6 +57,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se organiza una instalación con varias construcciones?', 'p' => [
                     'Desde el pilar a la casa y de la casa a cada galpón, con líneas dimensionadas para la distancia y la carga, y un tablero en cada destino. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en casas de fin de semana en la zona rural?', 'p' => [
+                    'Algunas casas de Toledo Chico se usan los fines de semana. Un tablero con los circuitos imprescindibles (bomba, alarma, heladera) separados del resto permite dejar la casa cortada durante la semana sin afectar lo que tiene que seguir funcionando. Así se reduce el riesgo de fallas con la casa sola.',
                 ]],
             ],
             'faq' => [

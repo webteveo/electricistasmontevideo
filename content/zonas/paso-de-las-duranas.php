@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué falla en los edificios bajos?', 'p' => [
                     'El automático de escalera, el portero y la bomba. Se revisan en el tablero de servicios y en cada punto. Si tu tablero es el que no da más, mirá [tableros en Paso de las Duranas](tableros-electricos/paso-de-las-duranas).',
                 ]],
+                ['h2' => '¿Qué pasa con los comercios sobre Millán?', 'p' => [
+                    'Sobre la avenida Millán hay comercios con vivienda arriba o atrás. Las heladeras, el aire y la iluminación del local muchas veces cuelgan del mismo tablero que la casa. Cuando algo falla en el local, se corta la vivienda. Se separan los dos sectores con su diferencial y se dan circuitos propios a los equipos de frío.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan cables de jardín?', 'a' => 'Sí, con caño y cajas estancas.'],
                 ['q' => '¿Atienden porteros eléctricos?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa si la casa no tiene tierra?', 'p' => [
                     'Se instala una jabalina en el jardín y se lleva el conductor al tablero y a los tomacorrientes de cocina, baño y lavadero. En suelos húmedos, conviene revisar la conexión cada tanto. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las casas de dos plantas cerca de Millán?', 'p' => [
+                    'En las casas de dos plantas del barrio, el tablero suele estar abajo y alimenta todo. Un tablero secundario arriba, con los circuitos de dormitorios y baño, acorta recorridos y permite cortar una planta sin afectar la otra.',
                 ]],
             ],
             'faq' => [

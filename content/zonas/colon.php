@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan luces del parque?', 'a' => 'Sí, luminarias, cajas y cables.'],
                 ['q' => '¿Atienden casas grandes sin planos?', 'a' => 'Sí, relevamos y dejamos los circuitos identificados.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el sector del parque?', 'p' => [
                     'Iluminación, tomacorrientes exteriores, bomba y riego si los hay, todo con su diferencial. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de caseros y dependencias?', 'p' => [
+                    'Muchas casas quinta de Colón tienen una casa de caseros, un galpón o una dependencia de servicio. Si se alimentan desde la casa principal sin tablero propio, cualquier falla afecta a todo. Se les da un tablero secundario con su diferencial, alimentado con una línea de sección adecuada.',
                 ]],
             ],
             'faq' => [

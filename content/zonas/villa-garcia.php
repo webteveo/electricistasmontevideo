@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Qué hacer con un galpón sin energía?', 'p' => [
                     'Revisar primero su protección en el tablero y después el tramo desde la casa, que es lo más expuesto. Si el tramo se dañó, se reemplaza por uno enterrado en caño o aéreo con soportes. Si el galpón no tiene tablero propio, mirá [tableros en Villa García](tableros-electricos/villa-garcia).',
                 ]],
+                ['h2' => '¿Qué pasa en los barrios nuevos sobre la ruta 8?', 'p' => [
+                    'Además de quintas, en Villa García crecieron barrios de casas nuevas con instalaciones recientes. Ahí las fallas vienen de agregados: un parrillero, un galpón o una piscina conectados al circuito más cercano. Se les da su línea propia desde el tablero, con su protección.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan bombas de riego?', 'a' => 'La parte eléctrica: protección, arranque y conexiones.'],
                 ['q' => '¿Atienden galpones y talleres?', 'a' => 'Sí, con sus tableros y circuitos.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [

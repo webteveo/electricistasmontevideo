@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Cómo se separa el taller?', 'p' => [
                     'Con una línea propia desde el tablero, dimensionada para las máquinas, y su protección. Si la casa no tiene tablero con lugar, mirá [tableros en Belvedere](tableros-electricos/belvedere).',
                 ]],
+                ['h2' => '¿Qué pasa cerca del Parque Belvedere?', 'p' => [
+                    'Las cuadras que rodean el parque tienen árboles grandes, humedad y hojas que tapan desagües. Las luces de fachada y los tomacorrientes del frente sufren. Además, en invierno las casas del barrio usan estufas eléctricas en circuitos de tomacorrientes, y es la época en que más saltan las térmicas. Se separa un circuito para la calefacción.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Puedo poner una térmica más grande?', 'a' => 'No. Hay que repartir la carga.'],
                 ['q' => '¿Reparan instalaciones de talleres?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,12 @@ return [
                 ]],
                 ['h2' => '¿Conviene sumar la tierra ahora?', 'p' => [
                     'Sí, en el mismo trabajo. Con el tablero nuevo abierto es el momento más práctico. Más en [puesta a tierra](puesta-a-tierra-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene dos plantas?', 'p' => [
+                    'Algunas casas de Belvedere tienen una planta alta agregada. Un tablero secundario arriba, alimentado desde el principal, permite cortar la planta alta sin afectar la baja y acorta los recorridos de los circuitos de dormitorios.',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene taller trifásico?', 'p' => [
+                    'Si el taller tiene máquinas trifásicas, el tablero reparte las cargas entre fases y cada máquina queda con su protección. La vivienda se alimenta desde una de las fases, o repartida, con su diferencial. Así, un arranque del torno no hace bajar las luces de la casa.',
                 ]],
             ],
             'faq' => [
@@ -78,6 +86,9 @@ return [
                 ]],
                 ['h2' => '¿En qué orden?', 'p' => [
                     'Tablero y línea principal, termotanque y cocina, baño y lavadero, y después dormitorios e iluminación. Todo con tierra.',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de fachada continua?', 'p' => [
+                    'En las casas de fachada continua de Carlos María Ramírez y alrededores, los ambientes están en fila y el cableado corre de uno a otro. Al recablear, el tablero se ubica cerca de la entrada y desde ahí salen los circuitos hacia el fondo, uno por uso, con cajas accesibles.',
                 ]],
             ],
             'faq' => [

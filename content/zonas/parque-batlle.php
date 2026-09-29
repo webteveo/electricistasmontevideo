@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en las casas grandes que sumaron equipos?', 'p' => [
                     'Térmicas que saltan en invierno o en verano, cuando se usan a la vez la calefacción o los aires, y luces que bajan al arrancar el termotanque. El remedio es separar circuitos y, si hace falta, revisar la potencia. Si el tablero no tiene lugar, mirá [tableros en Parque Batlle](tableros-electricos/parque-batlle).',
                 ]],
+                ['h2' => '¿Qué falla en los edificios bajos de Villa Dolores?', 'p' => [
+                    'Los edificios de tres o cuatro pisos de Villa Dolores tienen instalaciones comunes con muchos años: luz de escalera, portero y bomba. Cuando falla la bomba, el edificio se queda sin agua en los pisos altos. Revisamos el tablero de servicios, el automático de la bomba y el flotante, y dejamos anotado el estado de cada componente para que los vecinos decidan qué renovar.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de jardín?', 'a' => 'Sí, luminarias, tomacorrientes exteriores, bombas y riego.'],
                 ['q' => '¿Atienden consultorios con urgencia?', 'a' => 'Llamanos y te confirmamos la disponibilidad en el momento.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué protección necesita un consultorio?', 'p' => [
                     'Un circuito propio para los equipos, con su térmica y un diferencial que no se comparta con la cocina ni con los exteriores, y una puesta a tierra medida. Así una fuga en otro sector no deja al consultorio sin energía en medio de una consulta. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas cerca del Estadio y Clínicas?', 'p' => [
+                    'Alrededor del Centenario y del Hospital de Clínicas hay casas amplias alquiladas por habitaciones a estudiantes o personal de salud. Cada habitación con su estufa, su calefactor o su aire, y todo en dos o tres circuitos. Un tablero con un circuito por habitación, o por par de habitaciones, y un diferencial que funcione, evita los cortes de cada noche de invierno y el riesgo de alargues sobrecargados.',
                 ]],
             ],
             'faq' => [

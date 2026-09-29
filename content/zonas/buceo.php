@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Por qué calientan los tomacorrientes en edificios de los 70?', 'p' => [
                     'Porque llevan décadas de uso, los contactos se aflojaron y hoy se les conectan estufas y hervidores que consumen mucho. Se cambian los tomacorrientes gastados, se revisa el cable que llega a la caja y, si el circuito está sobrecargado, se separa. Si el problema es el tablero, mirá [tableros en el Buceo](tableros-electricos/buceo).',
                 ]],
+                ['h2' => '¿Qué falla en las casas cerca del puerto del Buceo?', 'p' => [
+                    'En las calles que bajan hacia el puerto y la rambla Armenia, las casas reciben humedad y sal del agua. Las luces de fachada, los timbres y los tomacorrientes del patio son los primeros en fallar: bornes verdes de óxido, portalámparas que se quiebran y cajas con agua. Se cambian por componentes para exterior y se revisa que el circuito de afuera no comparta protección con la cocina, para que una fuga no deje la casa entera a oscuras.',
+                ]],
             ],
             'faq' => [
                 ['q' => 'Un tomacorriente se puso caliente, ¿lo sigo usando?', 'a' => 'No. Dejalo sin usar y consultanos: hay que cambiarlo y revisar la conexión.'],
                 ['q' => '¿Reparan detalles en apartamentos nuevos?', 'a' => 'Sí, tomacorrientes, luminarias y circuitos.'],
-                ['q' => '¿Cómo pido presupuesto?', 'a' => 'Por WhatsApp, con fotos del punto con problemas y del tablero.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +53,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa si voy a comprar un auto eléctrico?', 'p' => [
                     'Conviene prever la salida hacia la cochera en el tablero desde ahora, aunque el cargador llegue después. Así el día que lo instales no hay que abrir el tablero de nuevo. Más en [tableros eléctricos](tableros-electricos-montevideo) y [cargadores](cargador-vehiculo-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las oficinas cerca del World Trade Center?', 'p' => [
+                    'Las oficinas de la zona cambian de distribución cada vez que cambia el inquilino. El tablero termina con térmicas que alimentan puestos que ya no existen y otras sobrecargadas por las nuevas estaciones de trabajo. Relevamos qué alimenta cada llave, reagrupamos por sector y dejamos separados los circuitos de computadoras, aire e iluminación, con su diferencial. Así la próxima mudanza interna no obliga a rehacer todo.',
                 ]],
             ],
             'faq' => [

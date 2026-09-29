@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Por qué las luces del patio hacen saltar todo?', 'p' => [
                     'Porque están conectadas a un circuito de la casa sin protección propia, y cuando entra agua en una luminaria o una caja, el diferencial corta toda la vivienda, o si no hay diferencial, la térmica. Se separan en un circuito propio con cajas y artefactos para exterior. Si el tablero no lo permite, mirá [tableros en el Reducto](tableros-electricos/reducto).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas con altillo?', 'p' => [
+                    'Muchas casas del Reducto tienen un altillo al que se llega por una escalera angosta, alimentado con un cable que sube por afuera o por un caño viejo. Es un punto de falla frecuente: el cable se reseca y la caja de llegada suele estar sin tapa. Se rehace con su propio circuito.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de cooperativas?', 'a' => 'Sí, en las unidades y los espacios comunes.'],
                 ['q' => '¿Atienden locales de San Martín?', 'a' => 'Sí, en horarios que no corten la atención.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +53,9 @@ return [
                 ]],
                 ['h2' => '¿Se puede ampliar el tablero de una vivienda de cooperativa?', 'p' => [
                     'Sí, dentro de la unidad y siempre que no se toque la instalación común. Se agrega una térmica para el equipo nuevo, con su cable desde el tablero, protegida por el diferencial existente. Si el tablero no tiene lugar, se cambia por uno de más bocas. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los locales cerca de San Martín y Millán?', 'p' => [
+                    'En el cruce de San Martín y Millán y las cuadras cercanas hay comercios con vivienda. Se separan los dos sectores en el tablero, cada uno con su diferencial, y se dan circuitos propios a heladeras y hornos del local.',
                 ]],
             ],
             'faq' => [
@@ -69,6 +74,12 @@ return [
                 ]],
                 ['h2' => '¿Qué se renueva primero?', 'p' => [
                     'El tablero, la línea principal y los circuitos de cocina y baño, que llevan más corriente. Después el patio y los exteriores, que son los que más fallan por humedad, y por último los dormitorios. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en casas de zaguán con patio lateral?', 'p' => [
+                    'En las casas de zaguán con patio lateral, las habitaciones se abren al patio y los circuitos pasan de una a otra por el exterior. Al recablear, se buscan recorridos interiores o bajo el alero, y lo que queda afuera va en caño con cajas estancas.',
+                ]],
+                ['h2' => '¿Qué pasa si la casa es parte de una cooperativa de reciclaje?', 'p' => [
+                    'En el Reducto hay cooperativas que reciclaron casas antiguas para varias familias. En esos casos, el recableado se planifica con la cooperativa: una línea por vivienda, tableros iguales y espacios comunes con su propio circuito. Se trabaja por etapas según el avance de la obra.',
                 ]],
             ],
             'faq' => [

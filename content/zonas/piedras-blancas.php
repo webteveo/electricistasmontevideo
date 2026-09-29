@@ -42,7 +42,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan la instalación de la casa del fondo?', 'a' => 'Sí, con su línea y su tablero.'],
                 ['q' => '¿Atienden peluquerías y almacenes?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -58,6 +57,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva cada tablero?', 'p' => [
                     'Una llave general, un diferencial de 30 mA y térmicas para iluminación, tomacorrientes, cocina, baño y termotanque. Si hay comercio, su propio sector. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en los conjuntos sobre Don Pedro de Mendoza?', 'p' => [
+                    'En los conjuntos habitacionales cercanos a Don Pedro de Mendoza, las unidades tienen tableros chicos sin lugar para el aire o la cocina eléctrica. Se amplían unidad por unidad y se revisa el tablero de servicios comunes con la comisión.',
                 ]],
             ],
             'faq' => [

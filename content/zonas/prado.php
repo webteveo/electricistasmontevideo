@@ -42,7 +42,6 @@ return [
             'faq' => [
                 ['q' => '¿Reparan instalaciones de casonas?', 'a' => 'Sí, respetando molduras y elementos originales.'],
                 ['q' => '¿Atienden colegios con urgencia?', 'a' => 'Llamanos y te confirmamos la disponibilidad.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -58,6 +57,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se hace con el tablero antiguo?', 'p' => [
                     'Se desconecta y se retira, o se conserva como pieza histórica sin energía, en su lugar. El tablero nuevo va en un gabinete cerrado. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en los chalets de Nueva Savona?', 'p' => [
+                    'En Nueva Savona los chalets son más compactos que las casonas del Prado, con jardín al frente y garaje. Un tablero con el jardín y el garaje en su propio sector, y lugar para un cargador de auto eléctrico, es lo más pedido.',
                 ]],
             ],
             'faq' => [

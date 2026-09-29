@@ -39,7 +39,6 @@ return [
             'faq' => [
                 ['q' => 'Se me cayó la luz de la mitad de la casa, ¿qué puede ser?', 'a' => 'En trifásica, una fase caída o floja. En monofásica, una térmica o un empalme. Se mide en el tablero.'],
                 ['q' => '¿Reparan instalaciones de locales?', 'a' => 'Sí, en horarios que no corten la atención.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y una descripción de la falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +51,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se separan comercio y vivienda en el tablero?', 'p' => [
                     'Con un tablero con dos sectores, cada uno con su diferencial, o con dos tableros: uno para el local y otro para la casa. Así un problema en el comercio no corta la vivienda. Más información en [tableros eléctricos](tableros-electricos-montevideo) y [aumento de potencia](aumento-de-potencia-ute-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los locales cerca del Mercado Agrícola?', 'p' => [
+                    'Alrededor del Mercado Agrícola abrieron cafés, restaurantes y comercios en edificios que fueron almacenes o talleres. Tienen hornos, cafeteras, heladeras exhibidoras y mucha iluminación, a veces sobre el tablero que dejó el uso anterior. Armamos un tablero con salidas para cada equipo de cocina y frío, el salón aparte y un diferencial por grupo, para que una falla en la cocina no apague el salón en pleno servicio.',
                 ]],
             ],
             'faq' => [
@@ -70,6 +72,9 @@ return [
                 ]],
                 ['h2' => '¿Qué se renueva en una casa de altos?', 'p' => [
                     'La montante que sube por la escalera, el tablero y los circuitos de la planta alta, empezando por cocina y baño. Si hay local en planta baja, se aprovecha para independizar sus circuitos. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con la trifásica que quedó del taller?', 'p' => [
+                    'Muchos ex talleres del barrio conservan una acometida trifásica. Al recablear como vivienda se puede mantener, repartiendo los circuitos entre las tres fases, o pasar a monofásico si no hay equipos que la justifiquen. Lo que no conviene es dejar líneas trifásicas viejas energizadas sin uso dentro de las paredes. Se desconectan en el tablero y se retiran, y se deja anotado qué quedó en servicio.',
                 ]],
             ],
             'faq' => [

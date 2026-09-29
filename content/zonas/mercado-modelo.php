@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Por qué salta la protección del compresor?', 'p' => [
                     'Por un arranque difícil, un capacitor o un contactor gastado, o una protección mal elegida para el motor. También por caída de tensión en cables largos. Se mide la corriente de arranque y la tensión. Si el tablero del local necesita ordenarse, mirá [tableros en Mercado Modelo](tableros-electricos/mercado-modelo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas de Bolívar?', 'p' => [
+                    'En Bolívar hay casas de barrio de los años 30 a 60, muchas con un local o depósito en el frente. Las fallas típicas son las de instalaciones de esa época: sin tierra, pocos circuitos y equipos nuevos colgados de cables viejos. Se reparan y se separan los circuitos del local.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones trifásicas?', 'a' => 'Sí.'],
                 ['q' => '¿Atienden depósitos fuera de hora?', 'a' => 'Se puede coordinar según la actividad del local.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [

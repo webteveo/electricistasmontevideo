@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué hacer cuando fallan equipos sensibles?', 'p' => [
                     'Si se reinician computadoras o equipos médicos, puede haber problemas de tierra, un neutro flojo o equipos grandes en el mismo circuito. Se mide la tensión y la tierra, y se separan los equipos sensibles en un circuito propio. Si el tablero de la oficina no da más, mirá [tableros en Tres Cruces](tableros-electricos/tres-cruces).',
                 ]],
+                ['h2' => '¿Qué falla en los apartamentos cerca de la terminal?', 'p' => [
+                    'Alrededor de la terminal hay muchos apartamentos chicos que se alquilan por temporada o por días. Se usan intensamente, por personas que no conocen la instalación: todos los equipos a la vez, cargadores y estufas en zapatillas. Los tomacorrientes se gastan rápido y las térmicas saltan. Cambiamos los puntos gastados, sumamos tomacorrientes donde faltan y dejamos el tablero rotulado para que cualquier huésped sepa qué cortar.',
+                ]],
             ],
             'faq' => [
                 ['q' => 'Se reinician las computadoras de la oficina, ¿es la instalación?', 'a' => 'Puede ser. Se mide tierra y tensión antes de culpar a los equipos.'],
                 ['q' => '¿Reparan tomacorrientes de piso?', 'a' => 'Sí, en cajas de piso, bandejas y periscopios.'],
-                ['q' => '¿Cómo pido la reparación?', 'a' => 'Por WhatsApp, con la dirección, el piso y qué sector falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué necesita un consultorio?', 'p' => [
                     'Un circuito exclusivo para los equipos médicos, con su protección y una puesta a tierra medida. Si el consultorio está en un edificio de oficinas, se verifica que la tierra del edificio llegue bien a la unidad. Más información en [tableros eléctricos](tableros-electricos-montevideo) y [puesta a tierra](puesta-a-tierra-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de las calles interiores?', 'p' => [
+                    'Entre las avenidas quedan casas de una y dos plantas de mediados de siglo, con tableros de dos o tres llaves y sin diferencial. Son viviendas familiares que conviven con torres nuevas, y su instalación es la de la época. Un tablero nuevo con circuitos separados para cocina, baño y termotanque, más el diferencial, es la mejora más útil.',
                 ]],
             ],
             'faq' => [

@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Y en las casas ampliadas?', 'p' => [
                     'Tomacorrientes y empalmes de la ampliación que calientan porque cuelgan de un circuito ya cargado. Se les da un circuito propio con su protección. Si el tablero no tiene lugar, mirá [tableros en Ituzaingó](tableros-electricos/ituzaingo).',
                 ]],
+                ['h2' => '¿Qué falla en las casas cerca de José Belloni?', 'p' => [
+                    'Sobre José Belloni y las calles cercanas hay casas de barrio con comercio al frente o taller al fondo. Los arranques de heladeras y máquinas se notan en toda la casa. Se separan los circuitos del comercio o del taller y se revisa que la línea de entrada tenga la sección necesaria para la suma de consumos.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿La comisión puede contratar la reparación?', 'a' => 'Sí, presupuestamos a nombre del conjunto.'],
                 ['q' => '¿Reparan porteros eléctricos?', 'a' => 'Sí, en bloques y casas.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con el bloque o la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de una unidad?', 'p' => [
                     'Una llave general, un diferencial y térmicas separadas para iluminación, tomacorrientes, cocina y un circuito para estufas o aire. Si hay tierra común en el bloque, se conecta. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué se hace con los medidores agrupados del bloque?', 'p' => [
+                    'En los conjuntos, los medidores están juntos en planta baja, cada uno con su protección de salida. Esas protecciones se identifican con el número de unidad, para que cualquier vecino pueda cortar la suya sin afectar a otros. Cuando cambiamos el tablero de una unidad, rotulamos también su protección en la batería de medidores.',
                 ]],
             ],
             'faq' => [

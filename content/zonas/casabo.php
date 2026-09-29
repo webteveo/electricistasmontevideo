@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Por qué falla la bomba de pozo?', 'p' => [
                     'Por la protección, el automático, el capacitor o la tensión. Se prueba cada cosa. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas autoconstruidas de Casabó?', 'p' => [
+                    'En casas levantadas por las propias familias, es frecuente que el cable de la cocina sea el mismo que el de las luces, que los empalmes estén dentro de la pared y que falte el diferencial. Las fallas aparecen cuando se suma un equipo. Se reparan y se deja un plan para ordenar la instalación por partes, empezando por lo más urgente.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan tramos aéreos?', 'a' => 'Los que son parte de la instalación del cliente.'],
                 ['q' => '¿Atienden bombas de pozo?', 'a' => 'La parte eléctrica.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,12 @@ return [
                 ]],
                 ['h2' => '¿Y la bomba?', 'p' => [
                     'Su propio tablero o salida, con protección de motor y diferencial. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa está cerca de la playa?', 'p' => [
+                    'En las casas de Pajas Blancas cercanas al río, el tablero no conviene en un alero o un garaje abierto. Se ubica adentro, en un gabinete que cierre bien, y los circuitos exteriores quedan con su propio diferencial. Así la humedad y la arena no deterioran las protecciones.',
+                ]],
+                ['h2' => '¿Qué pasa con las chacras de Pajas Blancas?', 'p' => [
+                    'En las chacras, el tablero de la casa y el de la bomba o el galpón conviene que estén separados, con líneas de sección adecuada para la distancia. Los gabinetes exteriores, con tapa y junta, y la entrada de cables por abajo para que el agua no entre.',
                 ]],
             ],
             'faq' => [

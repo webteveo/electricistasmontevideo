@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Cómo se sabe si un tramo largo es suficiente?', 'p' => [
                     'Midiendo la tensión en el extremo con los equipos funcionando. Si baja demasiado, el cable es fino para la distancia y la carga. Se reemplaza por uno de sección adecuada. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas cerca del límite con Canelones?', 'p' => [
+                    'Hacia el este de Abayubá, en el límite con Toledo Chico y Canelones, las casas tienen terrenos más grandes y el pilar del medidor queda lejos. Con tramos largos, cualquier empalme flojo en el camino se nota como luces que bajan y suben. Se revisa el tramo completo, desde el pilar hasta el tablero, y se rehacen las uniones con bornes adecuados dentro de cajas accesibles.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de ampliaciones?', 'a' => 'Sí, dándoles su propio circuito.'],
                 ['q' => '¿Atienden galpones?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Qué pasa con la potencia?', 'p' => [
                     'Con cada ampliación el consumo crece. Conviene revisar la potencia contratada cuando se suma un equipo grande. Mirá [aumento de potencia](aumento-de-potencia-ute-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si en el terreno hay un comercio?', 'p' => [
+                    'En Abayubá y Colón Sureste es común el almacén o el kiosco en el frente de la casa. Si comparte tablero con la vivienda, una heladera exhibidora o un freezer que arranca afecta a la casa. Un sector propio para el comercio, con su diferencial, y un circuito para cada equipo de frío, resuelve la mayoría de los cortes.',
                 ]],
             ],
             'faq' => [

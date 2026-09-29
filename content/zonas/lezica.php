@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué revisar después de una tormenta?', 'p' => [
                     'Los tramos aéreos, las protecciones y los equipos antes de reconectarlos. Si un cable está caído, no tocarlo: si es de UTE, reclamar al 0800 1930. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa en los barrios de casas con terreno de Lezica?', 'p' => [
+                    'Además de chacras, en Lezica hay barrios de casas con terreno y fondo. Las fallas típicas son las del fondo: parrilleros, galpones y bombas conectados con tramos sin caño. Se rehacen con caño, cajas estancas y su protección propia.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan cámaras de frío?', 'a' => 'La parte eléctrica.'],
                 ['q' => '¿Atienden bombas de riego?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la ubicación y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se reparte la trifásica?', 'p' => [
                     'Las máquinas trifásicas con su protección, y los circuitos monofásicos distribuidos entre las tres fases para que ninguna quede sobrecargada. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene en las casas cerca del aeródromo de Melilla?', 'p' => [
+                    'En la zona del aeródromo y Camino Melilla, los terrenos son amplios y abiertos. Las casas tienen tramos aéreos largos y más exposición a tormentas. Un tablero con protector contra sobretensiones y una buena puesta a tierra protege los equipos de la casa.',
                 ]],
             ],
             'faq' => [

@@ -41,7 +41,6 @@ return [
             'faq' => [
                 ['q' => '¿Revisan casas después de una inundación?', 'a' => 'Sí.'],
                 ['q' => '¿Reparan instalaciones comunes de cooperativas?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué pasó.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +56,12 @@ return [
                 ]],
                 ['h2' => '¿Qué lleva el tablero de una casa obrera?', 'p' => [
                     'Llave general, diferencial de 30 mA y térmicas para iluminación, tomacorrientes, cocina, baño y termotanque, con tierra. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con los talleres del barrio?', 'p' => [
+                    'La Teja todavía tiene talleres familiares con máquinas. Si comparten tablero con la vivienda, cada arranque se nota. Un tablero propio para el taller, con protecciones para cada máquina y su diferencial, ordena todo.',
+                ]],
+                ['h2' => '¿Dónde conviene el tablero en casas cerca de la bahía?', 'p' => [
+                    'Adentro, lejos de ventanas que dan al agua y en un gabinete que cierre bien. Un tablero en un patio o en un zaguán abierto recibe humedad salina y sus protecciones se deterioran antes de tiempo.',
                 ]],
             ],
             'faq' => [
@@ -78,6 +83,12 @@ return [
                 ]],
                 ['h2' => '¿Se puede hacer con la casa habitada?', 'p' => [
                     'Sí, por circuitos, avisando qué queda sin luz en cada etapa.',
+                ]],
+                ['h2' => '¿Qué pasa con las cooperativas antiguas?', 'p' => [
+                    'En las cooperativas de La Teja de los años 70 y 80, las viviendas tienen instalaciones originales con muchos años. Se puede recablear vivienda por vivienda, con el mismo criterio para todas, coordinando con la comisión.',
+                ]],
+                ['h2' => '¿Qué pasa con los muros de ladrillo antiguos?', 'p' => [
+                    'Los muros de las casas obreras de La Teja son de ladrillo macizo con revoques de cal. Si están sanos, se canalizan y se embuten caños nuevos. Si tienen humedad, se usa canalización de aplicar separada del muro.',
                 ]],
             ],
             'faq' => [

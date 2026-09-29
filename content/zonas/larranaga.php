@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en los edificios sin portería?', 'p' => [
                     'El automático de la escalera, las lámparas de los palieres y el portero eléctrico. Son circuitos con muchos años y uso diario. Se revisan en el tablero de servicios y en cada punto. Si tu tablero particular es el problema, mirá [tableros en Larrañaga](tableros-electricos/larranaga).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas cerca de Luis Alberto de Herrera?', 'p' => [
+                    'Sobre la avenida y sus paralelas hay casas de barrio de los años 40 y 50 que se reformaron para vivir o para oficinas. En las reformas se cambiaron llaves y tomacorrientes, pero no los cables. Las fallas aparecen en los empalmes viejos detrás de mecanismos nuevos. Se revisan y se rehacen.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan el caño común del pasaje?', 'a' => 'Sí, con el acuerdo de los propietarios que lo comparten.'],
                 ['q' => '¿Atienden porteros eléctricos?', 'a' => 'Sí, el cableado y las conexiones.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Qué conviene prever en una reforma?', 'p' => [
                     'Circuitos para cada aire acondicionado, para el horno y el anafe, para el termotanque, y bocas libres para futuras ampliaciones. Si la línea desde el medidor es fina, se renueva en el mismo trabajo. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa funciona como oficina?', 'p' => [
+                    'Algunas casas de Larrañaga cerca de Bulevar Artigas funcionan como estudios o consultorios. Conviene separar los circuitos de trabajo de los de la vivienda, si la hay, y dar un circuito propio a las computadoras y equipos sensibles, con diferencial y tierra medida.',
                 ]],
             ],
             'faq' => [

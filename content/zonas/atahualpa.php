@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Se puede reparar una llave de porcelana?', 'p' => [
                     'A veces sí: se limpian los contactos y se ajusta la conexión. Si el mecanismo está gastado, se reemplaza por una réplica con la misma estética. Si el problema es de la instalación y no de la llave, mirá [recableado en Atahualpa](recableado-electrico/atahualpa).',
                 ]],
+                ['h2' => '¿Qué pasa con los timbres y porteros de las casas de estilo?', 'p' => [
+                    'Muchas casas de Atahualpa conservan timbres de campanilla o porteros antiguos con transformadores propios, a veces escondidos en un placard o en el sótano. Cuando dejan de sonar, el problema suele ser el transformador o un cable cortado en el recorrido. Se ubican, se reparan o se reemplazan por equipos actuales que respeten la estética de la puerta.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan timbres antiguos?', 'a' => 'Sí, el cableado y el transformador del timbre.'],
                 ['q' => '¿Atienden casas con muchos ambientes?', 'a' => 'Sí, con los circuitos identificados.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +53,9 @@ return [
                 ]],
                 ['h2' => '¿Por qué tableros secundarios por planta?', 'p' => [
                     'Porque en casas de muchos ambientes los recorridos son largos y conviene cortar una planta sin afectar la otra. Además, facilita futuras reformas. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas de estilo divididas en apartamentos?', 'p' => [
+                    'Algunas casonas de Atahualpa se dividieron en dos o tres apartamentos. Si la instalación no se separó bien, pueden quedar circuitos compartidos entre unidades. Al cambiar el tablero, se da a cada apartamento su propio tablero con diferencial, alimentado desde su medidor, y se cortan los circuitos que cruzaban.',
                 ]],
             ],
             'faq' => [

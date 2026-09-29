@@ -39,7 +39,6 @@ return [
             'faq' => [
                 ['q' => 'Se me cortó la luz del fondo, ¿es peligroso?', 'a' => 'Puede serlo si hay un cable dañado a la intemperie. No uses ese sector hasta revisarlo.'],
                 ['q' => '¿Reparan bombas de agua en cooperativas?', 'a' => 'Sí, la parte eléctrica: alimentación, protecciones y automático.'],
-                ['q' => '¿Cómo coordino?', 'a' => 'Por WhatsApp, con la dirección aproximada y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +51,9 @@ return [
                 ]],
                 ['h2' => '¿Cómo se ordena el tablero en una cooperativa?', 'p' => [
                     'Unidad por unidad, identificando qué alimenta cada llave y separando los agregados. Para los espacios comunes se revisa el tablero general de servicios: iluminación exterior, bombas y salón. Con la comisión definimos qué hacer primero. Más información en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué cambia en los edificios nuevos cerca de Libertador?', 'p' => [
+                    'En las torres recientes de la zona del Palacio Legislativo, el tablero de cada unidad viene con diferencial y circuitos separados, pero con pocas bocas libres. Cuando se suma un segundo aire, un horno o el cargador del auto en la cochera, hay que ampliarlo. Se hace dentro de la unidad, sin tocar el tablero de servicios del edificio, y se deja la nueva térmica rotulada junto a las que puso la constructora.',
                 ]],
             ],
             'faq' => [

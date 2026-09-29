@@ -92,7 +92,7 @@ if (in_array($tpl, ['servicio', 'zona', 'sz'], true)) {
 <section class="social-proof" aria-label="Clientes y experiencia">
 <img class="social-proof-bg" src="<?= e(asset_ver('images/index/hero/electricista-montevideo-tablero-electrico-desktop.webp')) ?>" alt="" width="1672" height="941" loading="lazy" aria-hidden="true">
 <div class="wrap social-proof-inner">
-<ul class="trust-bar"><li><?= icon('check') ?><span><strong>Presupuesto sin costo</strong><small>Antes de empezar</small></span></li><li><?= icon('whatsapp') ?><span><strong>Consulta por WhatsApp</strong><small>Mandá una foto del problema</small></span></li><li><?= icon('pin') ?><span><strong>Montevideo y Canelones</strong><small>Casas, apartamentos y comercios</small></span></li></ul>
+<ul class="trust-bar"><li><?= icon('check') ?><span><strong>Presupuesto sin costo</strong><small>Antes de empezar</small></span></li><li><?= icon('whatsapp') ?><span><strong>Consulta por WhatsApp</strong><small>Mandá una foto</small></span></li><li><?= icon('pin') ?><span><strong>Montevideo y Canelones</strong><small>Casas, apartamentos y comercios</small></span></li></ul>
 </div>
 </section>
 <?php if ($tpl === 'home'): ?>
@@ -115,7 +115,7 @@ if (in_array($tpl, ['servicio', 'zona', 'sz'], true)) {
 </section>
 <section class="section steps-section" id="como-trabajamos"><div class="wrap">
 <div class="steps-heading"><span class="pill">Cómo trabajamos</span><h2>Tu instalación en 3 pasos</h2><p><?= $corto ? 'Consulta, presupuesto y visita. Sin vueltas.' : 'Contanos qué pasa por WhatsApp o teléfono, te asesoramos y coordinamos la visita. Sin vueltas y con presupuesto sin costo.' ?></p></div>
-<ol class="steps"><li class="step"><span class="step-icon"><?= icon('message') ?></span><div><span class="step-num">Paso 1</span><h3>Contanos qué pasa</h3><p><?= $corto ? 'La falla, el inmueble y tu barrio.' : 'Describí la falla o la mejora que querés hacer. Indicanos si es una vivienda o un comercio y en qué barrio estás.' ?></p></div></li><li class="step"><span class="step-icon"><?= icon('bolt') ?></span><div><span class="step-num">Paso 2</span><h3>Te pasamos el presupuesto</h3><p><?= $corto ? 'Sin costo y antes de empezar.' : 'Conversamos sobre la revisión, los materiales y el costo. Confirmás las condiciones antes de coordinar el trabajo.' ?></p></div></li><li class="step"><span class="step-icon"><?= icon('pin') ?></span><div><span class="step-num">Paso 3</span><h3>Coordinamos la visita</h3><p><?= $corto ? 'Día y hora según tu disponibilidad.' : 'Acordamos el día y la hora según tu disponibilidad y resolvemos tu instalación.' ?></p></div></li></ol><div class="steps-cta"><a class="button button-wsp" href="<?= e(whatsapp_url()) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div>
+<ol class="steps"><li class="step"><span class="step-icon"><?= icon('message') ?></span><div><span class="step-num">Paso 1</span><h3>Contanos qué pasa</h3><?php if (!$corto): ?><p><?= 'Describí la falla o la mejora que querés hacer. Indicanos si es una vivienda o un comercio y en qué barrio estás.' ?></p><?php endif; ?></div></li><li class="step"><span class="step-icon"><?= icon('bolt') ?></span><div><span class="step-num">Paso 2</span><h3>Te pasamos el presupuesto</h3><?php if (!$corto): ?><p><?= 'Conversamos sobre la revisión, los materiales y el costo. Confirmás las condiciones antes de coordinar el trabajo.' ?></p><?php endif; ?></div></li><li class="step"><span class="step-icon"><?= icon('pin') ?></span><div><span class="step-num">Paso 3</span><h3>Coordinamos la visita</h3><?php if (!$corto): ?><p><?= 'Acordamos el día y la hora según tu disponibilidad y resolvemos tu instalación.' ?></p><?php endif; ?></div></li></ol><div class="steps-cta"><a class="button button-wsp" href="<?= e(whatsapp_url()) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div>
 </div></section>
 <section class="section vs-section" id="por-que-nosotros"><div class="wrap">
 <div class="vs-heading"><span class="pill">Por qué elegirnos</span><h2>No todos los electricistas son iguales</h2></div>
@@ -212,7 +212,7 @@ $cta_por_servicio = [
 ];
 if ($tpl === 'servicio') { [$cta_h2, $cta_p] = $cta_por_servicio[$page['servicio']]; $cta_wsp = $hero_wsp; }
 elseif ($tpl === 'zona') { $cta_h2 = '¿Necesitás un electricista en ' . $bn . '?'; $cta_p = 'Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
-elseif ($tpl === 'sz') { $cta_h2 = $cta_por_servicio[$sz_serv][0]; $cta_p = 'En ' . $bn . ', presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
+elseif ($tpl === 'sz') { $cta_h2 = '¿' . $sz_h1 . ' en ' . $bn . '?'; $cta_p = 'Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
 elseif ($tpl === 'zonas' || $tpl === 'region') { $cta_h2 = '¿Necesitás un electricista en tu zona?'; $cta_p = 'Montevideo y Canelones. Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
 ?>
 <?php if (($route === '' || isset($pages[$route])) && $route !== 'contacto'): ?><section class="contact-banner"><img class="contact-banner-bg" src="<?= e(asset_ver('images/index/hero/electricista-montevideo-tablero-electrico-desktop.webp')) ?>" alt="" width="1672" height="941" loading="lazy" aria-hidden="true"><div class="wrap"><div><h2><?= e($cta_h2) ?></h2><p><?= e($cta_p) ?></p></div><a class="button button-wsp" href="<?= e($cta_wsp) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div></section><?php endif; ?>

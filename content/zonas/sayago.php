@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué pasa con el polvo del taller?', 'p' => [
                     'El polvo metálico y la grasa se acumulan en tomacorrientes y tableros, y pueden provocar fugas o cortocircuitos. Conviene que el taller tenga tomacorrientes industriales con tapa y un tablero cerrado. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa con las casas cerca de la estación?', 'p' => [
+                    'Alrededor de la estación Sayago hay casas antiguas de la época del ferrocarril, con instalaciones de décadas. Las fallas típicas son empalmes flojos y tomacorrientes sin tierra. Se reparan y se evalúa renovar los circuitos más usados.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de herrerías?', 'a' => 'Sí.'],
                 ['q' => '¿Atienden portones?', 'a' => 'La parte eléctrica.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [

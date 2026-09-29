@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Qué falla en las casas obreras?', 'p' => [
                     'Empalmes en las cajas de las luces que se recalentaron, tomacorrientes gastados y cables agregados sin protección. Se rehacen las conexiones y se separan los circuitos más cargados. Si el tablero no tiene lugar, mirá [tableros en Villa Española](tableros-electricos/villa-espanola).',
                 ]],
+                ['h2' => '¿Qué pasa con las cooperativas cerca del Antel Arena?', 'p' => [
+                    'En los alrededores del Antel Arena y de José Pedro Varela hay cooperativas de distintas épocas. En las más antiguas, los tableros de las viviendas son los originales y los espacios comunes tienen protecciones gastadas. Las fallas típicas son luces de caminos que no encienden y bombas que cortan. Reparamos y dejamos un informe para la comisión con lo que conviene renovar.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de talleres?', 'a' => 'Sí, en talleres familiares y comercios.'],
                 ['q' => '¿Trabajan con trifásica?', 'a' => 'Sí, en talleres con máquinas trifásicas.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -72,6 +74,9 @@ return [
                 ]],
                 ['h2' => '¿Se puede hacer por partes?', 'p' => [
                     'Sí, y es lo más común en el barrio. Primero cocina, baño y termotanque; después los dormitorios; al final el patio y el fondo. Si hay taller, su circuito va aparte desde el principio. Mirá [recableado eléctrico](recableado-electrico-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con el techo de chapa de los talleres?', 'p' => [
+                    'Muchos talleres del fondo tienen techo de chapa sobre perfiles metálicos. Los cables que corren por encima de los perfiles, sin caño, sufren el calor del verano y pueden tocar la chapa. Al recablear, se pasan en caño fijado a la estructura, lejos de la chapa, y la estructura metálica se conecta a tierra.',
                 ]],
             ],
             'faq' => [

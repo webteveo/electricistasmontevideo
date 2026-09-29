@@ -37,11 +37,13 @@ return [
                 ['h2' => '¿Qué hacer mientras tanto?', 'p' => [
                     'No usar herramientas en el fondo con la casa cargada y no subir la llave si salta seguido. Consultanos. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
+                ['h2' => '¿Qué pasa en las casas cerca de Camino Cibils?', 'p' => [
+                    'Sobre Camino Cibils y sus alrededores hay casas con terreno y talleres. El tramo del pilar a la casa suele ser largo y enterrado sin caño. Si la casa tiene tensión baja o cortes, es uno de los primeros lugares para revisar.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de parrilleros?', 'a' => 'Sí.'],
                 ['q' => '¿Miden la resistencia del termotanque?', 'a' => 'Sí.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -57,6 +59,12 @@ return [
                 ]],
                 ['h2' => '¿Incluye la tierra?', 'p' => [
                     'Si falta, conviene sumarla en el mismo trabajo. Más en [puesta a tierra](puesta-a-tierra-montevideo) y [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si en el fondo hay una segunda vivienda?', 'p' => [
+                    'Si en el fondo vive otra familia, necesita su propio tablero con diferencial, alimentado con una línea independiente desde el medidor. Si comparten tablero, cualquier falla afecta a las dos casas.',
+                ]],
+                ['h2' => '¿Qué conviene en casas con taller?', 'p' => [
+                    'Si en el fondo hay taller con herramientas o máquinas, conviene un tablero secundario ahí, alimentado con una línea de sección adecuada, con su diferencial. Así los arranques del taller no afectan a la casa.',
                 ]],
             ],
             'faq' => [

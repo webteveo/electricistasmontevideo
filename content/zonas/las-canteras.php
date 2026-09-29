@@ -34,11 +34,13 @@ return [
                 ['h2' => '¿Por qué salta el diferencial cuando arranca la bomba?', 'p' => [
                     'Porque la bomba o su cable tienen una fuga, casi siempre por humedad en la conexión o por el desgaste del bobinado. Se mide la bomba desconectada para saber si el problema es la bomba o la instalación. Si la bomba no tiene circuito propio, mirá [tableros en Las Canteras](tableros-electricos/las-canteras).',
                 ]],
+                ['h2' => '¿Qué falla en los conjuntos de vivienda del barrio?', 'p' => [
+                    'En los conjuntos de Las Canteras, las unidades tienen tableros chicos y los espacios comunes dependen de un tablero de servicios con años. La iluminación de los caminos interiores y las bombas son lo más delicado. Se reparan y se deja un informe para quien administra.',
+                ]],
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de parrilleros y galpones?', 'a' => 'Sí, con su circuito y protección.'],
                 ['q' => 'Corté un cable al cavar, ¿qué hago?', 'a' => 'No lo toques, dejá cortado ese circuito en el tablero y consultanos.'],
-                ['q' => '¿Cómo pido la visita?', 'a' => 'Por WhatsApp, con la dirección y qué falla.'],
             ],
         ],
         'tableros' => [
@@ -51,6 +53,9 @@ return [
                 ]],
                 ['h2' => '¿Qué protección necesita una bomba?', 'p' => [
                     'Una térmica o guardamotor según el tipo de bomba, un diferencial y, si está en un pozo o cerca de una piscina, una conexión estanca y la carcasa conectada a tierra. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué pasa con las casas cerca de Camino Carrasco?', 'p' => [
+                    'Sobre Camino Carrasco y sus paralelas hay casas con comercio o taller al frente. El tablero único de la casa alimenta también el negocio, y un arranque de compresor se siente en toda la vivienda. Separar los dos sectores con su diferencial ordena el consumo y evita cortes cruzados.',
                 ]],
             ],
             'faq' => [

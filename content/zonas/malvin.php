@@ -35,11 +35,13 @@ return [
                 ['h2' => '¿Qué falla en portones y luces con el salitre?', 'p' => [
                     'Contactos oxidados en la botonera o la placa del portón, fotocélulas que dejan de responder y luminarias con agua adentro. Se limpian o cambian las piezas afectadas y se sella lo que corresponda. Si el tablero no separa los exteriores, mirá [tableros en Malvín](tableros-electricos/malvin).',
                 ]],
+                ['h2' => '¿Qué pasa con las barbacoas y parrilleros del fondo?', 'p' => [
+                    'Muchas casas de Malvín tienen una barbacoa cerrada en el fondo con parrillero, heladera y a veces un baño. Se usa mucho en verano y poco en invierno, y la instalación se resiente: empalmes que se sulfatan con la humedad del invierno y fallan el primer asado de diciembre. Revisarla antes del verano, con los tomacorrientes y las luces en un circuito propio, evita el corte en plena reunión.',
+                ]],
             ],
             'faq' => [
                 ['q' => 'Se corta la luz del fondo cuando llueve, ¿qué hago?', 'a' => 'No uses ese sector y consultanos. Suele ser agua en una caja o un cable sin protección.'],
                 ['q' => '¿Reparan bombas de piscina?', 'a' => 'La parte eléctrica: alimentación, protección y conexiones.'],
-                ['q' => '¿Cómo pido presupuesto?', 'a' => 'Por WhatsApp, con fotos del tablero y del punto que falla.'],
             ],
         ],
         'tableros' => [
@@ -52,6 +54,9 @@ return [
                 ]],
                 ['h2' => '¿Dónde conviene poner el tablero?', 'p' => [
                     'Si el viejo está en un lugar incómodo o húmedo, como un garaje sin puerta, se puede mover a un lugar interior y dejar un tablero secundario en el garaje para las herramientas y el cargador. Más en [tableros eléctricos](tableros-electricos-montevideo).',
+                ]],
+                ['h2' => '¿Qué conviene si la casa tiene piscina?', 'p' => [
+                    'La bomba y la iluminación de la piscina trabajan junto al agua. Necesitan su propio circuito, con un diferencial que no se comparta con la casa, y las luminarias sumergidas o de borde tienen que ser las indicadas para piscina. En Malvín es común encontrar la bomba enchufada a un tomacorriente del garaje con un alargue: es de las situaciones que más conviene corregir.',
                 ]],
             ],
             'faq' => [
