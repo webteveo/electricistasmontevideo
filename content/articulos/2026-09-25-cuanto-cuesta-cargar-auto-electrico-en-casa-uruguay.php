@@ -4,7 +4,7 @@ return [
     'slug'=>'cuanto-cuesta-cargar-auto-electrico-en-casa-uruguay',
     'titulo'=>'¿Cuánto cuesta cargar un auto eléctrico en casa en Uruguay?',
     'title'=>'Cuánto cuesta cargar un auto eléctrico en casa en Uruguay',
-    'description'=>'Costo de cargar un auto eléctrico en casa con las tarifas de UTE 2026: valle, llano y punta, tiempos de carga y qué pide el reglamento para el cargador.',
+    'description'=>'Costo de cargar un auto eléctrico en casa con las tarifas de UTE 2026: valle, llano y punta, tiempos de carga y qué pide el reglamento al cargador.',
     'keywords'=>['cargar auto eléctrico en casa','tarifa triple horario UTE','cargador auto eléctrico Montevideo'],
     'categoria'=>'Cargadores para vehículos eléctricos',
     'tema'=>'Carga domiciliaria de vehículos eléctricos',

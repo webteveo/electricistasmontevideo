@@ -3,7 +3,7 @@
 $lista = zonas_de_region($rk);
 ?>
 <section class="section wrap landing-section" id="region">
-<div class="services-heading"><span class="pill">Zonas de atención</span><h2>Barrios de <?= e($region['nombre']) ?></h2></div>
+<div class="services-heading"><span class="pill">Zonas de atención</span><h2>Barrios que atendemos en <?= e($region['en']) ?></h2></div>
 <div class="landing-lead landing-lead--zone"><p><?= texto_enlaces($rc['intro']) ?></p><p class="landing-updated">Actualizado: <time datetime="<?= e($rc['mod']) ?>"><?= e(date('d/m/Y', strtotime($rc['mod']))) ?></time></p></div>
 <div class="landing-prose">
 <?php foreach ($rc['secciones'] as $sec): ?><h2><?= e($sec['h2']) ?></h2><?php foreach ($sec['p'] as $p): ?><p><?= texto_enlaces($p) ?></p><?php endforeach; ?>

@@ -32,7 +32,7 @@ return [
                     'La arena que trae el viento entra en cajas y tomacorrientes sin tapa, se mezcla con la humedad y forma una pasta que conduce y oxida. El resultado son fugas y contactos que calientan. Se limpian o reemplazan los componentes y se colocan cajas estancas con tapa.',
                 ]],
                 ['h2' => '¿Qué hacer si un temporal dañó un tramo aéreo?', 'p' => [
-                    'No acercarse al cable. Si es de la red, reclamar a UTE al 0800 1930; si es del tramo propio, cortar su protección y consultarnos. Se reemplaza con conductor y soportes adecuados.',
+                    'No acercarse al cable. Si es de la red, reclamar a UTE al 0800 1930; si es del tramo propio, no tocarlo y consultarnos. Se reemplaza con conductor y soportes adecuados.',
                 ]],
                 ['h2' => '¿Por qué falla la bomba de pozo?', 'p' => [
                     'Por la protección, el automático, el capacitor o la tensión. Se prueba cada cosa. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',

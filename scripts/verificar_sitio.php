@@ -48,9 +48,11 @@ foreach ($htmlPages as $path) {
 }
 $xml=simplexml_load_string(fetch_page('sitemap.xml')); verify($xml!==false,'Sitemap XML');
 $urls=[]; foreach($xml->sitemap as $sm) { $child=simplexml_load_string(fetch_page(basename((string)$sm->loc))); verify($child!==false,'Sitemap hijo XML'); foreach($child->url as $node) $urls[]=(string)$node->loc; }
-$expectedCount=count(array_filter($pages,static fn($p)=>empty($p['noindex'])))+count($published)+($published?1:0);
+$locales=local_urls(); // zonas, regiones y servicio × barrio con texto propio (src/datos/zonas.php)
+$expectedCount=count(array_filter($pages,static fn($p)=>empty($p['noindex'])))+count($locales)+count($published)+($published?1:0);
 verify(count($urls)===$expectedCount && count(array_unique($urls))===$expectedCount,'Solo páginas con contenido en sitemap');
-foreach(['','servicios','nosotros','contacto','zonas'] as $path) verify(in_array(absolute_url($path),$urls,true),'URL indexable en sitemap');
+foreach(array_merge(['','servicios','nosotros','contacto','zonas','como-funciona'], array_keys($locales)) as $path) verify(in_array(absolute_url($path),$urls,true),'URL indexable en sitemap: '.$path);
+foreach(array_keys($locales) as $path) if (!isset($visited[$path])) fetch_page($path);
 verify(str_contains(fetch_page('robots.txt'),'Sitemap: '.absolute_url('sitemap.xml')),'Robots usa dominio definitivo');
 verify(!preg_match('/contenedor|cacontainers/i',fetch_page('llms.txt')),'LLMS sin contenido anterior');
 fetch_page('public/images/social.png');
@@ -58,6 +60,7 @@ foreach(['no-existe','servicios/no-existe','contenedores-habitables-montevideo',
 foreach(['_archivo_base/','_archivo_base/trabajos.json','content/articulos/_plantilla.php','config/variables.php','src/vista/pagina.php','scripts/verificar_sitio.php','AGENTS.md','composer.json'] as $path) fetch_page($path,403);
 fetch_page('servicios/index',301); fetch_page('quienes_somos',301); fetch_page('proyectos',301);
 // Poda de la matriz barrio × servicio: las URLs antiguas redirigen con 301 y quedan fuera del sitemap.
-foreach(['tableros-electricos-buceo','cargador-vehiculo-electrico-san-jacinto','electricista-comercios-pocitos','electricista-malvin','electricista-la-floresta','electricista-solymar','mantenimiento-electrico-la-floresta'] as $path) fetch_page($path,301);
-verify(count($urls)<=40,'Sitemap acotado (fase 1): '.count($urls).' URLs');
+// Si el barrio ya tiene página propia, el 301 va a esa página (zona_redireccion en src/datos/barrios.php).
+foreach(['tableros-electricos-buceo','cargador-vehiculo-electrico-san-jacinto','electricista-comercios-pocitos','electricista-malvin','electricista-la-floresta','electricista-solymar','mantenimiento-electrico-la-floresta','electricista-prado','reparaciones-electricas-cerro'] as $path) fetch_page($path,301);
+foreach(['zonas/no-existe','tableros-electricos/no-existe','iluminacion/pocitos','zonas/region-falsa'] as $path) fetch_page($path,404);
 echo "OK: $checks comprobaciones HTTP, identidad, enlaces y SEO\n";

@@ -1,7 +1,7 @@
 <?php
 $isList = $route === 'articulos';
-$page_title = $a ? $a['title'] : ($isList ? 'Guías de electricidad para hogares y comercios | Electricistas Montevideo' : 'Artículo no encontrado | Electricistas Montevideo');
-$page_description = $a ? $a['description'] : 'Consultas y guías sobre instalaciones, reparaciones e iluminación en Montevideo. Información para entender tu instalación y conversar sobre tu próximo trabajo.';
+$page_title = $a ? $a['title'] : ($isList ? 'Guías de electricidad para casas y comercios – Artículos' : 'Artículo no encontrado | Electricistas Montevideo');
+$page_description = $a ? $a['description'] : 'Guías para entender tu instalación eléctrica en Uruguay: disyuntor, tablero, tierra y carga de autos eléctricos, con fuentes de UTE y URSEA.';
 $canonical_url = ar_url($a ? 'articulos/' . $a['slug'] : 'articulos');
 $page_image = ar_url($a && !empty($a['imagen']) ? og_image_path($a['imagen']) : 'public/images/social.png');
 $page_og_type = $a ? 'article' : 'website';
@@ -26,7 +26,7 @@ require APP_ROOT . '/src/vista/partials/header.php';
 ?>
 <main class="ar-page" id="main-content">
 <?php if ($isList): ?>
-    <header class="ar-intro"><span class="ar-tag">Guías para decidir</span><h1>Artículos de electricidad</h1><p>Guías para entender tu instalación y preparar tu consulta.</p><a href="<?= ar_e(app_url('articulos/feed')) ?>">Suscribite al RSS</a></header>
+    <header class="ar-intro"><span class="ar-tag">Guías para decidir</span><h1>Artículos de electricidad</h1><p>Guías para entender tu instalación y preparar tu consulta.</p><p>Cada guía responde una pregunta concreta de quienes nos escriben, con el dato principal al principio, la normativa de UTE y URSEA citada y la fecha de actualización. No reemplazan la visita de un electricista: sirven para saber qué preguntar y qué no tocar.</p><p>Los temas salen de las consultas más frecuentes en Montevideo y Canelones: por qué salta el disyuntor diferencial, cuánto cuesta cargar un auto eléctrico con las tarifas de UTE, cómo saber si una casa tiene puesta a tierra y cuándo conviene cambiar un tablero con fusibles. Si tu duda es sobre un trabajo concreto, las páginas de <a href="<?= ar_e(app_url('servicios')) ?>">servicios</a> y de <a href="<?= ar_e(app_url('zonas')) ?>">zonas</a> explican cómo lo resolvemos en tu barrio.</p><a href="<?= ar_e(app_url('articulos/feed')) ?>">Suscribite al RSS</a></header>
     <nav class="ar-chips" aria-label="Filtrar por categoría"><a href="<?= ar_e(app_url('articulos')) ?>" aria-current="<?= empty($_GET['categoria']) ? 'page' : 'false' ?>">Todos</a>
     <?php foreach (array_unique(array_column($articles, 'categoria')) as $cat): ?><a href="<?= ar_e(app_url('articulos') . '?categoria=' . rawurlencode($cat)) ?>" aria-current="<?= ($_GET['categoria'] ?? '') === $cat ? 'page' : 'false' ?>"><?= ar_e($cat) ?></a><?php endforeach; ?></nav>
     <div class="ar-cards"><?php $shown=0; foreach ($articles as $item) { if (!empty($_GET['categoria']) && $_GET['categoria'] !== $item['categoria']) continue; ar_card($item); $shown++; } if (!$shown) echo '<p>Todavía no hay artículos en esta categoría.</p>'; ?></div>

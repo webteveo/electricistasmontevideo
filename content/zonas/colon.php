@@ -18,7 +18,7 @@ return [
     ],
     'faq' => [
         ['q' => '¿Trabajan en casas quinta con parque?', 'a' => 'Sí: tablero, circuitos de la casa y del parque.'],
-        ['q' => 'Una raíz rompió un cable enterrado, ¿qué hago?', 'a' => 'Cortá ese circuito y consultanos. Se reemplaza el tramo en caño.'],
+        ['q' => 'Una raíz rompió un cable enterrado, ¿qué hago?', 'a' => 'No uses ese sector y consultanos. Se reemplaza el tramo en caño.'],
         ['q' => '¿Atienden comercios sobre Garzón?', 'a' => 'Sí, en horarios que no corten la atención.'],
         ['q' => '¿Van a Lezica, Abayubá y Peñarol?', 'a' => 'Sí, y también a La Paz y Conciliación.'],
     ],
@@ -32,7 +32,7 @@ return [
                     'Por caída de tensión en recorridos largos con cables de poca sección, o por un empalme flojo en el camino. En casas quinta, el ambiente más lejano puede estar a treinta metros del tablero. Se mide la tensión con carga y se decide si alcanza con rehacer un empalme o si hay que cambiar el tramo.',
                 ]],
                 ['h2' => '¿Qué hacer cuando una rama golpea un tramo aéreo?', 'p' => [
-                    'No acercarse. Si el tramo es de la red de UTE, reclamar al 0800 1930. Si es el que va de la casa a un galpón o a una luz del parque, cortar su protección y consultarnos. Se reemplaza el tramo y, si se puede, se pasa a enterrado en caño.',
+                    'No acercarse. Si el tramo es de la red de UTE, reclamar al 0800 1930. Si es el que va de la casa a un galpón o a una luz del parque, no tocarlo y consultarnos. Se reemplaza el tramo y, si se puede, se pasa a enterrado en caño.',
                 ]],
                 ['h2' => '¿Qué falla en los comercios?', 'p' => [
                     'Térmicas que saltan por equipos nuevos en circuitos viejos y tomacorrientes gastados. Se separan los circuitos y se cambian los puntos dañados. Si hace falta un tablero nuevo, mirá [tableros en Colón](tableros-electricos/colon).',

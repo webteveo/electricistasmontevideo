@@ -35,7 +35,7 @@ return [
                     'Con un cable de sección calculada para la distancia y la carga. Cuanto más lejos, más grueso tiene que ser para que la caída de tensión quede dentro de lo razonable. A veces conviene llevar la energía en una sola línea gruesa hasta un tablero en el galpón y repartir desde ahí.',
                 ]],
                 ['h2' => '¿Qué hacer si se cortó un tramo enterrado?', 'p' => [
-                    'Cortar la protección de ese circuito, no tocar el cable y consultarnos. Se ubica el punto con detector y se repara con un empalme adecuado para enterrar, o se reemplaza el tramo en caño. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
+                    'No tocar el cable ni acercarse al lugar del corte, y consultarnos. Se ubica el punto con detector y se repara con un empalme adecuado para enterrar, o se reemplaza el tramo en caño. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
                 ]],
             ],
             'faq' => [

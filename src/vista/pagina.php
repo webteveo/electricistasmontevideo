@@ -3,6 +3,9 @@ $page_schemas = [];
 $landing = null; $tpl = 'home';
 $faq_schema = static fn(array $items)=>['@context'=>'https://schema.org','@type'=>'FAQPage','mainEntity'=>array_map(static fn($f)=>['@type'=>'Question','name'=>$f['q'],'acceptedAnswer'=>['@type'=>'Answer','text'=>preg_replace('/\[([^\]]+)\]\([^)]+\)/', '$1', $f['a'])]],$items)];
 $page_mod = $page['mod'] ?? null;
+// Texto propio de páginas generales: content/paginas/{ruta}.php (la home es 'inicio'). Solo rutas simples.
+$hub_archivo = preg_match('/^[a-z0-9-]*$/', $route) ? APP_ROOT . '/content/paginas/' . ($route === '' ? 'inicio' : $route) . '.php' : '';
+$hub = $hub_archivo !== '' && is_file($hub_archivo) ? (array)require $hub_archivo : [];
 if ($route === '') {
     $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'WebSite','@id'=>absolute_url('#website'),'url'=>absolute_url(),'name'=>'Electricistas Montevideo','inLanguage'=>'es-UY','publisher'=>['@id'=>absolute_url('#organization')]];
     $page_schemas[] = $faq_schema($faq);
@@ -42,7 +45,7 @@ if ($route === '') {
         $page_schemas[] = $faq_schema($faq_items);
     } elseif (!empty($page['region'])) {
         $tpl = 'region'; $rk = $page['region']; $region = $regiones[$rk]; $rc = region_contenido($rk);
-        $hero_h1 = 'Electricista en<br>' . e($region['nombre']) . '.';
+        $hero_h1 = 'Electricista en<br>' . e($region['en']) . '.';
         $hero_text = $page['description'];
         $hero_wsp = whatsapp_url('Hola, necesito un electricista. Estoy en el barrio: ');
         $faq_items = $rc['faq'];
@@ -52,11 +55,12 @@ if ($route === '') {
         $page_schemas[] = $faq_schema($faq_items);
     } elseif (!empty($page['zonas'])) {
         $tpl = 'zonas';
-        $zonas_hub = is_file(APP_ROOT . '/content/paginas/zonas.php') ? require APP_ROOT . '/content/paginas/zonas.php' : [];
+        $zonas_hub = $hub;
         $hero_h1 = 'Electricista en Montevideo<br>y Canelones.';
         $hero_text = 'Electricista a domicilio en Montevideo, Ciudad de la Costa, la Costa de Oro y el área metropolitana de Canelones. Presupuesto sin costo.';
-        $hero_wsp = whatsapp_url('Hola, necesito un electricista. Estoy en el barrio: '); $faq_items = $faq;
-    } else { $tpl = 'interna'; }
+        $hero_wsp = whatsapp_url('Hola, necesito un electricista. Estoy en el barrio: '); $faq_items = $hub['faq'] ?? $faq;
+        $page_schemas[] = $faq_schema($faq_items);
+    } else { $tpl = 'interna'; if (!empty($hub['faq'])) $page_schemas[] = $faq_schema($hub['faq']); }
     if ($page_mod) $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'WebPage','@id'=>absolute_url($route),'url'=>absolute_url($route),'name'=>$page['title'],'inLanguage'=>'es-UY','isPartOf'=>['@id'=>absolute_url('#website')],'dateModified'=>$page_mod];
 } else { $tpl = 'interna'; }
 require APP_ROOT . '/src/vista/partials/header.php';
@@ -106,6 +110,7 @@ if (in_array($tpl, ['servicio', 'zona', 'sz'], true)) {
 <p>Nos contás qué pasa por WhatsApp o por teléfono y, si podés, nos mandás una foto del tablero sin abrirlo. Con eso te orientamos y coordinamos la visita. En la visita revisamos con instrumentos, te explicamos la causa y te pasamos el presupuesto. Recién cuando lo aprobás hacemos el trabajo y al final dejamos cada circuito identificado en el tablero.</p>
 </div>
 </section>
+<?php require APP_ROOT . '/src/vista/partials/hub.php'; ?>
 <?php endif; ?>
 <?php if ($tpl === 'servicio') require APP_ROOT . '/src/vista/servicio.php'; elseif ($tpl === 'zonas') require APP_ROOT . '/src/vista/zonas.php'; elseif ($tpl === 'zona' || $tpl === 'sz') require APP_ROOT . '/src/vista/local.php'; elseif ($tpl === 'region') require APP_ROOT . '/src/vista/region.php'; ?>
 <?php // Fuera de la home, los bloques de plantilla usan textos cortos: el diseño es el mismo y el contenido propio de cada página pesa más. ?>
@@ -160,7 +165,8 @@ if ($tpl === 'servicio') {
 <?php else: ?>
 <section class="page-intro"><div class="wrap"><nav class="breadcrumb" aria-label="Miga de pan"><a href="<?= app_url() ?>">Inicio</a><span>/</span><span><?= e($page['crumb'] ?? $nav[$route] ?? 'Página no encontrada') ?></span></nav><p class="eyebrow">ELECTRICISTAS MONTEVIDEO</p><h1><?= e($page['heading']) ?></h1></div></section>
 <?php if ($route === 'servicios'): ?>
-<section class="section wrap services-section"><div class="services-heading"><span class="pill">Hogares y comercios</span><h2>¿Qué trabajo tenés en mente?</h2></div><?php require APP_ROOT . '/src/vista/partials/servicios.php'; ?></section>
+<section class="section wrap services-section"><div class="services-heading"><span class="pill">Hogares y comercios</span><h2>¿Qué trabajo tenés en mente?</h2></div><?php $corto = true; require APP_ROOT . '/src/vista/partials/servicios.php'; ?></section>
+<?php require APP_ROOT . '/src/vista/partials/hub.php'; ?>
 <section class="process section"><div class="wrap narrow"><h2>Antes de pedir un presupuesto</h2><p>Indicá tu barrio, el tipo de inmueble y qué querés reparar, instalar o modificar. Cuanto más clara sea tu consulta, más fácil será conversar sobre el próximo paso.</p><p>Consultá si hace falta una visita, cuál es su costo y qué incluye la cotización. Los materiales y tiempos se definen para cada trabajo.</p><a class="text-link dark-link" href="<?= app_url('contacto') ?>">Prepará tu consulta <?= icon('arrow') ?></a></div></section>
 <section class="section wrap landing-section"><div class="landing-cols">
 <div class="landing-text"><h3>Cómo elegir el servicio</h3><p>Si algo dejó de funcionar, saltó la llave o hay olor a quemado, lo tuyo es una <a href="<?= e(app_url('reparaciones-electricas-montevideo')) ?>">reparación eléctrica</a>. Si estás reformando, construyendo o querés sumar puntos, es una <a href="<?= e(app_url('instalaciones-electricas-montevideo')) ?>">instalación</a>. Si el tablero tiene fusibles, no tiene disyuntor o salta seguido, empezá por <a href="<?= e(app_url('tableros-electricos-montevideo')) ?>">tableros y protecciones</a>.</p><p>Para luminarias, spots, tiras LED y luz exterior, mirá <a href="<?= e(app_url('iluminacion-montevideo')) ?>">iluminación</a>. Si no sabés en qué estado está tu instalación, o vas a comprar o alquilar, conviene una <a href="<?= e(app_url('mantenimiento-electrico-montevideo')) ?>">revisión</a>. Los locales, oficinas y consultorios tienen su propia página de <a href="<?= e(app_url('electricista-comercios-montevideo')) ?>">electricidad para comercios</a>, y si tenés un auto eléctrico o híbrido enchufable, la de <a href="<?= e(app_url('cargador-vehiculo-electrico-montevideo')) ?>">cargadores para vehículos eléctricos</a>.</p></div>
@@ -187,9 +193,12 @@ if ($tpl === 'servicio') {
 <div class="landing-text"><h3>Cómo seguimos</h3><p>Te respondemos por el mismo medio, te orientamos y, si hace falta ver la instalación, coordinamos una visita. Con eso te pasamos el presupuesto sin costo. Atendemos <a href="<?= e(app_url('zonas')) ?>">Montevideo y Canelones</a> con todos nuestros <a href="<?= e(app_url('servicios')) ?>">servicios</a>.</p></div>
 </div></section>
 <section class="section wrap landing-section"><div class="landing-cols">
-<div class="landing-text"><h3>Urgencias</h3><p>Si hay olor a quemado, chispas o un tomacorriente caliente, bajá la llave general y llamanos. Si saltó la llave y no vuelve a subir, no la fuerces: desconectá los equipos del circuito afectado y consultanos. En los dos casos, cuanto antes lo veamos, menor suele ser la reparación.</p><h3>Horario de respuesta</h3><p>Respondemos por WhatsApp y teléfono durante el día. Fuera de ese horario podés dejarnos el mensaje igual: lo vemos apenas volvemos y te contestamos para coordinar.</p></div>
+<div class="landing-text"><h3>Urgencias</h3><p>Si hay olor a quemado, chispas o un tomacorriente caliente, no uses ese punto y llamanos; si hay humo o fuego, salí y llamá al 911. Si saltó la llave y no vuelve a subir, no la fuerces y consultanos. En los dos casos, cuanto antes lo veamos, menor suele ser la reparación.</p><h3>Horario de respuesta</h3><p>Respondemos por WhatsApp y teléfono durante el día. Fuera de ese horario podés dejarnos el mensaje igual: lo vemos apenas volvemos y te contestamos para coordinar.</p></div>
 <div class="landing-text"><h3>Para comercios y edificios</h3><p>Si la consulta es para un local, una oficina o los espacios comunes de un edificio, contanos el horario en que se puede trabajar y si hace falta coordinar con una administración. Planificamos los trabajos por etapas o fuera del horario de atención para que la actividad no se detenga.</p><h3>Qué no hacemos por WhatsApp</h3><p>No damos precios cerrados sin ver la instalación ni instrucciones para manipular cables o tableros. Lo que sí hacemos es orientarte con lo que nos contás y coordinar la visita para resolverlo bien.</p></div>
 </div></section>
+<?php require APP_ROOT . '/src/vista/partials/hub.php'; ?>
+<?php elseif ($route === 'como-funciona'): ?>
+<?php require APP_ROOT . '/src/vista/partials/hub.php'; ?>
 <?php else: ?>
 <section class="section wrap narrow"><p>Revisá la dirección o volvé a la página de inicio.</p><a class="button" href="<?= app_url() ?>">Volver al inicio <?= icon('arrow') ?></a></section>
 <?php endif; ?>

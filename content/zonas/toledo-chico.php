@@ -30,7 +30,7 @@ return [
             'intro' => 'Reparamos fallas eléctricas en casas rurales, quintas y galpones de Toledo Chico. Lo más frecuente es un tramo aéreo dañado por el viento o una rama, equipos que se quemaron después de una tormenta y motores que hacen saltar la protección. Revisamos la instalación completa, desde el pilar, y te pasamos el presupuesto antes de reparar.',
             'secciones' => [
                 ['h2' => '¿Qué revisar después de una tormenta?', 'p' => [
-                    'Los tramos aéreos, que pueden haber quedado dañados o bajos, el tablero, las protecciones y la puesta a tierra. Los equipos que dejaron de andar se miden antes de volver a conectarlos. Si un cable quedó caído, no hay que acercarse: si es de la red, se reclama a UTE al 0800 1930; si es de la instalación propia, se corta la protección y se nos consulta.',
+                    'Los tramos aéreos, que pueden haber quedado dañados o bajos, el tablero, las protecciones y la puesta a tierra. Los equipos que dejaron de andar se miden antes de volver a conectarlos. Si un cable quedó caído, no hay que acercarse: si es de la red, se reclama a UTE al 0800 1930; si es de la instalación propia, no se toca y se nos consulta.',
                 ]],
                 ['h2' => '¿Por qué un motor corta la protección?', 'p' => [
                     'Por sobrecarga, desgaste, un capacitor en mal estado o tensión baja por un tramo largo. En zonas rurales, la tensión baja es una causa frecuente: el motor pide más corriente para compensar y la protección corta. Se mide la tensión en el motor al arrancar y la corriente que consume.',

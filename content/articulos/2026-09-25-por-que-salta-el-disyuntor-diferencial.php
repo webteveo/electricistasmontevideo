@@ -4,7 +4,7 @@ return [
     'slug'=>'por-que-salta-el-disyuntor-diferencial',
     'titulo'=>'¿Por qué salta el disyuntor diferencial? Causas y qué hacer',
     'title'=>'Por qué salta el disyuntor diferencial: causas y qué hacer',
-    'description'=>'Por qué salta el disyuntor diferencial en tu casa: humedad, termotanque, lavarropas o cables viejos. Cómo encontrar la causa sin riesgos y cuándo llamar.',
+    'description'=>'Por qué salta el disyuntor diferencial en tu casa: humedad, termotanque, lavarropas o cables viejos. Cómo saber la causa sin riesgos y cuándo llamar.',
     'keywords'=>['salta el disyuntor','disyuntor diferencial','salta la llave de luz'],
     'categoria'=>'Reparaciones eléctricas',
     'tema'=>'Interruptor diferencial',

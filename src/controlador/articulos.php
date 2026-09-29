@@ -7,6 +7,7 @@ if ($route === 'llms.txt') {
     echo "Idioma: español (Uruguay). El sitio no publica precios, tiempos de llegada ni horarios: se confirman en cada consulta. Actualizado: " . date('d/m/Y', max(array_map('strtotime', array_filter(array_column(local_urls(), 'mod'))) ?: [time()])) . ".\n\n";
     echo "Contacto: " . $empresa_whatsapp_visible . ". WhatsApp: " . $social_whatsapp . "\n\n## Páginas principales\n";
     foreach ($nav as $path=>$label) if (empty($pages[$path]['noindex'])) echo '- ['.$label.']('.ar_url($path).")\n";
+    echo '- [Cómo funciona]('.ar_url('como-funciona').")\n- [Zonas de atención](".ar_url('zonas').")\n";
     echo "\n## Servicios\n";
     foreach ($servicios_landing as $l) echo '- ['.$l['h1'].']('.ar_url($l['slug']).'): '.$l['description']."\n";
     echo "\n## Zonas\n\nCada barrio tiene su página de electricista y, donde hay texto propio, páginas de servicio con la forma " . ar_url('{servicio}/{barrio}') . " (por ejemplo " . ar_url('tableros-electricos/prado') . ").\n- [Todas las zonas de atención](" . ar_url('zonas') . ")\n";

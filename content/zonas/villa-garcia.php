@@ -10,14 +10,14 @@ return [
             'Un pilar con el medidor sobre el camino, un tramo largo hasta la casa y otros hasta los galpones, a veces aéreos y a veces enterrados. En los galpones, máquinas, bombas de riego o cámaras de frío. Con esas distancias y cargas, la sección de los cables y las protecciones tienen que estar bien calculadas, y muchas veces no lo están.',
         ]],
         ['h2' => '¿Qué pasa con los tramos aéreos y los árboles?', 'p' => [
-            'Los tramos aéreos que pasan cerca de árboles se rozan con las ramas y se dañan con el viento. Conviene que tengan la altura y los soportes adecuados y que el recorrido esté despejado. Si un árbol cayó sobre el tramo, no hay que tocarlo: se corta la protección en el tablero y se consulta. Si el cable es de la red de UTE, el reclamo es al 0800 1930.',
+            'Los tramos aéreos que pasan cerca de árboles se rozan con las ramas y se dañan con el viento. Conviene que tengan la altura y los soportes adecuados y que el recorrido esté despejado. Si un árbol cayó sobre el tramo, no hay que tocarlo y conviene consultar a un electricista. Si el cable es de la red de UTE, el reclamo es al 0800 1930.',
         ]],
         ['h2' => '¿Qué conviene si hay riego o bombas grandes?', 'p' => [
             'Bombas de riego y equipos que trabajan muchas horas necesitan protecciones pensadas para motores y, a veces, suministro trifásico. Si la potencia contratada no alcanza para la casa y el trabajo de la quinta, se evalúa el trámite ante UTE. Mirá [aumento de potencia](aumento-de-potencia-ute-montevideo).',
         ]],
     ],
     'faq' => [
-        ['q' => 'Una rama rozó el cable aéreo y ahora no tengo luz, ¿qué hago?', 'a' => 'No lo toques. Si es de UTE, reclamá al 0800 1930; si es tuyo, cortá la protección y consultanos.'],
+        ['q' => 'Una rama rozó el cable aéreo y ahora no tengo luz, ¿qué hago?', 'a' => 'No lo toques. Si es de UTE, reclamá al 0800 1930; si es tuyo, no lo toques y consultanos.'],
         ['q' => '¿Trabajan en quintas con riego?', 'a' => 'Sí: bombas, tableros de galpón y tramos largos.'],
         ['q' => '¿Instalan trifásica?', 'a' => 'Preparamos la instalación; el cambio de suministro es un trámite con UTE.'],
         ['q' => '¿Van a Punta de Rieles, Manga y Barros Blancos?', 'a' => 'Sí. Escribinos con la ubicación.'],

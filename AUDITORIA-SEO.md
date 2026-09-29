@@ -112,3 +112,26 @@ Sin estos datos, esos bloques no se publican (no se inventan):
 | Bing Places y Apple Business Connect | TRÁMITE | Mapas de Bing y de Apple |
 | Citaciones con el mismo nombre y teléfono: Páginas Amarillas UY, Cylex, Infobel, Mercado Libre Servicios, Facebook, Instagram, arreglatodo.uy | RANKING | Consistencia de NAP y menciones de marca |
 | Revisar que Cloudflare (si está delante del dominio) no bloquee a los bots de IA | GEO | Desde el 15/09/2026 los bloquea por defecto |
+
+---
+
+## 7. Estado al cierre (29/09/2026)
+
+| Tipo de página | Antes | Ahora | Qué cambió |
+|---|---|---|---|
+| Generales (home, servicios, nosotros, contacto, cómo funciona) | 4 | 5 | Texto propio con H2 en pregunta, fecha visible, FAQ propia; `/como-funciona` nueva; H1 de `/servicios` con keyword; title de `/nosotros` corregido |
+| Servicios pilar | 7 | 12 | + urgencias, puesta a tierra, recableado, tomacorrientes, aumento de potencia UTE (a confirmar) |
+| Zonas (`/zonas`, regiones y barrios) | 6 | 79 | 67 barrios/localidades nuevos con texto propio, 6 páginas de región, `/zonas` reescrita; las 5 históricas sin cambio de URL |
+| Servicio × barrio | 0 | 175 | 72 reparaciones + 72 tableros + 24 recableado + 7 cargadores |
+| Artículos | 3 | 3 | Title/description del índice y de los 2 artículos dentro de rango |
+| **Total sitemap** | **20** | **274** | |
+
+QA (`scripts/qa-seo.py`): 274 URLs, 0 errores, 0 titles o descriptions repetidos, 0 alertas; similitud máxima 18 %, mediana 6 %. `scripts/verificar_sitio.php`: 1123 comprobaciones OK. `scripts/verificar_articulos.php`: 91 OK. `php -l` sin errores.
+
+### Datos faltantes (no están en el texto visible)
+Operador (nombre, foto, categoría de técnico instalador o firma instaladora UTE) · base de salida y tiempos de llegada · horario real y si atiende urgencias de noche o fines de semana · costo de la visita y precios "desde" con fecha · garantía y medios de pago · trabajos reales por barrio con fotos · reseñas reales · enlaces de GBP, Instagram y Facebook (`sameAs`) · correo para el formulario · cobertura en Maldonado · confirmación de los 5 servicios nuevos.
+
+### Vigilancia de indexación
+- A los 7 días de subir cada región: GSC → Páginas, filtrar por el sitemap `sitemap-zonas.xml` y `sitemap-servicios-barrio.xml`.
+- A los 30 días: ≥ 50 % de las páginas de la región indexadas. Si no, no subir la siguiente región y reforzar enlaces desde la home y las madres.
+- A los 60 días: si más del 30 % sigue en "Descubierta/Rastreada: actualmente sin indexar", despublicar primero los servicio × barrio de esa región (sacar el bloque `servicios` o poner la región en `false`) y dejar solo las zonas.

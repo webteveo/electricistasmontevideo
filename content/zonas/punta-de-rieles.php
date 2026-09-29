@@ -29,7 +29,7 @@ return [
             'intro' => 'Reparamos fallas eléctricas en casas, chacras y cooperativas de Punta de Rieles y Bella Italia. Las consultas típicas son un tramo aéreo que se cortó con el viento, una bomba de pozo que no arranca y un emprendimiento que hace saltar la llave de la casa. Revisamos toda la instalación, encontramos la causa y te pasamos el presupuesto.',
             'secciones' => [
                 ['h2' => '¿Qué hacer si se cortó un cable aéreo?', 'p' => [
-                    'No acercarse ni tocarlo, aunque parezca sin energía. Si el cable es de la red de UTE, se reclama al 0800 1930. Si es del tramo del cliente (del medidor a la casa o de la casa al galpón), se corta la protección en el tablero y se nos consulta. Se reemplaza por un conductor adecuado para tendido aéreo, con sus soportes y la altura correcta.',
+                    'No acercarse ni tocarlo, aunque parezca sin energía. Si el cable es de la red de UTE, se reclama al 0800 1930. Si es del tramo del cliente (del medidor a la casa o de la casa al galpón), no se toca y se nos consulta. Se reemplaza por un conductor adecuado para tendido aéreo, con sus soportes y la altura correcta.',
                 ]],
                 ['h2' => '¿Por qué no arranca la bomba de pozo?', 'p' => [
                     'Puede ser la protección, el automático de presión, el capacitor de arranque o la bomba misma. Se prueba cada componente. Como la bomba suele ser la única fuente de agua de la casa, tratamos de dejarla funcionando en la misma visita cuando se puede. Si no tiene protección propia, mirá [tableros en Punta de Rieles](tableros-electricos/punta-de-rieles).',

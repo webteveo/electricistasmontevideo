@@ -10,12 +10,12 @@
 // vivienda y epoca (texto corto para la ficha), costera (salinidad), vecinos (3-5 linderos reales), refs y areas (schema).
 
 $regiones = [
-    'centro'    => ['slug'=>'centro-y-ciudad-vieja', 'nombre'=>'Centro, Ciudad Vieja y alrededores', 'depto'=>'Montevideo'],
-    'costa'     => ['slug'=>'costa-este', 'nombre'=>'Costa este, de Punta Carretas a Carrasco', 'depto'=>'Montevideo'],
-    'este'      => ['slug'=>'este-y-noreste', 'nombre'=>'Este y noreste de Montevideo', 'depto'=>'Montevideo'],
-    'norte'     => ['slug'=>'norte-de-montevideo', 'nombre'=>'Norte de Montevideo', 'depto'=>'Montevideo'],
-    'oeste'     => ['slug'=>'oeste-y-cerro', 'nombre'=>'Oeste de Montevideo y el Cerro', 'depto'=>'Montevideo'],
-    'canelones' => ['slug'=>'canelones', 'nombre'=>'Canelones: área metropolitana y costa', 'depto'=>'Canelones'],
+    'centro'    => ['en'=>'el Centro, la Ciudad Vieja y alrededores', 'slug'=>'centro-y-ciudad-vieja', 'nombre'=>'Centro, Ciudad Vieja y alrededores', 'depto'=>'Montevideo'],
+    'costa'     => ['en'=>'la costa este de Montevideo', 'slug'=>'costa-este', 'nombre'=>'Costa este, de Punta Carretas a Carrasco', 'depto'=>'Montevideo'],
+    'este'      => ['en'=>'el este y noreste de Montevideo', 'slug'=>'este-y-noreste', 'nombre'=>'Este y noreste de Montevideo', 'depto'=>'Montevideo'],
+    'norte'     => ['en'=>'el norte de Montevideo', 'slug'=>'norte-de-montevideo', 'nombre'=>'Norte de Montevideo', 'depto'=>'Montevideo'],
+    'oeste'     => ['en'=>'el oeste de Montevideo y el Cerro', 'slug'=>'oeste-y-cerro', 'nombre'=>'Oeste de Montevideo y el Cerro', 'depto'=>'Montevideo'],
+    'canelones' => ['en'=>'Canelones', 'slug'=>'canelones', 'nombre'=>'Canelones: área metropolitana y costa', 'depto'=>'Canelones'],
 ];
 
 // Interruptor por tanda de publicación. false = las páginas nuevas de esa región no se sirven ni van al sitemap.
@@ -163,7 +163,7 @@ if (!function_exists('zona_en')) {
                 if ($reg['slug'] !== $b) continue;
                 $c = region_contenido($r);
                 if (empty($publicar_regiones[$r]) || empty($c['intro']) || !zonas_de_region($r)) return null;
-                return ['title'=>$c['title'], 'description'=>$c['description'], 'heading'=>'Electricista en ' . $reg['nombre'], 'crumb'=>$reg['nombre'], 'region'=>$r, 'mod'=>$c['mod']];
+                return ['title'=>$c['title'], 'description'=>$c['description'], 'heading'=>'Electricista en ' . $reg['en'], 'crumb'=>$reg['nombre'], 'region'=>$r, 'mod'=>$c['mod']];
             }
             if (!isset($zonas[$b]) || !empty($zonas[$b]['legacy']) || !zona_publicada($b)) return null;
             $c = zona_contenido($b);

@@ -40,7 +40,7 @@ return [
             ],
             'faq' => [
                 ['q' => '¿Reparan instalaciones de parrilleros y galpones?', 'a' => 'Sí, con su circuito y protección.'],
-                ['q' => 'Corté un cable al cavar, ¿qué hago?', 'a' => 'No lo toques, dejá cortado ese circuito en el tablero y consultanos.'],
+                ['q' => 'Corté un cable al cavar, ¿qué hago?', 'a' => 'No lo toques, alejate del lugar y consultanos.'],
             ],
         ],
         'tableros' => [

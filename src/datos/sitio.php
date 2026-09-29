@@ -1,11 +1,12 @@
 <?php
 // Páginas generales. Servicios en servicios.php; zonas activas en barrios.php.
 $pages = [
-    ''=>['title'=>'Electricista en Montevideo – Reparaciones, tableros y más', 'description'=>'Electricista a domicilio en Montevideo y Canelones: llaves que saltan, tableros, instalaciones y cargadores. Pedí presupuesto por WhatsApp.', 'mod'=>'2026-09-25', 'heading'=>'Electricistas en Montevideo'],
-    'servicios'=>['title'=>'Servicios de electricista en Montevideo y Canelones', 'description'=>'Reparaciones, instalaciones, tableros, iluminación, revisión, comercios y cargadores para autos eléctricos. Elegí el servicio y pedí presupuesto.', 'heading'=>'Servicios eléctricos para tu día a día.'],
-    'nosotros'=>['title'=>'Quiénes somos – Electricistas Montevideo', 'description'=>'Conocé Electricistas Montevideo y cómo consultar por un trabajo eléctrico. Contacto directo para conversar sobre tu necesidad y coordinar la atención.', 'heading'=>'Hablemos de lo que necesitás resolver.'],
+    ''=>['title'=>'Electricista en Montevideo – Reparaciones, tableros y más', 'description'=>'Electricista a domicilio en Montevideo y Canelones: llaves que saltan, tableros, instalaciones y cargadores. Pedí presupuesto por WhatsApp.', 'mod'=>'2026-09-29', 'heading'=>'Electricistas en Montevideo'],
+    'servicios'=>['title'=>'Servicios de electricista en Montevideo y Canelones', 'description'=>'Reparaciones, tableros, puesta a tierra, recableado, instalaciones, iluminación y cargadores. Elegí según lo que pasa y pedí presupuesto.', 'heading'=>'Servicios de electricista en Montevideo.', 'mod'=>'2026-09-29'],
+    'nosotros'=>['title'=>'Quiénes somos – Electricistas Montevideo a domicilio', 'description'=>'Conocé Electricistas Montevideo y cómo consultar por un trabajo eléctrico. Contacto directo para conversar sobre tu necesidad y coordinar la atención.', 'heading'=>'Hablemos de lo que necesitás resolver.'],
     'trabajos'=>['title'=>'Trabajos eléctricos | Electricistas Montevideo', 'description'=>'Espacio de trabajos de Electricistas Montevideo. Consultá por tu instalación o reparación eléctrica en Montevideo al 097 406 456.', 'heading'=>'Cada trabajo empieza con una consulta.', 'noindex'=>true],
-    'contacto'=>['title'=>'Contacto – Electricista en Montevideo por WhatsApp', 'description'=>'Escribinos por WhatsApp o llamanos. Contanos qué trabajo eléctrico necesitás y en qué zona estás, y te pasamos el presupuesto sin costo.', 'heading'=>'Contanos qué necesitás.'],
+    'contacto'=>['title'=>'Contacto – Electricista en Montevideo por WhatsApp', 'description'=>'Escribinos por WhatsApp o llamanos. Contanos qué trabajo eléctrico necesitás y en qué zona estás, y te pasamos el presupuesto sin costo.', 'heading'=>'Contanos qué necesitás.', 'mod'=>'2026-09-29'],
+    'como-funciona'=>['title'=>'Cómo funciona – Electricista a domicilio en Montevideo', 'description'=>'Cómo trabaja Electricistas Montevideo: qué mandar por WhatsApp, cómo es la visita, el presupuesto sin costo y qué no hacemos. Paso a paso.', 'heading'=>'Cómo trabajamos, paso a paso.', 'crumb'=>'Cómo funciona', 'mod'=>'2026-09-29'],
 ];
 $nav = [''=>'Inicio', 'servicios'=>'Servicios', 'nosotros'=>'Nosotros', 'trabajos'=>'Trabajos', 'contacto'=>'Contacto'];
 require_once __DIR__ . '/servicios.php';

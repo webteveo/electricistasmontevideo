@@ -32,7 +32,7 @@ return [
                     'Midiendo la aislación por tramos y siguiendo el circuito con un buscador de cables. Cuando se ubica la zona, se abre donde hay una caja o, si el empalme está dentro de la pared sin caja, se abre lo mínimo y se deja una caja accesible.',
                 ]],
                 ['h2' => '¿Qué hacer si se dañó el tramo del pilar?', 'p' => [
-                    'Si la casa se quedó sin luz y el medidor tiene energía, cortar la protección del pilar y consultarnos. Se reemplaza el tramo por uno en caño, con la sección adecuada.',
+                    'Si la casa se quedó sin luz y el medidor tiene energía, no tocar el pilar ni el cable y consultarnos. Se reemplaza el tramo por uno en caño, con la sección adecuada.',
                 ]],
                 ['h2' => '¿Por qué corta el parrillero cuando llueve?', 'p' => [
                     'Porque el cable llega sin caño o la caja no es estanca. Se rehace con caño y cajas para exterior, con su protección. Mirá [reparaciones eléctricas](reparaciones-electricas-montevideo).',
