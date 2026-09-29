@@ -1,26 +1,31 @@
 <?php
-// Índice de cobertura: enlaza solo zonas con página propia; el resto son anclas (#slug) de destino para las URLs antiguas redirigidas.
+// Índice de zonas por región. Enlaza solo zonas con página propia; el resto son anclas (#slug) de destino para las URLs
+// antiguas redirigidas, agrupadas al final.
+$con_pagina = [];
+foreach ($zonas as $k => $z) if (zona_publicada($k)) $con_pagina[$k] = true;
 $agrupados = [];
 foreach ($zonas_activas as $ak => $z) foreach ($z['cubre'] ?? [] as $ck) $agrupados[$ck] = $ak;
-$por_depto = ['Montevideo'=>[], 'Canelones'=>[]];
-foreach ($barrios_perfil as $k => $b) if (!isset($agrupados[$k]) && !isset($zonas_activas[$k])) $por_depto[$b['depto']][$k] = $b;
+$alias_zona = ['figurita'=>'la-figurita', 'bella-vista'=>'capurro', 'villa-dolores'=>'parque-batlle', 'bolivar'=>'mercado-modelo', 'parque-guarani'=>'maronas', 'bella-italia'=>'punta-de-rieles', 'lavalleja'=>'penarol', 'goes'=>'villa-munoz', 'pajas-blancas'=>'casabo', 'melilla'=>'lezica', 'santiago-vazquez'=>'paso-de-la-arena'];
+$otras = ['Montevideo'=>[], 'Canelones'=>[]];
+foreach ($barrios_perfil as $k => $b) if (!isset($agrupados[$k]) && !isset($con_pagina[$alias_zona[$k] ?? $k])) $otras[$b['depto']][$k] = $b;
+$zc_hub = $zonas_hub ?? [];
 ?>
-<section class="section wrap landing-section" id="zonas-destacadas">
-<div class="services-heading"><span class="pill">Páginas por zona</span><h2>Zonas con información propia</h2></div>
-<p class="landing-lead">Estas zonas tienen su página con los trabajos más habituales del lugar y cómo coordinar la visita.</p>
-<ul class="zonas-list zonas-list--wide"><?php foreach ($zonas_activas as $k => $z): ?><li><?= icon('pin') ?><span><a href="<?= e(app_url('electricista-' . $k)) ?>">Electricista en <?= e($z['en'] ?? $z['nombre']) ?></a><?php if (!empty($z['cubre'])): ?> <small>(<?= e(implode(', ', array_map(static fn($c)=>$barrios_perfil[$c]['nombre'] ?? $c, array_slice($z['cubre'], 0, 4)))) ?> y más)</small><?php endif; ?></span></li><?php endforeach; ?></ul>
+<section class="section wrap landing-section" id="zonas-intro">
+<div class="services-heading"><span class="pill">Zonas de atención</span><h2>Electricista en tu barrio</h2></div>
+<div class="landing-lead landing-lead--zone"><?php foreach ($zc_hub['intro'] ?? [] as $p): ?><p><?= texto_enlaces($p) ?></p><?php endforeach; ?><?php if (!empty($page['mod'])): ?><p class="landing-updated">Actualizado: <time datetime="<?= e($page['mod']) ?>"><?= e(date('d/m/Y', strtotime($page['mod']))) ?></time></p><?php endif; ?></div>
+<div class="landing-prose"><?php foreach ($zc_hub['secciones'] ?? [] as $sec): ?><h2><?= e($sec['h2']) ?></h2><?php foreach ($sec['p'] as $p): ?><p><?= texto_enlaces($p) ?></p><?php endforeach; ?><?php endforeach; ?></div>
 </section>
-<section class="section wrap landing-section" id="zonas-montevideo">
-<div class="services-heading"><span class="pill">Montevideo</span><h2>Otros barrios de Montevideo</h2></div>
-<p class="landing-lead">También atendemos el resto de Montevideo. Escribinos por WhatsApp con tu barrio y el tipo de trabajo, y te confirmamos la disponibilidad.</p>
-<ul class="zonas-list zonas-list--wide"><?php foreach ($por_depto['Montevideo'] as $k => $b): ?><li id="<?= e($k) ?>"><?= icon('pin') ?><span><?= e($b['nombre']) ?></span></li><?php endforeach; ?></ul>
+<?php foreach ($regiones as $rk => $rg): $lista = zonas_de_region($rk); if (!$lista) continue; $r_url = local_pagina(region_url($rk)) ? region_url($rk) : null; ?>
+<section class="section wrap landing-section" id="region-<?= e($rk) ?>">
+<div class="services-heading"><span class="pill"><?= e($rg['depto']) ?></span><h2><?= e($rg['nombre']) ?></h2><?php if ($r_url): ?><a class="text-link dark-link" href="<?= e(app_url($r_url)) ?>">Ver la zona <?= icon('arrow') ?></a><?php endif; ?></div>
+<?php if (!empty($zc_hub['regiones'][$rk])): ?><p class="landing-lead"><?= texto_enlaces($zc_hub['regiones'][$rk]) ?></p><?php endif; ?>
+<ul class="zonas-list zonas-list--wide"><?php foreach ($lista as $k => $z): ?><li id="<?= e($k) ?>"><?= icon('pin') ?><span><a href="<?= e(app_url(zona_url($k))) ?>"><?= e($z['nombre']) ?></a></span></li><?php endforeach; ?></ul>
 </section>
-<section class="section wrap landing-section" id="zonas-canelones">
-<div class="services-heading"><span class="pill">Canelones</span><h2>Otras localidades de Canelones</h2></div>
-<p class="landing-lead">Además de <a href="<?= e(app_url('electricista-ciudad-de-la-costa')) ?>">Ciudad de la Costa</a> y la <a href="<?= e(app_url('electricista-costa-de-oro')) ?>">Costa de Oro</a>, consultanos por estas localidades. La disponibilidad se confirma según la distancia y el tipo de trabajo.</p>
-<ul class="zonas-list zonas-list--wide"><?php foreach ($por_depto['Canelones'] as $k => $b): ?><li id="<?= e($k) ?>"><?= icon('pin') ?><span><?= e($b['nombre']) ?></span></li><?php endforeach; ?></ul>
-<div class="landing-cols landing-cols--after">
-<div class="landing-text"><h3>Qué trabajos hacemos en tu zona</h3><p>Los mismos servicios en Montevideo y Canelones: <a href="<?= e(app_url('reparaciones-electricas-montevideo')) ?>">reparaciones eléctricas</a> cuando salta la llave o un punto deja de funcionar, <a href="<?= e(app_url('instalaciones-electricas-montevideo')) ?>">instalaciones eléctricas</a> para reformas y obra nueva, <a href="<?= e(app_url('tableros-electricos-montevideo')) ?>">tableros y protecciones</a>, <a href="<?= e(app_url('iluminacion-montevideo')) ?>">iluminación</a>, <a href="<?= e(app_url('mantenimiento-electrico-montevideo')) ?>">revisión y mantenimiento</a>, <a href="<?= e(app_url('electricista-comercios-montevideo')) ?>">electricidad para comercios</a> y <a href="<?= e(app_url('cargador-vehiculo-electrico-montevideo')) ?>">cargadores para autos eléctricos</a>.</p></div>
-<div class="landing-text"><h3>Cómo coordinar la visita</h3><p>Escribinos por WhatsApp con tu barrio o localidad, el tipo de inmueble y lo que necesitás resolver. Te orientamos, confirmamos la disponibilidad para tu zona y coordinamos día y hora. El presupuesto es sin costo.</p></div>
-</div>
+<?php endforeach; ?>
+<?php if ($otras['Montevideo'] || $otras['Canelones']): ?>
+<section class="section wrap landing-section" id="otras-zonas">
+<div class="services-heading"><span class="pill">Más zonas</span><h2>Otras localidades</h2></div>
+<p class="landing-lead">Consultanos por WhatsApp: la visita depende de la distancia.</p>
+<ul class="zonas-list zonas-list--wide"><?php foreach (array_merge($otras['Montevideo'], $otras['Canelones']) as $k => $b): ?><li id="<?= e($k) ?>"><?= icon('pin') ?><span><?= e($b['nombre']) ?></span></li><?php endforeach; ?></ul>
 </section>
+<?php endif; ?>

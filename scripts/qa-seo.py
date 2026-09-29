@@ -21,7 +21,7 @@ DOMINIO = 'https://electricistasmontevideo.com'
 # Páginas con límite de 30 %: zonas y servicio × barrio. El resto, 20 %.
 LOCAL = re.compile(r'^/(zonas/[^/]+|electricista-(?![a-z-]*-montevideo$)[a-z0-9-]+|[a-z-]+/[a-z0-9-]+)$')
 NO_LOCAL = re.compile(r'^/(articulos|zonas/region)')
-RELLENO = re.compile(r'DATO FALTANTE|\b[Cc]ompletar\b|[Ll]orem ipsum|\bTODO\b|\bXXX\b|\[[A-ZÁÉÍÓÚ ]{6,}\]')
+RELLENO = re.compile(r'DATO FALTANTE|\bCOMPLETAR\b|Completar (?:con|meta|una|el|la)\b|[Ll]orem ipsum|\bTODO\b|\{[a-z_]+\}|\[[A-ZÁÉÍÓÚ ]{6,}\]')
 
 
 def get(path):

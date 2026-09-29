@@ -233,15 +233,23 @@ foreach ($zonas_activas as $zk => $z) {
 }
 
 // URL antigua de zona (hub o servicio × zona) → destino 301. Devuelve null si la ruta no es de zona.
+// Si la zona ya tiene página propia (/zonas/{slug} o /{servicio}/{slug}), el 301 va ahí; si no, a la madre o al ancla de /zonas.
+// Alias: claves antiguas de $barrios_perfil que hoy forman parte de un barrio oficial con otro slug.
 if (!function_exists("zona_redireccion")) { function zona_redireccion(string $route, array $barrios_perfil, array $zonas_activas, array $servicio_base_slug, array $servicios_landing): ?string {
+    $alias = ['figurita'=>'la-figurita', 'bella-vista'=>'capurro', 'villa-dolores'=>'parque-batlle', 'bolivar'=>'mercado-modelo', 'parque-guarani'=>'maronas', 'bella-italia'=>'punta-de-rieles', 'lavalleja'=>'penarol', 'goes'=>'villa-munoz', 'pajas-blancas'=>'casabo', 'melilla'=>'lezica', 'santiago-vazquez'=>'paso-de-la-arena'];
     foreach ($servicio_base_slug as $id => $base) {
         if (!str_starts_with($route, $base . '-')) continue;
         $zk = substr($route, strlen($base) + 1);
-        if (isset($barrios_perfil[$zk]) || isset($zonas_activas[$zk])) return $servicios_landing[$id]['slug'];
+        if (!isset($barrios_perfil[$zk]) && !isset($zonas_activas[$zk])) continue;
+        $zn = $alias[$zk] ?? $zk;
+        if (function_exists('sz_publicada') && sz_publicada($id, $zn)) return sz_url($id, $zn);
+        return $servicios_landing[$id]['slug'];
     }
     if (str_starts_with($route, 'electricista-')) {
         $zk = substr($route, 13);
         foreach ($zonas_activas as $ak => $z) if (in_array($zk, $z['cubre'] ?? [], true)) return 'electricista-' . $ak;
+        $zn = $alias[$zk] ?? $zk;
+        if (function_exists('zona_publicada') && zona_publicada($zn)) return zona_url($zn);
         if (isset($barrios_perfil[$zk])) return 'zonas#' . $zk;
     }
     return null;

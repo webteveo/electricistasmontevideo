@@ -12,7 +12,9 @@ class App {
             require APP_ROOT . '/src/controlador/articulos.php'; return;
         }
         $page = $pages[$route] ?? null;
-        if (!$page && ($destino = zona_redireccion($route, $barrios_perfil, $zonas_activas, $servicio_base_slug, $servicios_landing)) !== null) { header('Location: ' . app_url($destino), true, 301); return; }
+        // Zonas (/zonas/{barrio}), regiones (/zonas/{region}) y servicio × barrio (/{servicio}/{barrio}): src/datos/zonas.php.
+        if (!$page && ($page = local_pagina($route))) $pages[$route] = $page;
+        if (!$page &&($destino = zona_redireccion($route, $barrios_perfil, $zonas_activas, $servicio_base_slug, $servicios_landing)) !== null) { header('Location: ' . app_url($destino), true, 301); return; }
         if (!$page) { http_response_code(404); $page = ['title'=>'Página no encontrada | Electricistas Montevideo', 'description'=>'La página que buscás no está disponible. Volvé al inicio o contactá a Electricistas Montevideo.', 'heading'=>'Esta página no está disponible.', 'noindex'=>true]; }
         $page_title = $page['title']; $page_description = $page['description'];
         $page_noindex = $page['noindex'] ?? false;

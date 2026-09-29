@@ -3,14 +3,24 @@ require_once APP_ROOT . '/src/datos/articulos.php';
 $articles = ar_all();
 if ($route === 'llms.txt') {
     header('Content-Type: text/plain; charset=utf-8');
-    echo '# ' . $empresa_nombre . "\n\n> Consultas sobre trabajos eléctricos para hogares y comercios en Montevideo, Uruguay.\n\n";
+    echo '# ' . $empresa_nombre . "\n\n> Electricista a domicilio para casas, apartamentos y comercios de Montevideo y Canelones (Uruguay): reparaciones, tableros, puesta a tierra, recableado, instalaciones, iluminación y cargadores para autos eléctricos. Consultas y presupuesto sin costo por WhatsApp.\n\n";
+    echo "Idioma: español (Uruguay). El sitio no publica precios, tiempos de llegada ni horarios: se confirman en cada consulta. Actualizado: " . date('d/m/Y', max(array_map('strtotime', array_filter(array_column(local_urls(), 'mod'))) ?: [time()])) . ".\n\n";
     echo "Contacto: " . $empresa_whatsapp_visible . ". WhatsApp: " . $social_whatsapp . "\n\n## Páginas principales\n";
     foreach ($nav as $path=>$label) if (empty($pages[$path]['noindex'])) echo '- ['.$label.']('.ar_url($path).")\n";
     echo "\n## Servicios\n";
     foreach ($servicios_landing as $l) echo '- ['.$l['h1'].']('.ar_url($l['slug']).'): '.$l['description']."\n";
-    echo "\n## Zonas con página propia\n";
-    foreach ($zonas_activas as $zk=>$z) echo '- ['.$z['title'].']('.ar_url('electricista-'.$zk).")\n";
-    echo '- [Todas las zonas de atención]('.ar_url('zonas').")\n";
+    echo "\n## Zonas\n\nCada barrio tiene su página de electricista y, donde hay texto propio, páginas de servicio con la forma " . ar_url('{servicio}/{barrio}') . " (por ejemplo " . ar_url('tableros-electricos/prado') . ").\n- [Todas las zonas de atención](" . ar_url('zonas') . ")\n";
+    foreach ($regiones as $rk => $rg) {
+        $lista = zonas_de_region($rk);
+        if (!$lista) continue;
+        echo "\n### " . $rg['nombre'] . (local_pagina(region_url($rk)) ? ' — ' . ar_url(region_url($rk)) : '') . "\n";
+        foreach ($lista as $zk => $z) {
+            $c = !empty($z['legacy']) ? $zonas_activas[$zk] : zona_contenido($zk);
+            $extra = [];
+            foreach ($servicios_zona as $s => $sd) if (sz_publicada($s, $zk)) $extra[] = '[' . $sd['h1'] . '](' . ar_url(sz_url($s, $zk)) . ')';
+            echo '- [Electricista en ' . zona_en($z) . '](' . ar_url(zona_url($zk)) . '): ' . $c['description'] . ($extra ? ' ' . implode(' · ', $extra) : '') . "\n";
+        }
+    }
     if ($articles) {
         echo "\n## Artículos\n";
         foreach ($articles as $a) echo '- ['.$a['titulo'].']('.ar_url('articulos/'.$a['slug']).'): '.$a['description']."\n";

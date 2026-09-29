@@ -224,8 +224,10 @@ $servicios_landing = [
 ];
 
 require __DIR__ . '/servicios_preguntas.php';
+require __DIR__ . '/servicios_nuevos.php';
 foreach ($servicios_landing as $id => $l) {
     $pages[$l['slug']] = ['title' => $l['title'], 'description' => $l['description'], 'heading' => $l['h1'], 'crumb' => $l['crumb'], 'servicio' => $id, 'mod' => $l['mod'] ?? null];
 }
 require_once __DIR__ . '/barrios.php';
-$pages['zonas'] = ['title' => 'Zonas de atención – Electricista en Montevideo y Canelones', 'description' => 'Electricista a domicilio en Montevideo, Ciudad de la Costa, la Costa de Oro y el resto de Canelones. Mirá si llegamos a tu barrio y pedí presupuesto.', 'mod' => '2026-09-25', 'heading' => 'Electricista en Montevideo y Canelones', 'crumb' => 'Zonas de atención', 'zonas' => true];
+require_once __DIR__ . '/zonas.php';
+$pages['zonas'] =['title' => 'Zonas de atención – Electricista en Montevideo y Canelones', 'description' => 'Electricista a domicilio en Montevideo, Ciudad de la Costa, la Costa de Oro y el resto de Canelones. Mirá si llegamos a tu barrio y pedí presupuesto.', 'mod' => '2026-09-25', 'heading' => 'Electricista en Montevideo y Canelones', 'crumb' => 'Zonas de atención', 'zonas' => true];

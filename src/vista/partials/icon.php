@@ -14,6 +14,11 @@ function icon(string $name): string {
         'close'=>'<path d="M18 6 6 18M6 6l12 12"/>',
         'ev'=>'<path d="M5 17h-1a1 1 0 0 1-1-1v-4l2-5h9l2 5h1a2 2 0 0 1 2 2v3h-2"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="14.5" cy="17" r="1.5"/><path d="M19 3v3m2-3v3M18 6h4v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V6Z"/>',
         'check'=>'<path d="m5 12 5 5L20 7"/>',
+        'alert'=>'<path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4m0 3v.01"/>',
+        'ground'=>'<path d="M12 3v9M5 12h14M8 16h8M10.5 20h3"/>',
+        'cable'=>'<path d="M4 20c4 0 4-6 8-6s4-6 8-6"/><circle cx="4" cy="20" r="1.5"/><circle cx="20" cy="8" r="1.5"/><path d="M18 4v3m4-3v3"/>',
+        'socket'=>'<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9.5 10v2m5-2v2M12 15v1.5"/>',
+        'gauge'=>'<path d="M4 16a8 8 0 1 1 16 0"/><path d="m12 16 4-5"/><path d="M4 20h16"/>',
         'pin'=>'<path d="M19 9c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 14 0Z"/><circle cx="12" cy="9" r="2"/>',
     ];
     if ($name === 'whatsapp') {

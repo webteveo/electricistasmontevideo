@@ -302,3 +302,16 @@ h3{font-size:24px}
 .landing-updated{margin-top:16px;font-size:14px;color:var(--muted)}
 .zonas-list small{color:var(--muted);font-size:14px}
 @media(max-width:760px){.landing-prose h2{font-size:26px}.landing-prose p{font-size:17px}.table-wrap table{font-size:14px;min-width:520px}}
+/* Zonas y servicio × barrio: ficha del barrio, listas apiladas y tarjetas de región (mismos componentes del sitio) */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.table-wrap--ficha{max-width:760px}
+.table-wrap--ficha th{width:34%;background:var(--celeste-soft)}
+.zones-list--stack{grid-template-columns:1fr;gap:4px}
+.region-zonas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 48px;margin-top:28px}
+.region-zona h3{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.1;margin:0 0 6px}
+.region-zona h3 a{color:inherit;text-decoration:none}
+.region-zona h3 a:hover{color:var(--celeste)}
+.region-zona p{font-size:16px;line-height:1.65;margin:0 0 6px;color:var(--muted)}
+.region-zona small{font-size:14px;color:var(--muted)}
+.region-zona small a{color:inherit}
+@media(max-width:760px){.table-wrap--ficha table{min-width:0}.region-zonas{grid-template-columns:1fr}}

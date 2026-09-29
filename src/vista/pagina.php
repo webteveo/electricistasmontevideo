@@ -17,17 +17,42 @@ if ($route === '') {
         $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'Service','@id'=>absolute_url($route.'#service'),'name'=>$landing['h1'],'serviceType'=>$landing['crumb'],'description'=>$landing['description'],'url'=>absolute_url($route),'provider'=>['@id'=>absolute_url('#organization')],'areaServed'=>[['@type'=>'City','name'=>'Montevideo'],['@type'=>'AdministrativeArea','name'=>'Canelones']]];
         $page_schemas[] = $faq_schema($landing['faq']);
         $hero_h1 = e($landing['h1']); $hero_text = $landing['hero']; $hero_wsp = whatsapp_url($landing['wsp']); $faq_items = $landing['faq'];
-    } elseif (!empty($page['barrio_hub'])) {
-        $tpl = 'barrio'; $bk = $page['barrio_hub']; $bp = $zonas_activas[$bk]; $bn = $bp['en'] ?? $bp['nombre'];
-        $hero_h1 = 'Electricista<br>en ' . e($bn) . '.';
-        $hero_text = 'Electricista a domicilio en ' . $bn . ': reparaciones, tableros, instalaciones e iluminación. Presupuesto sin costo por WhatsApp.';
-        $hero_wsp = whatsapp_url('Hola, necesito un electricista en ' . $bn . '.');
-        $faq_items = $bp['faq'];
-        $page_schemas[0]['itemListElement'] = [['@type'=>'ListItem','position'=>1,'name'=>'Inicio','item'=>absolute_url()],['@type'=>'ListItem','position'=>2,'name'=>'Zonas de atención','item'=>absolute_url('zonas')],['@type'=>'ListItem','position'=>3,'name'=>$page['crumb'],'item'=>absolute_url($route)]];
-        $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'Service','@id'=>absolute_url($route.'#service'),'name'=>'Electricista en ' . $bp['nombre'],'serviceType'=>'Electricista a domicilio','description'=>$page['description'],'url'=>absolute_url($route),'provider'=>['@id'=>absolute_url('#organization')],'areaServed'=>['@type'=>'Place','name'=>$bp['nombre'],'containedInPlace'=>['@type'=>'AdministrativeArea','name'=>$bp['depto']]]];
+    } elseif (!empty($page['barrio_hub']) || !empty($page['zona']) || !empty($page['sz'])) {
+        // Zona (/electricista-{zona} o /zonas/{zona}) y servicio × barrio (/{servicio}/{zona}): vista local.php.
+        if (!empty($page['sz'])) { [$sz_serv, $bk] = $page['sz']; $tpl = 'sz'; } else { $bk = $page['barrio_hub'] ?? $page['zona']; $tpl = 'zona'; $sz_serv = null; }
+        $bp = $zonas[$bk]; $bn = zona_en($bp);
+        $zc = $sz_serv ? zona_contenido($bk)['servicios'][$sz_serv] : (!empty($bp['legacy']) ? $zonas_activas[$bk] : zona_contenido($bk));
+        $region = $regiones[$bp['region']];
+        $area = ['@type'=>'Place','name'=>$bp['nombre'],'containedInPlace'=>$bp['depto'] === 'Montevideo' ? ['@type'=>'City','name'=>'Montevideo'] : ['@type'=>'AdministrativeArea','name'=>$bp['depto']]];
+        if ($sz_serv) {
+            $landing = $servicios_landing[$sz_serv]; $sz_h1 = $servicios_zona[$sz_serv]['h1'];
+            $hero_h1 = e($sz_h1) . '<br>en ' . e($bn) . '.';
+            $hero_wsp = whatsapp_url('Hola, necesito ' . mb_strtolower($landing['crumb']) . ' en ' . $bn . '.');
+            $migas = [['Inicio', ''], [$landing['crumb'], $landing['slug']], ['En ' . $bn, $route]];
+            $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'Service','@id'=>absolute_url($route.'#service'),'name'=>$sz_h1 . ' en ' . $bp['nombre'],'serviceType'=>$landing['crumb'],'description'=>$page['description'],'url'=>absolute_url($route),'provider'=>['@id'=>absolute_url('#organization')],'areaServed'=>$area,'isRelatedTo'=>['@id'=>absolute_url($landing['slug'].'#service')]];
+        } else {
+            $hero_h1 = 'Electricista<br>en ' . e($bn) . '.';
+            $hero_wsp = whatsapp_url('Hola, necesito un electricista en ' . $bn . '.');
+            $migas = [['Inicio', ''], ['Zonas', 'zonas'], [$region['nombre'], region_url($bp['region'])], [$page['crumb'], $route]];
+            $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'Service','@id'=>absolute_url($route.'#service'),'name'=>'Electricista en ' . $bp['nombre'],'serviceType'=>'Electricista a domicilio','description'=>$page['description'],'url'=>absolute_url($route),'provider'=>['@id'=>absolute_url('#organization')],'areaServed'=>$area];
+        }
+        $hero_text = $page['description'];
+        $faq_items = $zc['faq'];
+        $page_schemas[0]['itemListElement'] = array_map(static fn($m, $i)=>['@type'=>'ListItem','position'=>$i+1,'name'=>$m[0],'item'=>absolute_url($m[1])], $migas, array_keys($migas));
+        $page_schemas[] = $faq_schema($faq_items);
+    } elseif (!empty($page['region'])) {
+        $tpl = 'region'; $rk = $page['region']; $region = $regiones[$rk]; $rc = region_contenido($rk);
+        $hero_h1 = 'Electricista en<br>' . e($region['nombre']) . '.';
+        $hero_text = $page['description'];
+        $hero_wsp = whatsapp_url('Hola, necesito un electricista. Estoy en el barrio: ');
+        $faq_items = $rc['faq'];
+        $migas = [['Inicio', ''], ['Zonas', 'zonas'], [$region['nombre'], $route]];
+        $page_schemas[0]['itemListElement'] = array_map(static fn($m, $i)=>['@type'=>'ListItem','position'=>$i+1,'name'=>$m[0],'item'=>absolute_url($m[1])], $migas, array_keys($migas));
+        $page_schemas[] = ['@context'=>'https://schema.org','@type'=>'CollectionPage','@id'=>absolute_url($route.'#coleccion'),'name'=>$page['title'],'url'=>absolute_url($route),'about'=>['@id'=>absolute_url('#organization')],'mainEntity'=>['@type'=>'ItemList','itemListElement'=>array_values(array_map(static fn($k, $i)=>['@type'=>'ListItem','position'=>$i+1,'url'=>absolute_url(zona_url($k)),'name'=>'Electricista en ' . zona_en($GLOBALS['zonas'][$k])], array_keys(zonas_de_region($rk)), array_keys(array_keys(zonas_de_region($rk)))))]];
         $page_schemas[] = $faq_schema($faq_items);
     } elseif (!empty($page['zonas'])) {
         $tpl = 'zonas';
+        $zonas_hub = is_file(APP_ROOT . '/content/paginas/zonas.php') ? require APP_ROOT . '/content/paginas/zonas.php' : [];
         $hero_h1 = 'Electricista en Montevideo<br>y Canelones.';
         $hero_text = 'Electricista a domicilio en Montevideo, Ciudad de la Costa, la Costa de Oro y el área metropolitana de Canelones. Presupuesto sin costo.';
         $hero_wsp = whatsapp_url('Hola, necesito un electricista. Estoy en el barrio: '); $faq_items = $faq;
@@ -44,11 +69,11 @@ require APP_ROOT . '/src/vista/partials/header.php';
 $hero_custom = $route !== '' && is_file(APP_ROOT . '/public/images/hero/' . $route . '.webp') ? 'images/hero/' . $route . '.webp' : null;
 $hero_custom_m = $hero_custom && is_file(APP_ROOT . '/public/images/hero/' . $route . '-celular.webp') ? 'images/hero/' . $route . '-celular.webp' : $hero_custom;
 $foto = null; $foto_alt = '';
-if ($tpl === 'servicio' || $tpl === 'barrio') {
-    $zk = $page['barrio_hub'] ?? null;
+if (in_array($tpl, ['servicio', 'zona', 'sz'], true)) {
+    $zk = $tpl === 'zona' ? $bk : null;
     // Foto de zona solo si es un trabajo real hecho ahí (images/zonas/{zona}.webp); el alt describe lo que se ve.
-    if ($zk && is_file(APP_ROOT . '/public/images/zonas/' . $zk . '.webp')) { $foto = 'images/zonas/' . $zk . '.webp'; $foto_alt = $zonas_activas[$zk]['foto_alt'] ?? ('Trabajo eléctrico en ' . $zonas_activas[$zk]['nombre']); }
-    elseif (!empty($page['servicio']) && is_file(APP_ROOT . '/public/images/servicios/' . $page['servicio'] . '.webp')) { $foto = 'images/servicios/' . $page['servicio'] . '.webp'; $foto_alt = $landing['h1']; }
+    if ($zk && is_file(APP_ROOT . '/public/images/zonas/' . $zk . '.webp')) { $foto = 'images/zonas/' . $zk . '.webp'; $foto_alt = $zc['foto_alt'] ?? ('Trabajo eléctrico en ' . $bp['nombre']); }
+    elseif ($tpl === 'servicio' && is_file(APP_ROOT . '/public/images/servicios/' . $page['servicio'] . '.webp')) { $foto = 'images/servicios/' . $page['servicio'] . '.webp'; $foto_alt = $landing['h1']; }
 }
 ?>
 <picture class="hero-background">
@@ -57,7 +82,7 @@ if ($tpl === 'servicio' || $tpl === 'barrio') {
 </picture>
 <div class="wrap hero-grid">
 <div class="hero-copy">
-<?php if ($tpl !== 'home'): ?><nav class="breadcrumb" aria-label="Miga de pan"><a href="<?= app_url() ?>">Inicio</a><span>/</span><span><?= e($page['crumb']) ?></span></nav><?php endif; ?>
+<?php if ($tpl !== 'home'): ?><nav class="breadcrumb" aria-label="Miga de pan"><?php if (!empty($migas)): foreach ($migas as $i => $m): ?><?= $i ? '<span>/</span>' : '' ?><?php if ($i < count($migas) - 1): ?><a href="<?= e(app_url($m[1])) ?>"><?= e($m[0]) ?></a><?php else: ?><span aria-current="page"><?= e($m[0]) ?></span><?php endif; ?><?php endforeach; else: ?><a href="<?= app_url() ?>">Inicio</a><span>/</span><span aria-current="page"><?= e($page['crumb']) ?></span><?php endif; ?></nav><?php endif; ?>
 <h1><?= $hero_h1 ?></h1>
 <p class="hero-text"><?= e($hero_text) ?></p>
 <div class="actions"><a class="button button-wsp" href="<?= e($hero_wsp) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a><a class="text-link" href="tel:+<?= e($empresa_telefono) ?>"><?= icon('phone') ?> <?= e($empresa_telefono_sep) ?></a></div>
@@ -67,7 +92,7 @@ if ($tpl === 'servicio' || $tpl === 'barrio') {
 <section class="social-proof" aria-label="Clientes y experiencia">
 <img class="social-proof-bg" src="<?= e(asset_ver('images/index/hero/electricista-montevideo-tablero-electrico-desktop.webp')) ?>" alt="" width="1672" height="941" loading="lazy" aria-hidden="true">
 <div class="wrap social-proof-inner">
-<ul class="trust-bar"><li><?= icon('check') ?><span><strong>Presupuesto sin costo</strong><small>Antes de empezar el trabajo</small></span></li><li><?= icon('whatsapp') ?><span><strong>Consulta por WhatsApp</strong><small>Mandá una foto del problema</small></span></li><li><?= icon('pin') ?><span><strong>Montevideo y Canelones</strong><small>Casas, apartamentos y comercios</small></span></li></ul>
+<ul class="trust-bar"><li><?= icon('check') ?><span><strong>Presupuesto sin costo</strong><small>Antes de empezar</small></span></li><li><?= icon('whatsapp') ?><span><strong>Consulta por WhatsApp</strong><small>Mandá una foto del problema</small></span></li><li><?= icon('pin') ?><span><strong>Montevideo y Canelones</strong><small>Casas, apartamentos y comercios</small></span></li></ul>
 </div>
 </section>
 <?php if ($tpl === 'home'): ?>
@@ -82,19 +107,21 @@ if ($tpl === 'servicio' || $tpl === 'barrio') {
 </div>
 </section>
 <?php endif; ?>
-<?php if ($tpl === 'servicio') require APP_ROOT . '/src/vista/servicio.php'; elseif ($tpl === 'zonas') require APP_ROOT . '/src/vista/zonas.php'; elseif ($tpl === 'barrio') require APP_ROOT . '/src/vista/barrio.php'; ?>
+<?php if ($tpl === 'servicio') require APP_ROOT . '/src/vista/servicio.php'; elseif ($tpl === 'zonas') require APP_ROOT . '/src/vista/zonas.php'; elseif ($tpl === 'zona' || $tpl === 'sz') require APP_ROOT . '/src/vista/local.php'; elseif ($tpl === 'region') require APP_ROOT . '/src/vista/region.php'; ?>
+<?php // Fuera de la home, los bloques de plantilla usan textos cortos: el diseño es el mismo y el contenido propio de cada página pesa más. ?>
+<?php $corto = $tpl !== 'home'; ?>
 <section class="section wrap services-section" id="servicios"><div class="services-heading"><span class="pill"><?= $tpl === 'home' ? 'Nuestros servicios' : 'Más servicios' ?></span><h2><?= $tpl === 'home' ? 'Servicios eléctricos' : 'Todos nuestros servicios' ?></h2><a class="text-link dark-link" href="<?= app_url('servicios') ?>">Ver todos los servicios <?= icon('arrow') ?></a></div>
 <?php require APP_ROOT . '/src/vista/partials/servicios.php'; ?>
 </section>
 <section class="section steps-section" id="como-trabajamos"><div class="wrap">
-<div class="steps-heading"><span class="pill">Cómo trabajamos</span><h2>Tu instalación en 3 pasos</h2><p>Contanos qué pasa por WhatsApp o teléfono, te asesoramos y coordinamos la visita. Sin vueltas y con presupuesto sin costo.</p></div>
-<ol class="steps"><li class="step"><span class="step-icon"><?= icon('message') ?></span><div><span class="step-num">Paso 1</span><h3>Contanos qué pasa</h3><p>Describí la falla o la mejora que querés hacer. Indicanos si es una vivienda o un comercio y en qué barrio estás.</p></div></li><li class="step"><span class="step-icon"><?= icon('bolt') ?></span><div><span class="step-num">Paso 2</span><h3>Te pasamos el presupuesto</h3><p>Conversamos sobre la revisión, los materiales y el costo. Confirmás las condiciones antes de coordinar el trabajo.</p></div></li><li class="step"><span class="step-icon"><?= icon('pin') ?></span><div><span class="step-num">Paso 3</span><h3>Coordinamos la visita</h3><p>Acordamos el día y la hora según tu disponibilidad y resolvemos tu instalación.</p></div></li></ol><div class="steps-cta"><a class="button button-wsp" href="<?= e(whatsapp_url()) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div>
+<div class="steps-heading"><span class="pill">Cómo trabajamos</span><h2>Tu instalación en 3 pasos</h2><p><?= $corto ? 'Consulta, presupuesto y visita. Sin vueltas.' : 'Contanos qué pasa por WhatsApp o teléfono, te asesoramos y coordinamos la visita. Sin vueltas y con presupuesto sin costo.' ?></p></div>
+<ol class="steps"><li class="step"><span class="step-icon"><?= icon('message') ?></span><div><span class="step-num">Paso 1</span><h3>Contanos qué pasa</h3><p><?= $corto ? 'La falla, el inmueble y tu barrio.' : 'Describí la falla o la mejora que querés hacer. Indicanos si es una vivienda o un comercio y en qué barrio estás.' ?></p></div></li><li class="step"><span class="step-icon"><?= icon('bolt') ?></span><div><span class="step-num">Paso 2</span><h3>Te pasamos el presupuesto</h3><p><?= $corto ? 'Sin costo y antes de empezar.' : 'Conversamos sobre la revisión, los materiales y el costo. Confirmás las condiciones antes de coordinar el trabajo.' ?></p></div></li><li class="step"><span class="step-icon"><?= icon('pin') ?></span><div><span class="step-num">Paso 3</span><h3>Coordinamos la visita</h3><p><?= $corto ? 'Día y hora según tu disponibilidad.' : 'Acordamos el día y la hora según tu disponibilidad y resolvemos tu instalación.' ?></p></div></li></ol><div class="steps-cta"><a class="button button-wsp" href="<?= e(whatsapp_url()) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div>
 </div></section>
 <section class="section vs-section" id="por-que-nosotros"><div class="wrap">
 <div class="vs-heading"><span class="pill">Por qué elegirnos</span><h2>No todos los electricistas son iguales</h2></div>
 <div class="vs-grid">
 <div class="vs-col vs-col--us"><div class="vs-brand"><picture class="brand-pic"><source srcset="<?= e(asset_ver('images/logo/logo-120.webp')) ?>" type="image/webp"><img src="<?= e(asset_ver('images/logo/logo-120.png')) ?>" alt="" width="83" height="120"></picture><span>ELECTRICISTAS<strong>MONTEVIDEO</strong></span></div><ul><li><span class="vs-badge"><?= icon('check') ?></span>Presupuesto sin costo antes de empezar</li><li><span class="vs-badge"><?= icon('check') ?></span>Te explicamos la causa de la falla</li><li><span class="vs-badge"><?= icon('check') ?></span>Coordinamos día y hora por WhatsApp</li><li><span class="vs-badge"><?= icon('check') ?></span>Circuitos identificados en el tablero al terminar</li></ul></div>
-<div class="vs-col vs-col--them"><h3>Lo que conviene evitar</h3><ul><li><span class="vs-badge"><?= icon('close') ?></span>Arreglos provisorios que después se olvidan</li><li><span class="vs-badge"><?= icon('close') ?></span>Subir la llave una y otra vez sin buscar la causa</li><li><span class="vs-badge"><?= icon('close') ?></span>Precios que aparecen recién al final</li><li><span class="vs-badge"><?= icon('close') ?></span>Tableros sin disyuntor ni puesta a tierra</li></ul></div>
+<div class="vs-col vs-col--them"><h3>Lo que conviene evitar</h3><ul><li><span class="vs-badge"><?= icon('close') ?></span>Arreglos provisorios que después se olvidan</li><li><span class="vs-badge"><?= icon('close') ?></span>Subir la llave sin buscar la causa</li><li><span class="vs-badge"><?= icon('close') ?></span>Precios que aparecen recién al final</li><li><span class="vs-badge"><?= icon('close') ?></span>Tableros sin disyuntor ni puesta a tierra</li></ul></div>
 </div>
 </div></section>
 <?php // Ilustración de stock con licencia Pexels (foto 257736), no es un trabajo propio: reemplazar por una foto real del técnico cuando esté disponible.
@@ -105,25 +132,28 @@ $about_img = 'images/nosotros/tablero-electrico-termicas.webp'; $about_has = is_
 $about_h2 = 'Electricistas de Montevideo, para Montevideo';
 $about_p1 = 'Electricistas Montevideo atiende reparaciones, instalaciones, tableros e iluminación en casas, apartamentos y comercios de Montevideo y Canelones. La idea es siempre la misma: entender el problema, explicarte qué hay que hacer y cumplir lo que se presupuestó.';
 $about_p2 = 'Revisamos con instrumentos de medición, dejamos la instalación prolija y te contamos qué hicimos y por qué. El presupuesto es sin costo y se aprueba antes de empezar.';
-$about_servicio = ['reparaciones'=>'reparaciones eléctricas', 'instalaciones'=>'instalaciones eléctricas', 'tableros'=>'tableros y protecciones', 'iluminacion'=>'iluminación', 'mantenimiento'=>'revisión y mantenimiento', 'comercios'=>'electricidad para comercios', 'cargadores'=>'instalación de cargadores para vehículos eléctricos'];
+$about_servicio = ['reparaciones'=>'reparaciones eléctricas', 'instalaciones'=>'instalaciones eléctricas', 'tableros'=>'tableros y protecciones', 'iluminacion'=>'iluminación', 'mantenimiento'=>'revisión y mantenimiento', 'comercios'=>'electricidad para comercios', 'cargadores'=>'instalación de cargadores para vehículos eléctricos', 'puesta-tierra'=>'puesta a tierra', 'recableado'=>'recableado', 'tomacorrientes'=>'tomacorrientes', 'potencia'=>'aumento de potencia', 'urgencias'=>'urgencias eléctricas'];
+if ($corto) {
+    // Versión corta en páginas internas: mismo bloque visual, sin repetir los párrafos de la home.
+    $about_p1 = 'Entendemos el problema y te lo explicamos.';
+    $about_p2 = 'Cumplimos lo que se presupuestó.';
+}
 if ($tpl === 'servicio') {
-    $sv = $about_servicio[$page['servicio']];
-    $about_h2 = 'Quiénes hacen tu trabajo de ' . $sv;
-    $about_p1 = 'Electricistas Montevideo trabaja en casas, apartamentos y comercios de Montevideo y Canelones. En ' . $sv . ' aplicamos la misma idea que en todo: entender qué necesitás, explicarte qué hay que hacer y cumplir lo que se presupuestó.';
-} elseif ($tpl === 'barrio') {
+    $about_h2 = 'Quiénes hacen tu trabajo de ' . $about_servicio[$page['servicio']];
+} elseif ($tpl === 'sz') {
+    $about_h2 = mb_strtoupper(mb_substr($landing['crumb'], 0, 1)) . mb_substr(mb_strtolower($landing['crumb']), 1) . ' en ' . $bn;
+} elseif ($tpl === 'zona') {
     $about_h2 = 'Electricistas de ' . $bp['depto'] . ', en ' . $bn;
-    $about_p1 = 'Electricistas Montevideo atiende ' . $bn . ' y sus alrededores con la misma idea que en el resto de ' . $bp['depto'] . ': entender el problema, explicarte qué hay que hacer y cumplir lo que se presupuestó.';
-} elseif ($tpl === 'zonas') {
+} elseif ($tpl === 'zonas' || $tpl === 'region') {
     $about_h2 = 'Electricistas de Montevideo y Canelones';
-    $about_p1 = 'Electricistas Montevideo trabaja en casas, apartamentos y comercios de Montevideo y Canelones. Estés donde estés dentro de la zona de atención, la idea es la misma: entender el problema, explicarte qué hay que hacer y cumplir lo que se presupuestó.';
 }
 ?>
 <div class="about-copy"><span class="pill">Quiénes somos</span><h2><?= e($about_h2) ?></h2><p><?= e($about_p1) ?></p><p><?= e($about_p2) ?></p><div class="about-actions"><a class="button button-wsp" href="<?= e(whatsapp_url()) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a><a class="text-link dark-link" href="<?= app_url('nosotros') ?>">Conocé más sobre nosotros <?= icon('arrow') ?></a></div></div>
 </div></section>
-<?php if ($tpl === 'home' || $tpl === 'servicio'): $zonas_por_depto = ['Montevideo'=>[], 'Canelones'=>[]]; foreach ($zonas_activas as $k => $z) $zonas_por_depto[$z['depto']][$k] = $z; ?>
-<section class="section wrap zones-section" id="zonas"><div class="services-heading"><span class="pill">Dónde trabajamos</span><h2>Montevideo y Canelones</h2><a class="text-link dark-link" href="<?= app_url('zonas') ?>">Ver todas las zonas <?= icon('arrow') ?></a></div>
-<p class="landing-lead">Atendemos a domicilio en Montevideo y en Canelones, con foco en Ciudad de la Costa, la Costa de Oro y el área metropolitana. Si tu barrio no aparece acá, está en la página de <a href="<?= e(app_url('zonas')) ?>">zonas de atención</a>.</p>
-<div class="zones-cols"><?php foreach ($zonas_por_depto as $depto => $lista): ?><div><h3><?= e($depto) ?></h3><ul class="zones-list"><?php foreach ($lista as $k => $z): ?><li><a href="<?= e(app_url('electricista-' . $k)) ?>">Electricista en <?= e($z['en'] ?? $z['nombre']) ?></a></li><?php endforeach; ?></ul></div><?php endforeach; ?></div>
+<?php if ($tpl === 'home' || $tpl === 'servicio'): $zs_serv = $tpl === 'servicio' && isset($servicios_zona[$page['servicio']]) ? $page['servicio'] : null; ?>
+<section class="section wrap zones-section" id="zonas"><div class="services-heading"><span class="pill">Dónde trabajamos</span><h2><?= $zs_serv ? e($landing['crumb']) . ' por barrio' : 'Montevideo y Canelones' ?></h2><a class="text-link dark-link" href="<?= app_url('zonas') ?>">Ver todas las zonas <?= icon('arrow') ?></a></div>
+<p class="landing-lead"><?= $tpl === 'home' ? 'Atendemos a domicilio en Montevideo y en Canelones. Elegí tu barrio para ver cómo son las instalaciones de la zona y qué trabajos se piden más.' : 'Elegí tu barrio o tu localidad.' ?></p>
+<div class="zones-cols"><?php foreach ($regiones as $rk => $rg): $lista = zonas_de_region($rk); if (!$lista) continue; ?><div><h3><?php if (local_pagina(region_url($rk))): ?><a href="<?= e(app_url(region_url($rk))) ?>"><?= e($rg['nombre']) ?></a><?php else: ?><?= e($rg['nombre']) ?><?php endif; ?></h3><ul class="zones-list"><?php foreach ($lista as $k => $z): $zu = $zs_serv && sz_publicada($zs_serv, $k) ? sz_url($zs_serv, $k) : zona_url($k); ?><li><a href="<?= e(app_url($zu)) ?>"><?= e($z['nombre']) ?></a></li><?php endforeach; ?></ul></div><?php endforeach; ?></div>
 </section>
 <?php endif; ?>
 <section class="section wrap faq-section"><div><p class="eyebrow">ANTES DE COORDINAR</p><h2>Preguntas<br>frecuentes.</h2><p>Información para dar<br>el próximo paso.</p></div><div class="faq-list"><?php foreach ($faq_items as $f): ?><details><summary><?= e($f['q']) ?><span aria-hidden="true">+</span></summary><p><?= e($f['a']) ?></p></details><?php endforeach; ?></div></section>
@@ -174,10 +204,16 @@ $cta_por_servicio = [
     'mantenimiento' => ['¿Querés saber cómo está tu instalación?', 'Revisión completa con informe claro. Presupuesto sin costo.'],
     'comercios' => ['¿Tu comercio necesita un electricista?', 'Coordinamos sin frenar tu actividad. Presupuesto sin costo.'],
     'cargadores' => ['¿Querés cargar tu auto eléctrico en casa?', 'Instalamos tu cargador con circuito dedicado. Presupuesto sin costo.'],
+    'puesta-tierra' => ['¿No sabés si tu casa tiene tierra?', 'La medimos y te decimos qué falta. Presupuesto sin costo.'],
+    'recableado' => ['¿Tu instalación tiene muchos años?', 'Renovamos por etapas. Presupuesto sin costo.'],
+    'tomacorrientes' => ['¿Te faltan enchufes o alguno calienta?', 'Contanos dónde y te orientamos. Presupuesto sin costo.'],
+    'potencia' => ['¿Te quedó corta la potencia?', 'Revisamos tu consumo antes del trámite. Presupuesto sin costo.'],
+    'urgencias' => ['¿Tenés una falla eléctrica ahora?', 'Llamanos y consultá la disponibilidad.'],
 ];
 if ($tpl === 'servicio') { [$cta_h2, $cta_p] = $cta_por_servicio[$page['servicio']]; $cta_wsp = $hero_wsp; }
-elseif ($tpl === 'barrio') { $cta_h2 = '¿Necesitás un electricista en ' . $bn . '?'; $cta_p = 'Atendemos ' . $bn . ' y alrededores. Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
-elseif ($tpl === 'zonas') { $cta_h2 = '¿Necesitás un electricista en tu zona?'; $cta_p = 'Montevideo y Canelones. Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
+elseif ($tpl === 'zona') { $cta_h2 = '¿Necesitás un electricista en ' . $bn . '?'; $cta_p = 'Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
+elseif ($tpl === 'sz') { $cta_h2 = $cta_por_servicio[$sz_serv][0]; $cta_p = 'En ' . $bn . ', presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
+elseif ($tpl === 'zonas' || $tpl === 'region') { $cta_h2 = '¿Necesitás un electricista en tu zona?'; $cta_p = 'Montevideo y Canelones. Presupuesto sin costo.'; $cta_wsp = $hero_wsp; }
 ?>
 <?php if (($route === '' || isset($pages[$route])) && $route !== 'contacto'): ?><section class="contact-banner"><img class="contact-banner-bg" src="<?= e(asset_ver('images/index/hero/electricista-montevideo-tablero-electrico-desktop.webp')) ?>" alt="" width="1672" height="941" loading="lazy" aria-hidden="true"><div class="wrap"><div><h2><?= e($cta_h2) ?></h2><p><?= e($cta_p) ?></p></div><a class="button button-wsp" href="<?= e($cta_wsp) ?>"><?= icon('whatsapp') ?> Pedí tu presupuesto</a></div></section><?php endif; ?>
 <?php require APP_ROOT . '/src/vista/partials/relacionados.php'; ?>
